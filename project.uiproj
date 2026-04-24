@@ -1,0 +1,6 @@
+{
+  "Name": "AMP06_00_InformeSeguimientoRepuestos",
+  "ProjectType": "Process",
+  "Description": "Generar el informe de seguimiento a repuestos de las diferentes transacciones en SAP",
+  "MainFile": "Main.xaml"
+}
