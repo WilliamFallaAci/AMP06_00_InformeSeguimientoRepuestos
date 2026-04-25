@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SAP_ValidateLights" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_LogMessage" Type="OutArgument(x:String)" />
     <x:Property Name="out_GreenLight" Type="OutArgument(x:Boolean)" />
   </x:Members>
@@ -48,6 +49,8 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -105,16 +108,17 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_ValidateLights" sap:VirtualizedContainerService.HintSize="1281,1554" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_ValidateLights" sap:VirtualizedContainerService.HintSize="1174,1554" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia validar semáforo en SAP Logon&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Crear CC lista materiales para pedido" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,1190" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="0ce17d04-54f3-4cd7-bc88-ff4798478b0f" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Crear CC lista materiales para pedido" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,1190" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="0ce17d04-54f3-4cd7-bc88-ff4798478b0f" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -129,7 +133,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="tooltip" DisplayName="Get attribute from SAP UI element lights" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,196" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[LightValue]" ScopeIdentifier="0ce17d04-54f3-4cd7-bc88-ff4798478b0f" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="tooltip" DisplayName="Get attribute from SAP UI element lights" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,196" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[LightValue]" ScopeIdentifier="0ce17d04-54f3-4cd7-bc88-ff4798478b0f" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
               <uix:NGetAttributeGeneric.Target>
                 <uix:TargetAnchorable ContentHash="_IDkRh6ZcE6EPT-1De9YIA" DesignTimeRectangle="725, 335, 34, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/tabsREITER/tabpKOST/ssubKOST:SAPLCKDI:*/txtH_AMPEL' tooltip='Semáf*' type='GuiTextField' /&gt;" Guid="bfd6b3e6-ba87-4ddc-9f1f-734792bc5a3b" InformativeScreenshot="f23558980be53e5c8679aed274247e9a.png" Reference="QIwDNHBmYkWUle_j6tfhqw/mXdYuI9GqUO6617kRyM-uA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NGetAttributeGeneric.Target>
@@ -151,12 +155,12 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the 'Log de errores' button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0ce17d04-54f3-4cd7-bc88-ff4798478b0f" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the 'Log de errores' button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0ce17d04-54f3-4cd7-bc88-ff4798478b0f" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable ContentHash="M-IVuQW1XU-dtT1WEvqtMQ" DesignTimeRectangle="725, 335, 34, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/tabsREITER/tabpKOST/ssubKOST:SAPLCKDI:*/txtH_AMPEL' tooltip='Semáf*' type='GuiTextField' /&gt;" Guid="bfd6b3e6-ba87-4ddc-9f1f-734792bc5a3b" InformativeScreenshot="f23558980be53e5c8679aed274247e9a.png" Reference="QIwDNHBmYkWUle_j6tfhqw/mXdYuI9GqUO6617kRyM-uA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NGetText DisplayName="Extract pricing message from SAP UI" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,134" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="0ce17d04-54f3-4cd7-bc88-ff4798478b0f" TextString="[out_LogMessage]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+                  <uix:NGetText DisplayName="Extract pricing message from SAP UI" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,134" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="0ce17d04-54f3-4cd7-bc88-ff4798478b0f" TextString="[out_LogMessage]" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable ContentHash="RMCXjgudU0CSJUVqCwdqaw" DesignTimeRectangle="533, 908, 553, 19" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap colName='CMF_TEXT' id='shellcont[*]/shell' tableRow='0' colTooltip='Texto de mensaje' /&gt;" Guid="c4254fe8-b6b2-45c0-93cc-9292f28fb55c" InformativeScreenshot="d3c561a4dede7a029d622728f6a75770.png" Reference="QIwDNHBmYkWUle_j6tfhqw/JUhGcsPXu0O_G0j7cGbODA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                     </uix:NGetText.Target>
