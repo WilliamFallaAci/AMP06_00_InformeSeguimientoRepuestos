@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Click on a SAP program variant",
+  "Type": "Element",
+  "Id": "_1kPxmXb3UGtGckPYpkQzg",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/_1kPxmXb3UGtGckPYpkQzg",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/mrRqRsYiCke4OsvHf-Nofg",
+  "Created": "2026-05-05T03:00:04.4354537Z",
+  "Updated": "2026-05-05T03:00:04.4354537Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

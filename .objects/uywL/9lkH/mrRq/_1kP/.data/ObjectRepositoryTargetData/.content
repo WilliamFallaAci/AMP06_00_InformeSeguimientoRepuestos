@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rtb-rOCElU-RhkSevRgTpA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="4, 139, 133, 19" ElementVisibilityArgument="Interactive" FullSelectorArgument="[String.Format(&quot;&lt;sap colName='VARIANT' id='*/*ALV_CONTAINER_*/shellcont/*' text='{0}' /&gt;&quot;,in_Variante)]" Guid="fd8497b2-7461-4aee-9ddd-ab8cb80fffcf" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='ABAP*Catálogo de variantes del programa*' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="0351dbb9d9bcd787b2b77d6c604f6314.png" xmlns="">0OS2Pe2HtB0260jupyggbPA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

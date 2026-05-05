@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Órdenes fabricac.",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Id": "0tCIWnSdE0KoATBSNSWDQg",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/0tCIWnSdE0KoATBSNSWDQg",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/iUGerGbCjUmgUzjnFGoyEg",
+  "Created": "2026-05-05T04:04:39.1933038Z",
+  "Updated": "2026-05-05T04:04:39.1933038Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

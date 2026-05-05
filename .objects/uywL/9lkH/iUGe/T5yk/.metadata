@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Check 'Órdenes fabricac.' checkbox in SAP application",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Id": "T5ykwimxjkWqHM2UYpTvnQ",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/T5ykwimxjkWqHM2UYpTvnQ",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/iUGerGbCjUmgUzjnFGoyEg",
+  "Created": "2026-05-05T04:12:54.9206739Z",
+  "Updated": "2026-05-05T04:12:54.9206739Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
