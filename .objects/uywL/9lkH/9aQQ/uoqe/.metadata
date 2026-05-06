@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Seleccionar disposición",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "uoqeY_dJaESAysfiEqiZbQ",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/uoqeY_dJaESAysfiEqiZbQ",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/9aQQBSQnuEifwipKIopzBg",
+  "Created": "2026-05-06T04:17:29.1286625Z",
+  "Updated": "2026-05-06T04:17:29.1286625Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

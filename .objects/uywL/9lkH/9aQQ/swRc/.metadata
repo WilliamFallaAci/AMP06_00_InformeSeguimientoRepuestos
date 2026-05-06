@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Button Seleccionar disp…",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "swRcDsdIn0yDiRZytB-iKA",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/swRcDsdIn0yDiRZytB-iKA",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/9aQQBSQnuEifwipKIopzBg",
+  "Created": "2026-05-06T03:37:11.4656563Z",
+  "Updated": "2026-05-06T03:37:11.4656563Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

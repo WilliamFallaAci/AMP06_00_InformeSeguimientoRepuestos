@@ -1,0 +1,12 @@
+﻿{
+  "Name": ".xlsx - Excel",
+  "Type": "App",
+  "Id": "4FWxSgBUJkOMpAxpT68gig",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/4FWxSgBUJkOMpAxpT68gig",
+  "Created": "2026-05-06T04:26:16.3590653Z",
+  "Updated": "2026-05-06T04:26:16.3590653Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

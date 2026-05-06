@@ -1,4 +1,26 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SAP_DownloadReport" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="SAP_DownloadReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_DownloadReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_SheetName" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_FilePath" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="out_DataTableRecords" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>SAP_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -25,6 +47,25 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -50,13 +91,167 @@
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_DownloadReport" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_DownloadReport" sap:VirtualizedContainerService.HintSize="1281,1798" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia seleccionar disposición en SAP Logon&quot;]" />
+    <Assign DisplayName="Initialize a DataTable variable" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataTable">[out_DataTableRecords]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="SAP Easy Access(2)(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1082" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="450,931" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Hoja de cálculo' button in SAP" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="AVE7FhStLEWjGajlELWshQ" DesignTimeRectangle="240, 123, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Hoja de cálculo...*' type='GuiButton' /&gt;" Guid="6932f925-05f3-475a-b91a-cc9772213a41" InformativeScreenshot="29edf8665a28dcb7cc184a97a6e57a28.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/5tpozEoby0-ks5H9sjUgGw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='MM: Monitor seguimiento AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Seleccionar disposición' button with specific layout" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="OwgCqOFLpkGdeW1ujGiffA" DesignTimeRectangle="410, 157, 102, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' text='Exportar a...' tooltip='Exportar datos*' type='GuiButton' /&gt;" Guid="9d15c0c0-856e-4e2c-be5d-008918c03655" InformativeScreenshot="e8de365f7115019f34e9ee0b6fd03db5.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/uoqeY_dJaESAysfiEqiZbQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Exportar como' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type &quot;C:\TEMP&quot; into SAP path field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Text="[Path.GetDirectoryName(in_FilePath)]" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="tHG4iQ1cskmX66VUS7g2WQ" DesignTimeRectangle="87, 32, 370, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ctxtDY_PATH' type='GuiCTextField' /&gt;" Guid="c40702dc-5a04-4238-8428-d9396de5c035" InformativeScreenshot="868b67373465f2507840ed8a5d3271e2.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/1JU6gkxWRkuPEMToctlElw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Grabar fichero' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type filename into SAP application field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,237" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Text="[Path.GetFileName(in_FilePath)]" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="87, 54, 370, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ctxtDY_FILENAME' type='GuiCTextField' /&gt;" Guid="feb15792-6cb8-477a-bb87-1ae9f42f60fd" InformativeScreenshot="774e86e39dcb2b4a078f4febb206fa98.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Grabar fichero' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="GyEdfdBz80mtlnz3-myt-A" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhHY/j//z/jQGIGdAF641EHjDpg1AEMTjWr2Z2qVx8cEFyzppDBqXoNp1PNmv8DgNc6164RHCgHgCwXhkQB/R0AtxzsgEOnLlo6Vq/+71i9ikp49X+nGhDGsBjDcrAD3n76/vn+i4//qYH3nr/3368B5gjCloMd8P7Lz//UwGdvPv7vVzH7v13pImwOwGo51Rxw4fbT/96lM/7bFi/AFgXrQakd3WKqOeD87af/PYun/bcrWYjN5+td6tbitJxiB4B87lkyHWr5KmSL/xJjOdgBD56/LW1bsu9/y6JdJOLd/33KZ1NkOdgBVrkzOO0rlv23L19KMnaoXI4e7GDLnetwxzk6pmZBBPU58ZZT0wEk+5zaDiA6ztEx5dVxzZqZ5FoOdgC6AL3xqANGHTDqgAF3AAD5AWfDouj2iwAAAABJRU5ErkJggg==" InformativeScreenshot="fec0066ee56941bf5e7f3a471cbca0d9.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/9aQQBSQnuEifwipKIopzBg" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='MM: Monitor seguimiento AMPO' /&gt;" Version="V2">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.FilePath>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.FilePath>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName=".xlsx - Excel" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="63d5d573-d4e5-4a80-8e51-32f683ab6594" Timeout="20" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="4CnbIOi9-0K02wFu6mtq2A" IconBase64="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" InformativeScreenshot="2ff709c5df9a7f31c89528acdefc2135.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/bPVvRq2zSEa1TG1NEOxm2w" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='*.xlsx - Excel' /&gt;" Version="V2">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.FilePath>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.FilePath>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[out_DataTableRecords]" DisplayName="Read Excel sheet data into a DataTable" sap:VirtualizedContainerService.HintSize="452,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_SheetName]" WorkbookPath="[in_FilePath]" />
+    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza seleccionar disposición en SAP Logon&quot;]" />
   </Sequence>
 </Activity>

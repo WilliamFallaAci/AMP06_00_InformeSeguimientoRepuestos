@@ -1,0 +1,13 @@
+﻿{
+  "Name": ".xlsx - Excel",
+  "Type": "Screen",
+  "Id": "bPVvRq2zSEa1TG1NEOxm2w",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/bPVvRq2zSEa1TG1NEOxm2w",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/0aq6XXGKK0iAmgucgW1eqg",
+  "Created": "2026-05-06T04:26:16.3717915Z",
+  "Updated": "2026-05-06T04:26:16.3717915Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

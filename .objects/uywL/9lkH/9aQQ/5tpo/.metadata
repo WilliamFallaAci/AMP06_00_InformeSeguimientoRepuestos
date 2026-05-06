@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Hoja de cálculo",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "5tpozEoby0-ks5H9sjUgGw",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/5tpozEoby0-ks5H9sjUgGw",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/9aQQBSQnuEifwipKIopzBg",
+  "Created": "2026-05-06T04:17:27.9373905Z",
+  "Updated": "2026-05-06T04:17:27.9373905Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
