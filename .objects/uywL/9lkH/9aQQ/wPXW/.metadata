@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Type filename into SAP application field",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "wPXWx__LrkCUCrHFn5yZ8g",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/wPXWx__LrkCUCrHFn5yZ8g",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/9aQQBSQnuEifwipKIopzBg",
+  "Created": "2026-05-07T02:12:43.7332613Z",
+  "Updated": "2026-05-07T02:12:43.7332613Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

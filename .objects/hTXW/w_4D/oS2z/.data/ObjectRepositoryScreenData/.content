@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="YDGOzor4Zku6OPAvAYJlEQ" Reference="oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-8, -8, 1936, 1048" BrowserType="Chrome" ContentHash="_OzaSeA1UECDkvRbX1zg0Q" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVDhP7Y47ikJREESPjmBsNLFCbcHQXIw1my0YTGCiqSAK4idwB67pLEeuXAPfBjR4B5qmu7qKhpYvQjKQbCSLOjf1Tu29N+GF5CAZSm6SsWQrGUmukrNkL7lI/iWrpr8EHCVTyV0yk5wk6xpQjDvJRLIs+6a/BPxK5pI/Sbe8LPmp/Vn1rt/0tnyaBwlMNDmyh277AAAAAElFTkSuQmCC" Reference="oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA" Selector="&lt;html app='chrome.exe' title='*PORTAL AMPO' /&gt;" Url="[in_Config(&quot;ODM_URL&quot;).ToString.Trim]" Version="V2">
+      <TargetApp.Arguments>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.Arguments>
+      <TargetApp.WorkingDirectory>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.WorkingDirectory>
+      <imageRef attrName="InformativeScreenshot" originalValue="640f82830f41f5f7d675bc5d007616fd.jpg" xmlns="">0W4PVlyr1eUK1Qb7UHHjCfw</imageRef>
+    </TargetApp>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1" />
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

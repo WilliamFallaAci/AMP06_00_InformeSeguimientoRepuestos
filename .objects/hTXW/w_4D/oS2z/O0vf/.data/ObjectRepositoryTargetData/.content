@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="uAdQQy5R6UGR3ltMqp1Kpg" Reference="oCOFMf_dREKLlM0YaHnBwQ/O0vfw7ePx0mGaj-O2AJerA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odmtest.ampo.com" CVScreenId="ed40604d-70e8-400a-b913-828f135136f6" DesignTimeRectangle="1546, 389, 365, 49" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' innertext=' Acceder ' parentid='loginform' visibleinnertext='ACCEDER ' /&gt;" Guid="38d27d48-19ce-40fc-9abf-8cd11608193e" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="0dcb3361230a6e8a6ee377c319771fc4.png" xmlns="">0WWousk6YuUmurzGRKL4riw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="-paWYKLxzk6yEEeLCeEnRQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odmtest.ampo.com" CVScreenId="8967bc32-2b4c-4c44-98ae-abe9f5943875" DesignTimeRectangle="8, 347, 240, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='sidebarnav' tag='A' innertext='Inicio  ' parentclass='active ng-star-inserted' visibleinnertext='Inicio' /&gt;" Guid="32570a7d-c9e8-4acc-8f90-798316539947" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Portal AMPO - CERTIFICADO PROVISIONAL RX' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="e3df269e4e02f864a0c7170950cb9a2b.png" xmlns="">07p0-ViHiq0eyZ-RzwKInyg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

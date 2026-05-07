@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Acceder",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "O0vfw7ePx0mGaj-O2AJerA",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/O0vfw7ePx0mGaj-O2AJerA",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA",
+  "Created": "2026-05-07T03:34:53.4377528Z",
+  "Updated": "2026-05-07T03:34:53.4377528Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

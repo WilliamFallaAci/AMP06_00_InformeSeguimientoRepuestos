@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="O3ptT2Cj0UqSmInu2sX5zA" Reference="oCOFMf_dREKLlM0YaHnBwQ/L6rHNDz68k-Pdcy1tc8DpQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odmtest.ampo.com" CVScreenId="ed40604d-70e8-400a-b913-828f135136f6" DesignTimeRectangle="1546, 238, 365, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' name='user' parentid='loginform' type='text' /&gt;" Guid="9efb283a-d0e7-43e5-aa44-4e260a5c34eb" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="07e27061b214c946f7d69140de21285b.png" xmlns="">0URY6-2N7EEydxA5MRiYncg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
