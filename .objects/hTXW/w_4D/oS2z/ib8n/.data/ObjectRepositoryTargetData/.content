@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="VbvRQ4krCEuNBQcKK845uA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odmtest.ampo.com" DesignTimeRectangle="1796, 129, 54, 74" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' data-toggle='dropdown' parentclass='nav-item dropdown' parentid='main-wrapper' /&gt;" Guid="c7f366bb-49f2-4c10-8ee3-eeaba3b4baff" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*PORTAL AMPO VALIDACI*N DOCUMENTACI*N PROVEEDOR' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="807e57b0c617bf98ef7e58712fa9bbc2.png" xmlns="">0reyZoTRdEUiqbyO0NtVhLA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

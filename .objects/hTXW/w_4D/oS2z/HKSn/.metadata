@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Check",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "HKSnn9pq-U6Ms0ynMltMCQ",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/HKSnn9pq-U6Ms0ynMltMCQ",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA",
+  "Created": "2026-05-08T03:53:57.9393259Z",
+  "Updated": "2026-05-08T03:53:57.9393259Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

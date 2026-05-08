@@ -1,0 +1,14 @@
+﻿{
+  "Name": "exportValidationData (1…",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "l8lrFLijsUOxCIY3ic2S6Q",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/l8lrFLijsUOxCIY3ic2S6Q",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA",
+  "Created": "2026-05-08T04:12:27.4213943Z",
+  "Updated": "2026-05-08T04:12:27.4213943Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

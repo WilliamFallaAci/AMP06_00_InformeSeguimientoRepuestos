@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Validación Proveedor(1)",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "iG487z41GkK-332QO7jn8A",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/iG487z41GkK-332QO7jn8A",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA",
+  "Created": "2026-05-08T03:57:15.9285092Z",
+  "Updated": "2026-05-08T03:57:15.9285092Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

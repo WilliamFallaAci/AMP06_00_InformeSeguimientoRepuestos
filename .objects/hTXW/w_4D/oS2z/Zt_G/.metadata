@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Check a specific checkbox on the web page.",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Zt_G3U0eOUGpjLaG98exIw",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/Zt_G3U0eOUGpjLaG98exIw",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA",
+  "Created": "2026-05-08T03:50:26.9158562Z",
+  "Updated": "2026-05-08T03:50:26.9158562Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
