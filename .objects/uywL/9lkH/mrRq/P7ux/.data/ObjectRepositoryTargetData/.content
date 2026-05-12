@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ADq78FHj5EuAkXlSO97KMQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="438, 291, 76, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ctxtSP*HIGH' tooltip='Documento de ventas' type='GuiCTextField' /&gt;" Guid="b14b65c8-0aa5-4888-be46-7e0cb83088c9" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Informe de Repuestos' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="0e90b9e3537227b67dd89494fd33b89e.png" xmlns="">0QVWi3ByNCEeCp5jISQKKjg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

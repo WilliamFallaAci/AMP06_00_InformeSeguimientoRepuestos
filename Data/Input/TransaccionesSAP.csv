@@ -1,6 +1,6 @@
 ﻿Transaction;Step1;Step2;Step3
-ZMG002_01;variante;;
-ZMM026;disposicion;;
+ZMG002_01;variante;ejecutar;
+ZMM026;ejecutar;disposicion;
 LX02;variante;;
 COHV;checks;disposicion;
 ZCO017;variante;;

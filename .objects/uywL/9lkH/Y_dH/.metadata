@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Interact with SAP to click a specific button",
+  "Type": "Screen",
+  "Id": "Y_dHEzs9E0aJEBQLfcXvJw",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/Y_dHEzs9E0aJEBQLfcXvJw",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/9lkH7DM8FkmRosKFeVUTYw",
+  "Created": "2026-05-12T02:05:45.2767334Z",
+  "Updated": "2026-05-12T02:05:45.2767334Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

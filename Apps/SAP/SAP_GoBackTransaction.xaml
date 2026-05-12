@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SAP_RegresarTransaction" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="in_NumberTimes" Type="InArgument(x:Int32)" />
     <x:Property Name="in_EndProcess" Type="InArgument(x:String)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))">
       <x:Property.Attributes>
@@ -109,35 +110,61 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_GoBackTransaction" sap:VirtualizedContainerService.HintSize="1281,1803" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_GoBackTransaction" sap:VirtualizedContainerService.HintSize="1281,2160" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia regresar a transacciones en SAP Logon&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="InternoSubcontratación" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,1439" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V2">
+    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="524,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia regresar a transacciones en SAP Logon&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="InternoSubcontratación" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="524,1796" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1288" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,1645" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[in_EndProcess.Trim.ToLower.Contains(&quot;end&quot;)]" sap:VirtualizedContainerService.HintSize="452,1228" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[in_EndProcess.Trim.ToLower.Contains(&quot;end&quot;)]" sap:VirtualizedContainerService.HintSize="488,1585" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,646" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1003" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Int32" Name="Counter">
+                      <Variable.Default>
+                        <Literal x:TypeArguments="x:Int32" Value="1" />
+                      </Variable.Default>
+                    </Variable>
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - go back" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,401" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Shortcuts="[d(hk)][k(F3)][u(hk)]" Version="V5" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'No' button to release cost calculation" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+                  <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="452,758" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                    <ui:InterruptibleDoWhile.Body>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,627" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - go back" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,401" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Shortcuts="[d(hk)][k(F3)][u(hk)]" Version="V5" />
+                        <Assign DisplayName="Increment a counter variable" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Counter]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[Counter + 1]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ui:InterruptibleDoWhile.Body>
+                  </ui:InterruptibleDoWhile>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'No' button to release cost calculation" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable ContentHash="aXrZYVYgb0G9HskkKdDV5Q" DesignTimeRectangle="129, 97, 83, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/btnSPOP-OPTION*' text='No' type='GuiButton' /&gt;" Guid="092d5297-1714-444e-9def-7f015d7fe56b" InformativeScreenshot="6d7e015ffb71f93932e880806a3bd0f1.png" Reference="QIwDNHBmYkWUle_j6tfhqw/jKNtfgMc4EmmuoW-vLKKLg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Finalizar' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                     </uix:NClick.Target>
@@ -145,13 +172,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,452" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,452" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - go back" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,392" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="HardwareEvents" ScopeIdentifier="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Shortcuts="[d(hk)][k(F3)][u(hk)]" Version="V5" />
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - go back" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,392" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="HardwareEvents" ScopeIdentifier="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Shortcuts="[d(hk)][k(F3)][u(hk)]" Version="V5" />
                 </Sequence>
               </If.Else>
             </If>
@@ -185,6 +212,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="488,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza regresar a transacciones en SAP Logon&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="524,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza regresar a transacciones en SAP Logon&quot;]" />
   </Sequence>
 </Activity>

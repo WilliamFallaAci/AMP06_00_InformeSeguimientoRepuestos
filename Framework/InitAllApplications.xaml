@@ -123,9 +123,12 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1281,1027" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1281,1143" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -152,6 +155,6 @@
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[out_TransactionData]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Read CSV" FilePath="[Path.Combine(System.Environment.CurrentDirectory,&quot;Data\Input\TransaccionesSAP.csv&quot;)]" sap:VirtualizedContainerService.HintSize="450,170" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
-    <ui:Comment sap:VirtualizedContainerService.HintSize="450,99" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// crear una copia de la plantilla y renombrar para reporte fecha actual" />
+    <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[Path.Combine(Path.GetDirectoryName(in_Config(&quot;InitialInpuPath&quot;).ToString.Trim),String.Format(in_Config(&quot;FinalReportName&quot;).ToString.Trim,Now.ToString(&quot;dd-MMM-yyyy HH-mm-ss&quot;)))]" DisplayName="Copy initial input file to timestamped destination" sap:VirtualizedContainerService.HintSize="450,215" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_Config(&quot;InitialInpuPath&quot;).ToString.Trim]" />
   </Sequence>
 </Activity>

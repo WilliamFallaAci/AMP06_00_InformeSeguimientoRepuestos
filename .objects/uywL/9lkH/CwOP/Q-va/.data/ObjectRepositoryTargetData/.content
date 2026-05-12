@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="JMsa79Upr0KMwVTEwY8fpg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="46, 554, 174, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/btnBUTTON*' text='Lista de entregas de sal' type='GuiButton' /&gt;" Guid="c6e9d3cc-2cdf-4fe5-9269-52b7379cb841" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Monitor de entregas de salida' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="58629be52a4fee592401085ea3e276bb.png" xmlns="">0EjxRxU329EyzSAHe5Dy2pQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

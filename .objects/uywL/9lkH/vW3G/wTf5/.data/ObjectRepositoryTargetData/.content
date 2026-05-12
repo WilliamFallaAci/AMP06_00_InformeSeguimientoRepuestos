@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="5FbydLOZQUqaLe5eciKBwg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="32, 123, 81, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' text='Por BOM' tooltip='Resultado de la búsqueda: Por BOM*' type='GuiButton' /&gt;" Guid="40482455-7614-4d24-98bf-2c7615e46673" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='PP: Gestión ampliada de requisitos de calidad - Proc Pedidos' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="006bad904c46de6bfa9a4dbd0c501a85.png" xmlns="">08CXGLY3_bEeLFn-wIOcZ3w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

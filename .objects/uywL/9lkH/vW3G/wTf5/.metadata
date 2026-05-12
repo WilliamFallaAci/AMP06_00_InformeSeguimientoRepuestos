@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Por BOM",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "wTf5gWxfVkWAVqU06rUUBg",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/wTf5gWxfVkWAVqU06rUUBg",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/vW3Gt41LXE6GwOOWPAbVRA",
+  "Created": "2026-05-12T01:41:23.1999348Z",
+  "Updated": "2026-05-12T01:41:23.1999348Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
