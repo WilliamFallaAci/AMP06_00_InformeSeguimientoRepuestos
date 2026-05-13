@@ -54,6 +54,7 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>System.ComponentModel</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -106,37 +107,126 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_SelectionDisposicion" sap:VirtualizedContainerService.HintSize="1281,954" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_SelectionDisposicion" sap:VirtualizedContainerService.HintSize="1250,1866" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia seleccionar disposición en SAP Logon&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="SAP Easy Access(2)(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,590" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
+    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="1210,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia seleccionar disposición en SAP Logon&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="SAP Easy Access(2)(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1210,1502" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="450,439" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="1208,1351" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Seleccionar disposición...' button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable ContentHash="s0lE2MEdSEifDxoqGQ7_cg" DesignTimeRectangle="346, 123, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Seleccionar disposición...*' type='GuiButton' /&gt;" Guid="244abf5a-8fc4-4c7a-9248-b115664a6a12" InformativeScreenshot="bb51d7dcbd329a05cb3b926df39fd3ce.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/swRcDsdIn0yDiRZytB-iKA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='MM: Monitor seguimiento AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Seleccionar disposición' button with specific layout" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="4, 339, 91, 19" ElementVisibilityArgument="Interactive" FullSelectorArgument="[String.Format(&quot;&lt;sap colName='VARIANT' id='usr/subSUB_CONFIGURATION*LAYOUT_CHOOSE*/*CONTAINER/shell*/*' colTooltip='Layout' text='{0}' /&gt;&quot;,in_Disposicion)]" Guid="a89ed61c-fb80-45f6-ab3e-45124f2526a0" InformativeScreenshot="d526781d05109d6af6343899a12428c3.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Sel.disposición' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-              </uix:NClick.Target>
-            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'saplogon.exe Tratamient…'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1174,470" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="4" Version="V5">
+              <uix:NCheckState.IfExists>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'saplogon.exe Tratamient…(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="347,162" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable ContentHash="Kw3hUBKdY0ytQJinVlOTKQ" DesignTimeRectangle="50, 130, 24, 18" ElementVisibilityArgument="Interactive" Guid="78846d47-b2fa-459f-bc09-7c208f3afb9d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAASCAYAAABB7B6eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEzSURBVDhPrY2/S8NQGEXfH9tBUEdXEURwciooVlosQhcR3Bx0k6KbQ0VFKNJCGyKahhiwJnlXbiCP+H7Qqm84y/ddzhHra6uIx13IrwlQfHiBLjrpFlUA2RRIr/2QTS2BPDSHNYQQxs1JHpoBmY3NoRZYNkKXGZg/AcmlkypQRiz/OnT9CMwYSPtAfO6kHigjlk0FXXSqQDQ6hkyugKjnRA+UEcuO0EXnvwOuiLeAvnEG3l46kMkF8N5xYsgtmwq66FSB12EbMj4zhq6A/tOhi04VCJ5bKJYM6HcbdNGpApPHAxSzxQH95oIuOlVgNGguDPwGuuhUgeHdHvLo1Bj+FbroVIH7m12kQQ+fQcsLdNFZBg6bm2jvb2DQ38bD7Y4X6KKTbjEPT9A92kKjseIVOun+BmPLYOyK11nIAAAAAElFTkSuQmCC" InformativeScreenshot="9ef921d3215b2592cf15a983e47efbb7.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/gHt26Tx6qEqefm1oZWYvvw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="None" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable ContentHash="uKNh2u4NCU-niprRkVHF6Q" DesignTimeRectangle="51, 129, 24, 17" ElementVisibilityArgument="Interactive" Guid="b745df00-2e39-4776-9a24-9ddbf9beb6ad" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAARCAYAAADHeGwwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEjSURBVDhPrY3NSsNAGEXnfdUn8AF0VVxYEAoW3dSFKN25sDsRcdWFglKokkIbIpqGGGibZK7cQMY4P7TqLM7m+y7niMuzPcjlC7AKvEAXne2DXUT3Q4hkcgq5mgLlpxfoonNne+s7gHwGZDd+yGeWQBGZwwZCCOPmpIjMgMwn5lALbBqhywwsn4H02kkdqCKWfxO6fgTmDGS3QNJ30gxUEcumhi46VSAOTiDTARD3nOiBKmLZEbro/HfAFfEW0DfOwPtrFzK9Aj66Tgy5ZVNDF50q8DY+hkwujKEroP906KJTBcJRB+WGAf1ugy46VWD6dIRyvj6g31zQRacKBA+HawO/gS46VWA8bKGIz43hX6GLThV4vNtHFvawCDteoIvOOvAFuwdMLK71PLoAAAAASUVORK5CYII=" InformativeScreenshot="3bff15c7539acae7277172bcdaeea60e.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/5n9Jz--oK0OWe7KZqzvWpA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="None" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <Pick DisplayName="Pick Seleccionar disposición" sap:VirtualizedContainerService.HintSize="1174,821" sap2010:WorkflowViewState.IdRef="Pick_1">
+              <PickBranch DisplayName="PickBranch with selector" sap:VirtualizedContainerService.HintSize="540,751" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+                <PickBranch.Trigger>
+                  <uix:NCheckElement Result="{x:Null}" DelayBefore="0" DisplayName="Check Element with selector" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,111" sap2010:WorkflowViewState.IdRef="NCheckElement_1" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                    <uix:NCheckElement.Target>
+                      <uix:TargetAnchorable ContentHash="FYKQzrMirUeVOJaAJ0Y0Mw" DesignTimeRectangle="451, 127, 36, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Seleccionar disposición...*' type='GuiButton' /&gt;" Guid="1d523864-1f49-4eec-a103-032dc2ae5bfb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAaCAYAAADFTB7LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJoSURBVFhH1ZfNbhJhFIZ7C668AjfuvRhXaCCtXoAXYEyjm6qNP9RgIGgMJlpII0ab1FYJbf2ppolDLJIgMnQGShyYDmAp8L3mHBvjfFgGAqXj4smc82bC+yxmMh8TqZUE3MzEzvtNuJn/S9Dj8cDnu3CskMOhgj7fJGKPr0I0vwH7+ZER+/i5K5OhTuomhx6CUzDVBxD7GtCpDcV2s4XthsXzw6U3v7OGxbl8L0Gd1E0OjoLnznuHAvUkyj/L2CjlePY/ifGVdspp7qKlDybYVs7aoCy8krFB2aONizb+JThzP+Qs2N45PsHp2VuOgqKljlHQWkKhXsK6luX58swNvtJOOc0yopnuT7A6imfQXMBXS8NrLcMzC5oLvFNOs4yor3G3o2AlH+YS885JG5QpzyI2KOskT9hgwUoEn0wVi+oWzyxYifBOOc0ywnrF3WMTTBoq4pIg7ZTLcq4VtAohmPkgGnq4f8EfuVDXMzUoMEJIGjnE1RTPLGiEeKec5mruLkrpWZw5fQq1whyE9ZK7HQXL2SCXWImEDcrmlXs2KLsZT9noR5DkigdyxJ4egDCj3O0oWMwEjlRwWU9jN+//I0fACKNjRrnbUVDbmjtSwVXju02OENV5dKpR7nYUzCu3u56pQZEF+UtyIPihokLsLkLUViFq6xDWMkQ1xoLU7SiY3byOduUp/+Aw/C3I32LpJZGhTup2FEy9vYZ6MYK9YmAonusZKIUXPNNphq60Uy7fS1AndfcU9HqnEPRfgrJ2BV/eTY8MOg/KmQx1Ujc59BD08olWPoaPj0l2OFTQjbhfUP6j7DZ+AecU4TqX5yagAAAAAElFTkSuQmCC" InformativeScreenshot="69d8dec550dc2390929ad0636ee68793.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/-9AN2qqEi0WAPUwAzm0o9A" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" SelectionStrategy="AA" Version="V6" WaitForReadyArgument="Complete" />
+                    </uix:NCheckElement.Target>
+                  </uix:NCheckElement>
+                </PickBranch.Trigger>
+                <Sequence DisplayName="Sequence Seleccionar disposición with selector" sap:VirtualizedContainerService.HintSize="450,439" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Seleccionar disposición...' button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="s0lE2MEdSEifDxoqGQ7_cg" DesignTimeRectangle="346, 123, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Seleccionar disposición...*' type='GuiButton' /&gt;" Guid="244abf5a-8fc4-4c7a-9248-b115664a6a12" InformativeScreenshot="bb51d7dcbd329a05cb3b926df39fd3ce.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/swRcDsdIn0yDiRZytB-iKA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Seleccionar disposición' button with specific layout" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="kRS132ufRUGAVqwpxrirFQ" DesignTimeRectangle="4, 339, 91, 19" ElementVisibilityArgument="Interactive" FullSelectorArgument="[String.Format(&quot;&lt;sap colName='VARIANT' id='usr/subSUB_CONFIGURATION*LAYOUT_CHOOSE*/*CONTAINER/shell*/*' colTooltip='Layout' text='{0}' /&gt;&quot;,in_Disposicion)]" Guid="a89ed61c-fb80-45f6-ab3e-45124f2526a0" InformativeScreenshot="d526781d05109d6af6343899a12428c3.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/8YPMlF1Mx0Gdqz5iKt3qHw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Sel.disposición' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </Sequence>
+              </PickBranch>
+              <PickBranch DisplayName="PickBranch without selector" sap:VirtualizedContainerService.HintSize="540,751" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+                <PickBranch.Trigger>
+                  <uix:NCheckElement Result="{x:Null}" DelayBefore="0" DisplayName="Check Element without selector" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,111" sap2010:WorkflowViewState.IdRef="NCheckElement_2" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;)) + 1]" Version="V5">
+                    <uix:NCheckElement.Target>
+                      <uix:TargetAnchorable ContentHash="uqFGf7E_x0G5e66tX0c-0Q" DesignTimeRectangle="451, 127, 36, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl idx='7' name=' ' role='split button' /&gt;" Guid="9a66dac6-b469-402e-9d50-c30df06c5f3e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAaCAYAAADFTB7LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJoSURBVFhH1ZfNbhJhFIZ7C668AjfuvRhXaCCtXoAXYEyjm6qNP9RgIGgMJlpII0ab1FYJbf2ppolDLJIgMnQGShyYDmAp8L3mHBvjfFgGAqXj4smc82bC+yxmMh8TqZUE3MzEzvtNuJn/S9Dj8cDnu3CskMOhgj7fJGKPr0I0vwH7+ZER+/i5K5OhTuomhx6CUzDVBxD7GtCpDcV2s4XthsXzw6U3v7OGxbl8L0Gd1E0OjoLnznuHAvUkyj/L2CjlePY/ifGVdspp7qKlDybYVs7aoCy8krFB2aONizb+JThzP+Qs2N45PsHp2VuOgqKljlHQWkKhXsK6luX58swNvtJOOc0yopnuT7A6imfQXMBXS8NrLcMzC5oLvFNOs4yor3G3o2AlH+YS885JG5QpzyI2KOskT9hgwUoEn0wVi+oWzyxYifBOOc0ywnrF3WMTTBoq4pIg7ZTLcq4VtAohmPkgGnq4f8EfuVDXMzUoMEJIGjnE1RTPLGiEeKec5mruLkrpWZw5fQq1whyE9ZK7HQXL2SCXWImEDcrmlXs2KLsZT9noR5DkigdyxJ4egDCj3O0oWMwEjlRwWU9jN+//I0fACKNjRrnbUVDbmjtSwVXju02OENV5dKpR7nYUzCu3u56pQZEF+UtyIPihokLsLkLUViFq6xDWMkQ1xoLU7SiY3byOduUp/+Aw/C3I32LpJZGhTup2FEy9vYZ6MYK9YmAonusZKIUXPNNphq60Uy7fS1AndfcU9HqnEPRfgrJ2BV/eTY8MOg/KmQx1Ujc59BD08olWPoaPj0l2OFTQjbhfUP6j7DZ+AecU4TqX5yagAAAAAElFTkSuQmCC" InformativeScreenshot="e666a922105b197b0c389ae68a871837.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/eSFgQrQq2Umb-GWExV6yUw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector, Image" SelectionStrategy="AA" Version="V6" WaitForReadyArgument="Complete" />
+                    </uix:NCheckElement.Target>
+                  </uix:NCheckElement>
+                </PickBranch.Trigger>
+                <Sequence DisplayName="Sequence Seleccionar disposición without selector" sap:VirtualizedContainerService.HintSize="450,439" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Seleccionar disposición without selector" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="uqFGf7E_x0G5e66tX0c-0Q" DesignTimeRectangle="451, 127, 36, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl idx='7' name=' ' role='split button' /&gt;" Guid="9a66dac6-b469-402e-9d50-c30df06c5f3e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAaCAYAAADFTB7LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJoSURBVFhH1ZfNbhJhFIZ7C668AjfuvRhXaCCtXoAXYEyjm6qNP9RgIGgMJlpII0ab1FYJbf2ppolDLJIgMnQGShyYDmAp8L3mHBvjfFgGAqXj4smc82bC+yxmMh8TqZUE3MzEzvtNuJn/S9Dj8cDnu3CskMOhgj7fJGKPr0I0vwH7+ZER+/i5K5OhTuomhx6CUzDVBxD7GtCpDcV2s4XthsXzw6U3v7OGxbl8L0Gd1E0OjoLnznuHAvUkyj/L2CjlePY/ifGVdspp7qKlDybYVs7aoCy8krFB2aONizb+JThzP+Qs2N45PsHp2VuOgqKljlHQWkKhXsK6luX58swNvtJOOc0yopnuT7A6imfQXMBXS8NrLcMzC5oLvFNOs4yor3G3o2AlH+YS885JG5QpzyI2KOskT9hgwUoEn0wVi+oWzyxYifBOOc0ywnrF3WMTTBoq4pIg7ZTLcq4VtAohmPkgGnq4f8EfuVDXMzUoMEJIGjnE1RTPLGiEeKec5mruLkrpWZw5fQq1whyE9ZK7HQXL2SCXWImEDcrmlXs2KLsZT9noR5DkigdyxJ4egDCj3O0oWMwEjlRwWU9jN+//I0fACKNjRrnbUVDbmjtSwVXju02OENV5dKpR7nYUzCu3u56pQZEF+UtyIPihokLsLkLUViFq6xDWMkQ1xoLU7SiY3byOduUp/+Aw/C3I32LpJZGhTup2FEy9vYZ6MYK9YmAonusZKIUXPNNphq60Uy7fS1AndfcU9HqnEPRfgrJ2BV/eTY8MOg/KmQx1Ujc59BD08olWPoaPj0l2OFTQjbhfUP6j7DZ+AecU4TqX5yagAAAAAElFTkSuQmCC" InformativeScreenshot="e666a922105b197b0c389ae68a871837.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/eSFgQrQq2Umb-GWExV6yUw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector, Image" SelectionStrategy="AA" Version="V6" WaitForReadyArgument="Complete" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Version="V5" />
+                </Sequence>
+              </PickBranch>
+            </Pick>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -148,7 +238,7 @@
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="GyEdfdBz80mtlnz3-myt-A" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhHY/j//z/jQGIGdAF641EHjDpg1AEMTjWr2Z2qVx8cEFyzppDBqXoNp1PNmv8DgNc6164RHCgHgCwXhkQB/R0AtxzsgEOnLlo6Vq/+71i9ikp49X+nGhDGsBjDcrAD3n76/vn+i4//qYH3nr/3368B5gjCloMd8P7Lz//UwGdvPv7vVzH7v13pImwOwGo51Rxw4fbT/96lM/7bFi/AFgXrQakd3WKqOeD87af/PYun/bcrWYjN5+td6tbitJxiB4B87lkyHWr5KmSL/xJjOdgBD56/LW1bsu9/y6JdJOLd/33KZ1NkOdgBVrkzOO0rlv23L19KMnaoXI4e7GDLnetwxzk6pmZBBPU58ZZT0wEk+5zaDiA6ztEx5dVxzZqZ5FoOdgC6AL3xqANGHTDqgAF3AAD5AWfDouj2iwAAAABJRU5ErkJggg==" InformativeScreenshot="fec0066ee56941bf5e7f3a471cbca0d9.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/9aQQBSQnuEifwipKIopzBg" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='MM: Monitor seguimiento AMPO' /&gt;" Version="V2">
+        <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="GyEdfdBz80mtlnz3-myt-A" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhHY/j//z/jQGIGdAF641EHjDpg1AEMTjWr2Z2qVx8cEFyzppDBqXoNp1PNmv8DgNc6164RHCgHgCwXhkQB/R0AtxzsgEOnLlo6Vq/+71i9ikp49X+nGhDGsBjDcrAD3n76/vn+i4//qYH3nr/3368B5gjCloMd8P7Lz//UwGdvPv7vVzH7v13pImwOwGo51Rxw4fbT/96lM/7bFi/AFgXrQakd3WKqOeD87af/PYun/bcrWYjN5+td6tbitJxiB4B87lkyHWr5KmSL/xJjOdgBD56/LW1bsu9/y6JdJOLd/33KZ1NkOdgBVrkzOO0rlv23L19KMnaoXI4e7GDLnetwxzk6pmZBBPU58ZZT0wEk+5zaDiA6ztEx5dVxzZqZ5FoOdgC6AL3xqANGHTDqgAF3AAD5AWfDouj2iwAAAABJRU5ErkJggg==" InformativeScreenshot="fec0066ee56941bf5e7f3a471cbca0d9.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/9aQQBSQnuEifwipKIopzBg" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" Version="V2">
           <uix:TargetApp.Arguments>
             <InArgument x:TypeArguments="x:String" />
           </uix:TargetApp.Arguments>
@@ -167,6 +257,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza seleccionar disposición en SAP Logon&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="1210,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza seleccionar disposición en SAP Logon&quot;]" />
   </Sequence>
 </Activity>

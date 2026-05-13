@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Check Element without selector",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "eSFgQrQq2Umb-GWExV6yUw",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/eSFgQrQq2Umb-GWExV6yUw",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/9aQQBSQnuEifwipKIopzBg",
+  "Created": "2026-05-13T03:30:25.0843069Z",
+  "Updated": "2026-05-13T03:30:25.0843069Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
