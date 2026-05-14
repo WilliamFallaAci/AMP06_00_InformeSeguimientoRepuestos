@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="kRS132ufRUGAVqwpxrirFQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="_rbnhnFdH0WHAsevL5uzXg" Reference="oCOFMf_dREKLlM0YaHnBwQ/8YPMlF1Mx0Gdqz5iKt3qHw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="4, 339, 91, 19" ElementVisibilityArgument="Interactive" FullSelectorArgument="[String.Format(&quot;&lt;sap colName='VARIANT' id='usr/subSUB_CONFIGURATION*LAYOUT_CHOOSE*/*CONTAINER/shell*/*' colTooltip='Layout' text='{0}' /&gt;&quot;,in_Disposicion)]" Guid="a89ed61c-fb80-45f6-ab3e-45124f2526a0" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Sel.disposición' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
-      <imageRef attrName="InformativeScreenshot" originalValue="d526781d05109d6af6343899a12428c3.png" xmlns="">0UNaefFgi30ela7Hic4Ak6g</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="4, 339, 91, 19" ElementVisibilityArgument="Interactive" FullSelectorArgument="[String.Format(&quot;&lt;sap colName='VARIANT' id='usr/subSUB_CONFIGURATION*/*CONTAINER/shell*/*' colTooltip='Layout' text='{0}' /&gt;&quot;,in_Disposicion)]" Guid="a89ed61c-fb80-45f6-ab3e-45124f2526a0" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Sel.disposición' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="d526781d05109d6af6343899a12428c3.png" xmlns="">0tg8C8fbnv0as1XXfjN7sQw</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>

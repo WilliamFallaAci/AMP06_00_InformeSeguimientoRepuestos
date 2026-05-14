@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Seleccionar disposición…",
+  "Type": "Element",
+  "Id": "Mml_imM_3EiaaChl2xgyLQ",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/Mml_imM_3EiaaChl2xgyLQ",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/9aQQBSQnuEifwipKIopzBg",
+  "Created": "2026-05-14T03:55:29.9107635Z",
+  "Updated": "2026-05-14T03:55:29.9107635Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
