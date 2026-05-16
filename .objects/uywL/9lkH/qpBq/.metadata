@@ -1,0 +1,13 @@
+﻿{
+  "Name": "SAP ejecutar",
+  "Type": "Screen",
+  "Id": "qpBqVjJC20yJ0kXIEzXumg",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/qpBqVjJC20yJ0kXIEzXumg",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/9lkH7DM8FkmRosKFeVUTYw",
+  "Created": "2026-05-16T22:24:03.337305Z",
+  "Updated": "2026-05-16T22:24:03.337305Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

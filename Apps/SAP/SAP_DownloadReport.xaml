@@ -132,7 +132,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_DownloadReport" sap:VirtualizedContainerService.HintSize="1250,1798" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_DownloadReport" sap:VirtualizedContainerService.HintSize="1250,1911" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -233,7 +233,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName=".xlsx - Excel" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="63d5d573-d4e5-4a80-8e51-32f683ab6594" Timeout="20" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" ContinueOnError="True" DisplayName=".xlsx - Excel" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="63d5d573-d4e5-4a80-8e51-32f683ab6594" Timeout="20" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -276,6 +276,7 @@
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
     <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[out_DataTableRecords]" DisplayName="Read Excel sheet data into a DataTable" sap:VirtualizedContainerService.HintSize="452,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_SheetName]" WorkbookPath="[in_FilePath]" />
+    <ui:DeleteFileX DisplayName="Delete a file using the provided path" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_FilePath]" />
     <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza seleccionar disposición en SAP Logon&quot;]" />
   </Sequence>
 </Activity>
