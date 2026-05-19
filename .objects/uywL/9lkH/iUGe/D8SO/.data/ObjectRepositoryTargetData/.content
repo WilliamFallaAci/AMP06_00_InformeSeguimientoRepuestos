@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="_EM3oTctyU-F4rnS-UzuHQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="445, 518, 76, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP_SELBLOCK/tabpSEL*/*SUBSCREEN_SELBLOCK*/*HIGH' tooltip='Pedido de cliente' type='GuiCTextField' /&gt;" Guid="845896a8-38a3-44c0-b1f1-50c9d3692c59" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratamiento masa órdenes fabricación' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="6c32b6889d93667ce2c82b47049aeb9e.png" xmlns="">093RHeQKmxEimDqOYyQhYww</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="bMwE5uXz4UCsAhwkvewmMw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="306, 91, 42, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' text='Crear' tooltip='Crear fichero nuevo*' type='GuiButton' /&gt;" Guid="adbd868e-c4f0-4c8b-b336-4a61f9088556" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Grabar fichero' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="38a1997f254efbb93efe300704bcee48.png" xmlns="">0EVvGyMUBFkC5SIFTRxHvGg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

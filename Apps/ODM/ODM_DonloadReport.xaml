@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ODM_DonloadReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ODM_DonloadReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_FullReportPath" Type="InArgument(x:String)">
       <x:Property.Attributes>
@@ -10,6 +10,7 @@
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
     </x:Property>
+    <x:Property Name="out_DataTableRecords" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -56,6 +57,10 @@
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -113,15 +118,25 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ODM_DonloadReport" sap:VirtualizedContainerService.HintSize="1174,1785" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ODM_DonloadReport" sap:VirtualizedContainerService.HintSize="1250,2250" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia descargar reporte en ODM&quot;]" />
+    <Assign DisplayName="Initialize a DataTable variable" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataTable">[out_DataTableRecords]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
+      </Assign.Value>
+    </Assign>
     <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome PORTAL AMPO" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1421" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -161,16 +176,16 @@
             </uix:NClick>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type report path into UI input field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,237" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Text="[string.Format(&quot;{0}[k(enter)]&quot;, in_FullReportPath)]" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="b5ecb2b9-2c51-4f4b-a970-a4324fccc977" ContentHash="1ORNKIkHzkex1q7l4kzBCg" DesignTimeRectangle="136, 389, 791, 17" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='Panel del explorador' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nombre:' cls='ComboBox' /&gt;&lt;wnd aaname='Nombre:' aastate='enfocable' cls='Edit' /&gt;" Guid="10380bc1-ee98-49af-b960-e57062d58d65" InformativeScreenshot="a0987aae9abd5da087d94151801fa526.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/l8lrFLijsUOxCIY3ic2S6Q" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Guardar como' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                <uix:TargetAnchorable CVScreenId="049fdfa1-d914-42f2-879d-132a04847681" ContentHash="p0IsllvB70aq-cdfz3L3Vw" DesignTimeRectangle="136, 389, 791, 17" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='Panel del explorador' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='ComboBox' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='Edit' /&gt;" Guid="4c3c7ba9-a0bd-42b4-9a9d-f6964fe5cc89" InformativeScreenshot="d7c6d3f1ec409cd4b29ef4f95ae4e6c7.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/l8lrFLijsUOxCIY3ic2S6Q" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Guardar como' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.OCREngine>
-        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
           <ActivityFunc.Argument>
-            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
           </ActivityFunc.Argument>
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
@@ -188,6 +203,50 @@
         </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" ContinueOnError="True" DisplayName=".xlsx - Excel" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="63d5d573-d4e5-4a80-8e51-32f683ab6594" Timeout="20" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="4CnbIOi9-0K02wFu6mtq2A" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAicSURBVFhHzZdrUJTnFcf5XpHI/brsLneWyy6wQutdERY0KPcFF9iVXW6yV5b7HQUFRIKQqokRkHipaRqtbeykNaQTJzbTJmZMowICRs2U9/VD0mln8u35d57nXdDuphP7pdMzc+Y8+/Lh9z//c959Fje3/9eYfGLfPr5snO1frv22fbkK7V/XoP1RDVqXq0njXCUx3y1DzZ8LYfo0H794VIebz+x4n2/ANd5G3uFtuMhbMc1byFu8FW/wFvJzznJn9G8WsTPnB+PaN13dM183YmLZhP7lGtK2bCBtj6pBs+WhAQ33dDDeKYX+dh6uPjXiJt/A4Fd5G7nC23CBt5JJ3kLBeJ2z4CRvJqOcGcd586wzyyVmnx7V/uZpD6iA8WUjjixWo3VRj5YlA1qXq9C8oIftrxWo+6wY2ls5+OiZHb8TOgeFz3BWnOOtOM2byThnxgnOjCHeRI5yJhzhjMSZ5xKfrAzPXn/ag+lHdpxcMuLwYjVaFivRvKRH86IejXOVMH8p2F/2xz34/TM7rvMN+CW1/ZmVnOMt5BQvdH3cAe7jTejijOjg6l9CADeC608EAWNL9Ti8aCDNCwfRtFRJmhYrif3BQZjuakjVp/k4MKti1r/H23CJt2GKt5AzAhwUPsAZSQ9vJG0rRrSu1KOVM8KZ5xK3mYAuQcDiIfQuGND0UAf7gg5NC5VouK+F8YtSGP6Uh5IPM1n3dOlmeCve5CyY4C04zpnRz5nQtWJEmwPcyv0XAn79pBtTyw0YfViHnoVKNM5rYX+oQ+PCQdjulTMB+tu5KLmZwbq/zNswyVlwirOALtsxzoQezhVOXXDmuYQgoAtTyzaMLtSie74S9rly2OYrYJ/XwXavAvVflDgEZOJdYetxlrdggjNjmC2bCR0M/Nz6FlZfRsCKIGByyYoTC7XomtOhYa4c1rlyNMxpYf2qbG0EpbMqTCwacJ6961aMcWYMcib00u7/TYAgovrz8h8X8MnKcVx7TAXYMLJQwwRY72tgeaCB9UE5LF+VMwfoEmo+ykbZhxkYe1SF07xg/wCd/YtwhwDtLTUkNZEvK6ATg3drUXw1Bxnnd2HnuR3Y8dYOVneuVkdumtgMkSEMXgVB8CoIhE9RMPFVh8CvRMSSnmn6FAcT+jdnnktQAd1/MUH1q3xkXMzC7ul0R+5iNX16J9KnhDN9FqyVwjM/EF6FQYRCfEtD4K8JRUCZmFWWB0SEVr9S0Y8LeHO+D3s/0CH7WhFUl/cgc2Y3VKv59m7h89sZyJxJZ5898xgcPrTrUhH8y0IRqJUgSCsmQToJgnQSVumzwHKx6wi237CIN103zqa+W4ukSwYkTOsQe7YM0acPIPr1EkSPqxEzpkbcWAkUJzXYfKYQmTNZyLqQgawLmdR22jlY5wwuRtBBKUIMYWsZrJcSViulrgJS36ubVFypInEzWkSePYCwU2qITxYidDQPouFciI7tQ+hADiT9+xExkIuYgXxsHMtH9sVMlkL3wfDTiEhAhZhBQqrCEVoTAXEdzUiIayMQWhsBUXW46wgSL+kRNVUG6RtqiCYKSPBoHgKH9iFg4FX49WXDr1sF/04VAtozEdimQmjHHkR056wJcHRP/MtDHfAwBpPUR0JqilpLiTGSPXPmu0VOaYjkdDFCxvORf6UDNB5/x8G/Lxu+XSpc/vwD9qz+0iB8bDvhZ9uFEHvGmgDfEmq9GIE6CetcVBsBcX0kCbNGI9wWg3BbNGHVSjPaVYCYwQsQdCKXdX5j7jYDdtw4g/1n7ez827sfw9O0HZ6HtsKrbit8Dm1bE+CvESFAK0GwIQyimnAKh9QSjQh7LCKbZIhqliGqScbOkY0yVwEh43kkcGQ/AoZyiP/RvUR5Uoe/f/9PfPf9P/D42xUmQNGrZvAN1VuwQb8JnvpNDL5lYgvY3PVSBzwCUnMUwu0xiGyOJTFt8SSmPR4xbfGIptka5yogiMIHc+Dfv3fN9qGb5xmYxunZd7CBwTfjFf0meGjT4FGWiq0TW9iiBVVK6HIh9JAD3hCDqJY4ULCsKwGyrkTEdj6vzny3VbiwcFnwacvA0B+eC7h4+31sqNmCVyp/Bg/tT+GhScX6EiUCtGJCOw+ukhIKlzjgkU0yEt0WR2I7E0hcTyKElEPWk0hoOvPdGLw3G76dKgZPOqZh4FsLd3Br/g477x2uZ/D1mo1wV6fAvTAJQXopYba/0HlEUyyFI7ZLgMb3vZCH5YRWZ76bb28W8e3MhE9rBryb0vHlNw8ZVN5ZhL0njOz88f3PmO3r1Uq4FyZjXZ7i+cKtzrxJxuYc0xFPGPywQsgjCpLQ78gjClcBfl1Z8G3LgE9TOuovDz633TFzCqfRPD2yBl+3X7627WEN0WStc2p7byJJOKxAQr8Cif1JSBxIQuJRRx1IchXg36FicC/bTniatq1tuzDzNGY7nTm1fV2uAj/JSYRHbhLYe862nXYeB1lnAuJ65axLBj6aRORHk6EYTIH8WDLkQ8mEnp35bgHtqllf+y7iZdpGPOsc2+5YOAZXK7GuQIC758hZ+pUlIqIhlr7j7DWjG05tZ50PKAjtWD6YTBRDKSRpWAkhU6AYTvmBJWxRif0bd0960y+ams2EwSvS4MEWTgn3gmQGp7a775PDW50IqVnGOqfw2K4EIutNZAsW368g1GbasQBPQdKIkiSPKLGaznyX8FYHb/emd3tRMPshQe9xep3SHx30cqHf66z7FhldOMi6hVeNLhydO7VdPpjMumbQE0qSMroRKa+lIuW1ja4O/FB4FwX3MAHFIQjQsPudXadUQJg52vFlIwigDsT1yUn8ETlJ6E9iAhRUwPFVeCpSxlKhHEuDciz1jjPrP4ZPUVCFT3HILHWA3vEhhjCy6kC4LYbQ+cd2JAgO9AqvHbOfzn44hdm+2rlyPJUox9Nm00bTXu6f0/9l/AsOyaDCHUydZgAAAABJRU5ErkJggg==" InformativeScreenshot="2ff709c5df9a7f31c89528acdefc2135.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/bPVvRq2zSEa1TG1NEOxm2w" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='*.xlsx - Excel' /&gt;" Version="V2">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.FilePath>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.FilePath>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[out_DataTableRecords]" DisplayName="Read Excel sheet data into a DataTable" sap:VirtualizedContainerService.HintSize="452,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_Config(&quot;ODM_SheetName&quot;).ToString.Trim]" WorkbookPath="[in_FullReportPath]" />
+    <ui:DeleteFileX DisplayName="Delete a file using the provided path" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_FullReportPath]" />
     <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza descargar reporte en ODM&quot;]" />
   </Sequence>
 </Activity>
