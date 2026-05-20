@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="XdPYZVhcn0ym54a0AxXPpg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="YYYOlPZQSkyhO60lnS5wDg" Reference="oCOFMf_dREKLlM0YaHnBwQ/Zt_G3U0eOUGpjLaG98exIw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odmtest.ampo.com" CVScreenId="8f2eb2fa-b240-4d71-b25d-ba681ba2a37f" DesignTimeRectangle="507, 468, 95, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LABEL' for='mat-checkbox*' innertext='*Aceptada' parentclass='mat-checkbox*' /&gt;" Guid="069914e0-f3ca-48f3-a157-bbf1df85f916" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*PORTAL AMPO VALIDACI*N DOCUMENTACI*N PROVEEDOR' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
-      <imageRef attrName="InformativeScreenshot" originalValue="68ca8cac5a5587cadbab19a779d994e6.png" xmlns="">0ibGafVWaG0eX80MEQj6qWA</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odmtest.ampo.com" CVScreenId="8f2eb2fa-b240-4d71-b25d-ba681ba2a37f" DesignTimeRectangle="507, 468, 95, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LABEL' for='mat-checkbox*' innertext='*Aceptada' parentclass='mat-checkbox*' /&gt;" Guid="069914e0-f3ca-48f3-a157-bbf1df85f916" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="68ca8cac5a5587cadbab19a779d994e6.png" xmlns="">07uSygEGyDEue9sHjV_277g</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Check</x:String>
   </ObjectRepositoryTargetData.Data>

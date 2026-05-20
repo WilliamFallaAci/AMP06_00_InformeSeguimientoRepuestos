@@ -1,15 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SAP_SelectionDisposicion" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_Disposicion" Type="InArgument(x:String)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
-    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
+    <x:Property Name="in_Disposicion" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -126,13 +118,13 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="1208,1351" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="876,421" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'saplogon.exe Tratamient…'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1174,470" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="4" Version="V5">
+            <uix:NCheckState DisplayName="Check App State 'saplogon.exe Tratamient…'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="842,57" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="4" Version="V5">
               <uix:NCheckState.IfExists>
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'saplogon.exe Tratamient…(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="347,162" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
                   <uix:NClick.Target>
@@ -159,8 +151,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <Pick DisplayName="Pick Seleccionar disposición" sap:VirtualizedContainerService.HintSize="1174,821" sap2010:WorkflowViewState.IdRef="Pick_1">
-              <PickBranch DisplayName="PickBranch with selector" sap:VirtualizedContainerService.HintSize="540,751" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+            <Pick DisplayName="Pick Seleccionar disposición" sap:VirtualizedContainerService.HintSize="842,119" sap2010:WorkflowViewState.IdRef="Pick_1">
+              <PickBranch DisplayName="PickBranch with selector" sap:VirtualizedContainerService.HintSize="374,40" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -192,7 +184,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NClick>
               </PickBranch>
-              <PickBranch DisplayName="PickBranch without selector" sap:VirtualizedContainerService.HintSize="540,751" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <PickBranch DisplayName="PickBranch without selector" sap:VirtualizedContainerService.HintSize="374,40" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>

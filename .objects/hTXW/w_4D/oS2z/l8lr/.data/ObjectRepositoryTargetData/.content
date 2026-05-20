@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="p0IsllvB70aq-cdfz3L3Vw" Reference="oCOFMf_dREKLlM0YaHnBwQ/l8lrFLijsUOxCIY3ic2S6Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="2BsOnvuSE0-VICjjTepVIQ" Reference="oCOFMf_dREKLlM0YaHnBwQ/l8lrFLijsUOxCIY3ic2S6Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="049fdfa1-d914-42f2-879d-132a04847681" DesignTimeRectangle="136, 389, 791, 17" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='Panel del explorador' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='ComboBox' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='Edit' /&gt;" Guid="4c3c7ba9-a0bd-42b4-9a9d-f6964fe5cc89" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Guardar como' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
-      <imageRef attrName="InformativeScreenshot" originalValue="d7c6d3f1ec409cd4b29ef4f95ae4e6c7.png" xmlns="">0yaD3pMS0P02MTTwS1zM81g</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odm.ampo.com" CVScreenId="2a993a68-0997-4339-ac27-d92317e62b11" DesignTimeRectangle="136, 389, 791, 17" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='Panel del explorador' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='ComboBox' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='Edit' /&gt;" Guid="cb183c5c-810f-41b0-91c8-bd6b753862bd" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Guardar como' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="5d31512e1b0ec42fc8e5cd7e3142192a.png" xmlns="">0k7mHzFZIcUimTC-ceVINlA</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">TypeInto</x:String>
   </ObjectRepositoryTargetData.Data>

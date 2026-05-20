@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="-xoehUdxLUKYz9QSWNM8kw" Reference="oCOFMf_dREKLlM0YaHnBwQ/bobxVdOkEEyUqr6onAQqAA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="5u4brqGUm0a2uOwV6UsvPA" Reference="oCOFMf_dREKLlM0YaHnBwQ/bobxVdOkEEyUqr6onAQqAA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odmtest.ampo.com" CVScreenId="8f2eb2fa-b240-4d71-b25d-ba681ba2a37f" DesignTimeRectangle="304, 468, 194, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LABEL' for='mat-checkbox*input' innertext='*Pendiente de Validaci*n' parentclass='mat-checkbox*' /&gt;" Guid="c2d216f6-5aa9-4f79-8aaf-4c738b7a74fd" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*PORTAL AMPO VALIDACI*N DOCUMENTACI*N PROVEEDOR' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
-      <imageRef attrName="InformativeScreenshot" originalValue="0a58081a0015101bd53c5eb3c91668cb.png" xmlns="">0RRT9LJXTuUKRVKptgy1mxg</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odmtest.ampo.com" CVScreenId="8f2eb2fa-b240-4d71-b25d-ba681ba2a37f" DesignTimeRectangle="304, 468, 194, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LABEL' for='mat-checkbox*input' innertext='*Pendiente de Validaci*n' parentclass='mat-checkbox*' /&gt;" Guid="c2d216f6-5aa9-4f79-8aaf-4c738b7a74fd" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="0a58081a0015101bd53c5eb3c91668cb.png" xmlns="">0uZ7tQC6iVkKoEw8-ef9Uew</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Check</x:String>
   </ObjectRepositoryTargetData.Data>

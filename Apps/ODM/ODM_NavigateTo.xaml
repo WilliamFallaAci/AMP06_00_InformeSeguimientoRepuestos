@@ -1,15 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ODM_NavigateTo" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_MenuName" Type="InArgument(x:String)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
-    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
+    <x:Property Name="in_MenuName" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -115,14 +107,14 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ODM_NavigateTo" sap:VirtualizedContainerService.HintSize="1174,812" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ODM_NavigateTo" sap:VirtualizedContainerService.HintSize="1256,849.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia navegar a &quot;+in_MenuName+&quot; en ODM&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome PORTAL AMPO" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,448" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome PORTAL AMPO" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,396" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -136,7 +128,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DisplayName="Click 'Validación Proveedor' button on web page" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="3d065da3-0e41-49af-a988-f6d521f60fc5" ContentHash="JRRnzH80lUuMWodrHtsY9g" DesignTimeRectangle="36, 597, 212, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[String.Format(&quot;&lt;webctrl parentid='sidebarnav' tag='A' innertext='{0}' parentclass='ng-star-inserted' /&gt;&quot;, in_MenuName)]" Guid="068775c0-6e16-4dad-87b1-9b2bf33f234d" InformativeScreenshot="7277d8c9bf86c553a8e16d3ebf6f54b4.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/LSThxwwe1USHvy-ofSb50w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*PORTAL AMPO*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="3d065da3-0e41-49af-a988-f6d521f60fc5" ContentHash="JRRnzH80lUuMWodrHtsY9g" DesignTimeRectangle="36, 597, 212, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[String.Format(&quot;&lt;webctrl parentid='sidebarnav' tag='A' innertext='{0}' parentclass='ng-star-inserted' /&gt;&quot;, in_MenuName)]" Guid="068775c0-6e16-4dad-87b1-9b2bf33f234d" InformativeScreenshot="7277d8c9bf86c553a8e16d3ebf6f54b4.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/LSThxwwe1USHvy-ofSb50w" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
             </uix:NClick>
           </Sequence>
@@ -150,7 +142,7 @@
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" ContentHash="YDGOzor4Zku6OPAvAYJlEQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVDhP7Y47ikJREESPjmBsNLFCbcHQXIw1my0YTGCiqSAK4idwB67pLEeuXAPfBjR4B5qmu7qKhpYvQjKQbCSLOjf1Tu29N+GF5CAZSm6SsWQrGUmukrNkL7lI/iWrpr8EHCVTyV0yk5wk6xpQjDvJRLIs+6a/BPxK5pI/Sbe8LPmp/Vn1rt/0tnyaBwlMNDmyh277AAAAAElFTkSuQmCC" InformativeScreenshot="640f82830f41f5f7d675bc5d007616fd.jpg" Reference="oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA" Selector="&lt;html app='chrome.exe' title='*PORTAL AMPO' /&gt;" Version="V2">
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" ContentHash="jqk6Kv6uKEWXsNn7UkLUAQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVDhP7Y47ikJREESPjmBsNLFCbcHQXIw1my0YTGCiqSAK4idwB67pLEeuXAPfBjR4B5qmu7qKhpYvQjKQbCSLOjf1Tu29N+GF5CAZSm6SsWQrGUmukrNkL7lI/iWrpr8EHCVTyV0yk5wk6xpQjDvJRLIs+6a/BPxK5pI/Sbe8LPmp/Vn1rt/0tnyaBwlMNDmyh277AAAAAElFTkSuQmCC" InformativeScreenshot="f67b56fdeb270c6ae555f0958da75d00.jpg" Reference="oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA" Selector="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" Version="V2">
           <uix:TargetApp.Arguments>
             <InArgument x:TypeArguments="x:String" />
           </uix:TargetApp.Arguments>

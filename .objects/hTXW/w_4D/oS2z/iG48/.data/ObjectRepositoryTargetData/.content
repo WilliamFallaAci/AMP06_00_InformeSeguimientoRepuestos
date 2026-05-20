@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="QN5GTcAcpkqqZwNQb3uIUQ" Reference="oCOFMf_dREKLlM0YaHnBwQ/iG487z41GkK-332QO7jn8A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="UClR3OH9A0OhndP9DGGJjg" Reference="oCOFMf_dREKLlM0YaHnBwQ/iG487z41GkK-332QO7jn8A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odmtest.ampo.com" CVScreenId="bd22243c-d8a6-4af2-9d6d-28b9ed600738" DesignTimeRectangle="304, 571, 95, 24" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' innertext='*Buscar*' type='button' /&gt;" Guid="5a4e4f00-e4cd-4247-a23a-3f7845efc044" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*PORTAL AMPO VALIDACI*N DOCUMENTACI*N PROVEEDOR' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
-      <imageRef attrName="InformativeScreenshot" originalValue="7e58bb4e8e26e7428f5aa3d9b4fd81e3.png" xmlns="">09MABKtQc8ka1sQE82ov17A</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odmtest.ampo.com" CVScreenId="bd22243c-d8a6-4af2-9d6d-28b9ed600738" DesignTimeRectangle="304, 571, 95, 24" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' innertext='*Buscar*' type='button' /&gt;" Guid="5a4e4f00-e4cd-4247-a23a-3f7845efc044" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="7e58bb4e8e26e7428f5aa3d9b4fd81e3.png" xmlns="">0XABVWNr4k0mC3Ez6Cf0LrQ</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>
