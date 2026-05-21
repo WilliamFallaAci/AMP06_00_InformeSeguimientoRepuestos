@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Crear",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "uDa7BfGENk-8tvmKrc_trQ",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/uDa7BfGENk-8tvmKrc_trQ",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/z1yMi_42nk2CnLJ0pMFdlg",
+  "Created": "2026-05-21T03:15:34.1037233Z",
+  "Updated": "2026-05-21T03:15:34.1037233Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
