@@ -121,15 +121,15 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FilloutSAPBatches" sap:VirtualizedContainerService.HintSize="1256,849.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FilloutSAPBatches" sap:VirtualizedContainerService.HintSize="1250,1439" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Switch x:TypeArguments="x:String" DisplayName="Switches on transaction item, assigns variant from configuration" Expression="[in_Transaction]" sap:VirtualizedContainerService.HintSize="468,779" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" DisplayName="Switches on transaction item, assigns variant from configuration" Expression="[in_Transaction]" sap:VirtualizedContainerService.HintSize="488,1416" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Switch.Default>
-        <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="486,25" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -144,14 +144,14 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence x:Key="ZMG002_01" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,108" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence x:Key="ZMG002_01" DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,108" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Automate SAP sales document input" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="432,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[in_TimeOut]" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Automate SAP sales document input" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[in_TimeOut]" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -204,14 +204,14 @@
           </sap:WorkflowViewStateService.ViewState>
         </uix:NApplicationCard>
       </Sequence>
-      <Sequence x:Key="ZMM026" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,108" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence x:Key="ZMM026" DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,108" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Input sales document numbers into SAP" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="432,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[in_TimeOut]" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Input sales document numbers into SAP" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[in_TimeOut]" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -270,14 +270,14 @@
           </sap:WorkflowViewStateService.ViewState>
         </uix:NApplicationCard>
       </Sequence>
-      <Sequence x:Key="COHV" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,108" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence x:Key="COHV" DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,108" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Input batch values for spare parts tracking report" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="432,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[in_TimeOut]" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Input batch values for spare parts tracking report" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[in_TimeOut]" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -330,14 +330,14 @@
           </sap:WorkflowViewStateService.ViewState>
         </uix:NApplicationCard>
       </Sequence>
-      <Sequence x:Key="ZPP029_1" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,108" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence x:Key="ZPP029_1" DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,745" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Input batch range into SAP sales document fields" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="432,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[in_TimeOut]" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Input batch range into SAP sales document fields" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,685" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[in_TimeOut]" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -351,12 +351,12 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type value into SAP sales document field low" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="SameAsCard" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Text="[in_BatchStart]" Timeout="[in_TimeOut]" Version="V5">
                   <uix:NTypeInto.Target>
-                    <uix:TargetAnchorable ContentHash="Eb9DpgJpe0eVKeU7bQf3oQ" DesignTimeRectangle="277, 269, 76, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subSUB_SCREEN*/*LOW' tooltip='Documento de ventas' type='GuiCTextField' /&gt;" Guid="a53fef44-8e11-4bdc-80f6-be89417949c1" InformativeScreenshot="97bdcb86de41cf6706d761e6eb775e5a.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/bsTo6yH7Q0OHaDMawoxV6A" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='PP: Gestión ampliada de requisitos de calidad - Proc Pedidos' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                    <uix:TargetAnchorable ContentHash="Eb9DpgJpe0eVKeU7bQf3oQ" DesignTimeRectangle="277, 269, 76, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subSUB_SCREEN*/*LOW' tooltip='Documento de ventas' type='GuiCTextField' /&gt;" Guid="a53fef44-8e11-4bdc-80f6-be89417949c1" InformativeScreenshot="97bdcb86de41cf6706d761e6eb775e5a.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/bsTo6yH7Q0OHaDMawoxV6A" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                   </uix:NTypeInto.Target>
                 </uix:NTypeInto>
                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type value into SAP sales document field high" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,237" sap2010:WorkflowViewState.IdRef="NTypeInto_8" InteractionMode="SameAsCard" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Text="[in_BatchEnd]" Timeout="[in_TimeOut]" Version="V5">
                   <uix:NTypeInto.Target>
-                    <uix:TargetAnchorable ContentHash="ek78WXpExUKsZmoPfgG6mQ" DesignTimeRectangle="452, 269, 76, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subSUB_SCREEN*/*HIGH' tooltip='Documento de ventas' type='GuiCTextField' /&gt;" Guid="5055b447-e4e0-4838-8e1f-9f56c26befdd" InformativeScreenshot="aa63a1c424cb6aecc10ac7611b4f17f2.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/4LOfAqMHGU-ZorpPjuyXOA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='PP: Gestión ampliada de requisitos de calidad - Proc Pedidos' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                    <uix:TargetAnchorable ContentHash="ek78WXpExUKsZmoPfgG6mQ" DesignTimeRectangle="452, 269, 76, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subSUB_SCREEN*/*HIGH' tooltip='Documento de ventas' type='GuiCTextField' /&gt;" Guid="5055b447-e4e0-4838-8e1f-9f56c26befdd" InformativeScreenshot="aa63a1c424cb6aecc10ac7611b4f17f2.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/4LOfAqMHGU-ZorpPjuyXOA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                   </uix:NTypeInto.Target>
                 </uix:NTypeInto>
               </Sequence>
@@ -370,7 +370,7 @@
             </ActivityFunc>
           </uix:NApplicationCard.OCREngine>
           <uix:NApplicationCard.TargetApp>
-            <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="TMuL4ZtJ50qpiraUrz1wzw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhHY/j//z/jQGIGdAF641EHjDpg1AEMTjWr2Z2qVx8cEFyzppDBqXoNp1PNmv8DgNc6164RHCgHgCwXhkQB/R0AtxzsgEOnLlo6Vq/+71i9ikp49X+nGhDGsBjDcrAD3n76/vn+i4//qYH3nr/3368B5gjCloMd8P7Lz//UwGdvPv7vVzH7v13pImwOwGo51Rxw4fbT/96lM/7bFi/AFgXrQakd3WKqOeD87af/PYun/bcrWYjN5+td6tbitJxiB4B87lkyHWr5KmSL/xJjOdgBD56/LW1bsu9/y6JdJOLd/33KZ1NkOdgBVrkzOO0rlv23L19KMnaoXI4e7GDLnetwxzk6pmZBBPU58ZZT0wEk+5zaDiA6ztEx5dVxzZqZ5FoOdgC6AL3xqANGHTDqgAF3AAD5AWfDouj2iwAAAABJRU5ErkJggg==" InformativeScreenshot="74afed4390d6d075049ef127a1d8a018.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/vW3Gt41LXE6GwOOWPAbVRA" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='PP: Gestión ampliada de requisitos de calidad - Proc Pedidos' /&gt;" Version="V2">
+            <uix:TargetApp Area="-8, -8, 1936, 1048" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhHY/j//z/jQGIGdAF641EHjDpg1AEMTjWr2Z2qVx8cEFyzppDBqXoNp1PNmv8DgNc6164RHCgHgCwXhkQB/R0AtxzsgEOnLlo6Vq/+71i9ikp49X+nGhDGsBjDcrAD3n76/vn+i4//qYH3nr/3368B5gjCloMd8P7Lz//UwGdvPv7vVzH7v13pImwOwGo51Rxw4fbT/96lM/7bFi/AFgXrQakd3WKqOeD87af/PYun/bcrWYjN5+td6tbitJxiB4B87lkyHWr5KmSL/xJjOdgBD56/LW1bsu9/y6JdJOLd/33KZ1NkOdgBVrkzOO0rlv23L19KMnaoXI4e7GDLnetwxzk6pmZBBPU58ZZT0wEk+5zaDiA6ztEx5dVxzZqZ5FoOdgC6AL3xqANGHTDqgAF3AAD5AWfDouj2iwAAAABJRU5ErkJggg==" InformativeScreenshot="74afed4390d6d075049ef127a1d8a018.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" Version="V2">
               <uix:TargetApp.Arguments>
                 <InArgument x:TypeArguments="x:String" />
               </uix:TargetApp.Arguments>
@@ -384,7 +384,7 @@
           </uix:NApplicationCard.TargetApp>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>

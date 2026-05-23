@@ -55,6 +55,13 @@
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\ProcessTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "850b7b0b-a9b4-4fc8-84f4-b22f9acc6212",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Apps\\SAP\\TestCase_SAP_SelectDisposicion.xaml"
       }
     ],
     "saveToCloud": false
