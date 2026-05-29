@@ -1,0 +1,13 @@
+﻿{
+  "Name": "saplogon.exe Tratamient…",
+  "Type": "Element",
+  "Id": "tOi9b_UtlkepusXdf5zUKg",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/tOi9b_UtlkepusXdf5zUKg",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/p7GQg3Vl70e3dqcHeHVXrg",
+  "Created": "2026-05-28T03:20:30.1323432Z",
+  "Updated": "2026-05-28T03:20:30.1323432Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

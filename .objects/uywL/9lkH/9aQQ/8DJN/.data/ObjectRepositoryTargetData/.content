@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="TY_h_3FZg0O90rpcEf-Czw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="uG1_uG5Xm0mYpvtiSP1uyw" Reference="oCOFMf_dREKLlM0YaHnBwQ/8DJNVeW-zUytIn-5XPj0RQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="0a9be00f-3ebd-40c3-a056-c9cd803eb298" DesignTimeRectangle="371, 161, 15, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name=' ' role='split button' idx='4' /&gt;&lt;ctrl name='Abrir' role='drop down button' text='Abrir' /&gt;" Guid="f6e7d727-8cb2-423e-8d0a-965e41a559e9" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" SelectionStrategy="AA" Version="V6" WaitForReadyArgument="Complete">
-      <imageRef attrName="InformativeScreenshot" originalValue="47215c03f8a178cf6d6dfda331efeaee.png" xmlns="">0_xqhVF5dyEaGOtd_fikB5A</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="370, 127, 39, 21" ElementVisibilityArgument="Interactive" Guid="28a255c2-b8f7-4688-ac01-bb3aeb047496" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAVCAYAAADFEfeTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJXSURBVEhLzZbdbhJRFIX7Cl75BN5478N4hYZJbR/ABzCm0ZuqjT+0wUDQGEy0kEaMNqlVG9pqraaJQyySIM5QfkocZjqApcBZZm+r6RzKQAOlvfhy9l6ZsL6LQ2ZGttc2cFoZ+Td4PB4oytiJQg6HyinKFUSf3oCo/wD2tIER/fy1LZOhTuomh45ylv4IYi8HtCp9sVVvYKtm8/x44f3frGZzLj9LUCd1d5W7dNnbF6jGUfpdwnoxw7PvWZRP2imnuY1Gvne5pnrRAWWhtykHlD1ZH3dwmNzkw2B3ueb2ychNTN3tKica+pDk7AVkq0Ws5tI8X5u8zSftlNMsI+rJ7nLmIO6cNYfvdg7vcimeWc6a451ymmVEdYW7XeXKWogLrPtnHVCmvgg7oKwVP+OA5cphfLF0zOubPLNcOcw75TTLCPsNdw9FLm7oiElytFMui51KOTsbhKUFUMuHepP7lQm23aGjAiOIuJFBTE/wzHJGkHfKaTYzD1BMTuHC+XOoZKch7Nfc7SpXSge4wF5ackDZrDrjgLI7sYSDXuRIrLAvRuzm/RBWhLtd5Qop/7HKLeaT2NF8/8UIGCG0rAh3u8rlNqePVW7Z+OkQI4Q5i5YZ4W5XOU2913aHjoosx2+IfblPZR1iZx6isgxRWYWwFyHMKMtRt6tceuMWmuXn/GP9cFCO363SH0KGOqnbVS7x4SaqhTB2C/6+eJlPQc2+4pm+SuiknXL5WYI6qbujnNc7hoDvKtSV6/j2cWJg0PecnMlQJ3WTQwc5LxRltO3TeXiMssNBuT9E9OdavKrP3AAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Complete">
+      <TargetAnchorable.PointOffset>
+        <PointOffset X="11" Y="4" />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="4216fbb55f1d6da9b789d4f689c6b79c.png" xmlns="">0fzVRKLvao0ayI1WfTGClKw</imageRef>
     </TargetAnchorable>
-    <x:String x:Key="ActivityType">CheckElement</x:String>
+    <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>
 </ObjectRepositoryTargetData>

@@ -120,7 +120,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_DownloadReport" sap:VirtualizedContainerService.HintSize="1128,3248" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_DownloadReport" sap:VirtualizedContainerService.HintSize="1250,3248" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -135,19 +135,19 @@
         <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Easy Access(2)(1)(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="914,2476" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="{x:Null}" IsIncognito="{x:Null}" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" OutUiElement="{x:Null}" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Export SAP spare parts tracking report to Exc" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="914,2476" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="{x:Null}" IsIncognito="{x:Null}" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" OutUiElement="{x:Null}" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="912,2325" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="1128,1786" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope ContinueOnError="{x:Null}" DisplayName="Export SAP spare parts tracking report to spreadsheet." sap:VirtualizedContainerService.HintSize="878,377" sap2010:WorkflowViewState.IdRef="RetryScope_2" LogRetriedExceptions="{x:Null}" NumberOfRetries="15" RetriedExceptionsLogLevel="{x:Null}" RetryInterval="00:00:30">
+            <ui:RetryScope ContinueOnError="{x:Null}" DisplayName="Export SAP spare parts tracking report to spreadsheet." sap:VirtualizedContainerService.HintSize="1094,87" sap2010:WorkflowViewState.IdRef="RetryScope_2" LogRetriedExceptions="{x:Null}" NumberOfRetries="15" RetriedExceptionsLogLevel="{x:Null}" RetryInterval="00:00:30">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="876,170" sap2010:WorkflowViewState.IdRef="Sequence_9">
@@ -191,9 +191,13 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <PickBranch.Trigger>
-                          <uix:NCheckElement ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="0" DisplayName="Check Element 'Abrir'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,111" sap2010:WorkflowViewState.IdRef="NCheckElement_3" InUiElement="{x:Null}" OutUiElement="{x:Null}" Result="{x:Null}" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;)) + 1]" Version="V5">
+                          <uix:NCheckElement ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="0" DisplayName="Check Element 'saplogon.exe Tratamient…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,111" sap2010:WorkflowViewState.IdRef="NCheckElement_3" OutUiElement="{x:Null}" Result="{x:Null}" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;)) + 1]" Version="V5">
                             <uix:NCheckElement.Target>
-                              <uix:TargetAnchorable CVScreenId="0a9be00f-3ebd-40c3-a056-c9cd803eb298" ContentHash="TY_h_3FZg0O90rpcEf-Czw" DesignTimeRectangle="371, 161, 15, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name=' ' role='split button' idx='4' /&gt;&lt;ctrl name='Abrir' role='drop down button' text='Abrir' /&gt;" Guid="f6e7d727-8cb2-423e-8d0a-965e41a559e9" InformativeScreenshot="47215c03f8a178cf6d6dfda331efeaee.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/8DJNVeW-zUytIn-5XPj0RQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" SelectionStrategy="AA" Version="V6" WaitForReadyArgument="Complete" />
+                              <uix:TargetAnchorable ContentHash="oFZftG3sbkWGiDlfoduZRg" DesignTimeRectangle="324, 124, 40, 24" ElementVisibilityArgument="Interactive" Guid="4332629f-a0a3-45a3-aa7f-f723354e74cb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVFhHzdbNS9twGAfw/CG7evE6dvWyi3/ESg8J1n/Aw84i7qI4kCkrtNSLQ7Qy2GADX0A2nZ48WJwITqLYWrFNTOt86+8rz88m/l7Sl2xS+8AXyjdNng/JITEui+fo5hi51TV0c4zi1ja6Od0PtKxBxOPxoKDf1D1nRI+x+GkUlpUICssaAHXs+g9wY3c0tPPBM/AIdI9mFGAC1L0emYfxZqxh6DhqlScNuznhu0VPQyAhMqv7DUPHUf3xtLnNRweKM/ElxyMCY7GYFG1plNwVowN9lJgAqMz/ItntUXSgOD6w0Uh30luKHHa9pwOdECB1ze4gTd9QP0/YcKD7OXJYdZ3vloBlO6MBqROBKM/KqQNHl1+GIjlQPaeNMG+Z7/4noH/HxBAwDPlsQB8k5u3XFxoyCtA7TsO1U7jMZ8KB54dpDUidBCylowNL6ZZxDj/gdO89XvX2oHI8DeZ947sl4NlBSgNSFwZU0/QRh4BUXKGOo1zlk2Bulu+WgIX9pAakTnyTqBen8YEqrh3g3/xHXNhTAY6CUgY1N8t3S8CT39MakLpm72IfGIajaQUkjIijMGcBNSfLd0tAe2dSA1JHf9YvXE+LaQVk5Tmwi+9glZ9glQ0wbwXMWeQ7VY9xsD2uAam7K89rF6aIb4tmUc9rJ7RT9Ri5X+80IHXVwiyuCsmOhnaqHiM1NQTTHAwK00yAup31YexujnQ0tPPBIwDp69U0TQFo8i9a9TO8c5E999mLAloZYMrQAAAAAElFTkSuQmCC" InformativeScreenshot="21e0e26f73a97f02bb40cd65916bb35d.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/tOi9b_UtlkepusXdf5zUKg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.PointOffset>
+                                  <uix:PointOffset X="11" Y="4" />
+                                </uix:TargetAnchorable.PointOffset>
+                              </uix:TargetAnchorable>
                             </uix:NCheckElement.Target>
                           </uix:NCheckElement>
                         </PickBranch.Trigger>
@@ -205,7 +209,11 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Hoja de cálculo' button in SAP" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_3" InUiElement="{x:Null}" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" UnblockInput="{x:Null}" Version="V5">
                             <uix:NClick.Target>
-                              <uix:TargetAnchorable CVScreenId="0a9be00f-3ebd-40c3-a056-c9cd803eb298" ContentHash="TY_h_3FZg0O90rpcEf-Czw" DesignTimeRectangle="371, 161, 15, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name=' ' role='split button' idx='4' /&gt;&lt;ctrl name='Abrir' role='drop down button' text='Abrir' /&gt;" Guid="f6e7d727-8cb2-423e-8d0a-965e41a559e9" InformativeScreenshot="47215c03f8a178cf6d6dfda331efeaee.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/8DJNVeW-zUytIn-5XPj0RQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" SelectionStrategy="AA" Version="V6" WaitForReadyArgument="Complete" />
+                              <uix:TargetAnchorable ContentHash="oFZftG3sbkWGiDlfoduZRg" DesignTimeRectangle="324, 124, 40, 24" ElementVisibilityArgument="Interactive" Guid="4332629f-a0a3-45a3-aa7f-f723354e74cb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVFhHzdbNS9twGAfw/CG7evE6dvWyi3/ESg8J1n/Aw84i7qI4kCkrtNSLQ7Qy2GADX0A2nZ48WJwITqLYWrFNTOt86+8rz88m/l7Sl2xS+8AXyjdNng/JITEui+fo5hi51TV0c4zi1ja6Od0PtKxBxOPxoKDf1D1nRI+x+GkUlpUICssaAHXs+g9wY3c0tPPBM/AIdI9mFGAC1L0emYfxZqxh6DhqlScNuznhu0VPQyAhMqv7DUPHUf3xtLnNRweKM/ElxyMCY7GYFG1plNwVowN9lJgAqMz/ItntUXSgOD6w0Uh30luKHHa9pwOdECB1ze4gTd9QP0/YcKD7OXJYdZ3vloBlO6MBqROBKM/KqQNHl1+GIjlQPaeNMG+Z7/4noH/HxBAwDPlsQB8k5u3XFxoyCtA7TsO1U7jMZ8KB54dpDUidBCylowNL6ZZxDj/gdO89XvX2oHI8DeZ947sl4NlBSgNSFwZU0/QRh4BUXKGOo1zlk2Bulu+WgIX9pAakTnyTqBen8YEqrh3g3/xHXNhTAY6CUgY1N8t3S8CT39MakLpm72IfGIajaQUkjIijMGcBNSfLd0tAe2dSA1JHf9YvXE+LaQVk5Tmwi+9glZ9glQ0wbwXMWeQ7VY9xsD2uAam7K89rF6aIb4tmUc9rJ7RT9Ri5X+80IHXVwiyuCsmOhnaqHiM1NQTTHAwK00yAup31YexujnQ0tPPBIwDp69U0TQFo8i9a9TO8c5E999mLAloZYMrQAAAAAElFTkSuQmCC" InformativeScreenshot="21e0e26f73a97f02bb40cd65916bb35d.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/tOi9b_UtlkepusXdf5zUKg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.PointOffset>
+                                  <uix:PointOffset X="11" Y="4" />
+                                </uix:TargetAnchorable.PointOffset>
+                              </uix:TargetAnchorable>
                             </uix:NClick.Target>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -229,7 +237,7 @@
                 <ActivityFunc x:TypeArguments="x:Boolean" />
               </ui:RetryScope.Condition>
             </ui:RetryScope>
-            <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Seleccionar disposición' button with specific layout" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="878,194" sap2010:WorkflowViewState.IdRef="NClick_5" InUiElement="{x:Null}" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" UnblockInput="{x:Null}" Version="V5">
+            <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Seleccionar disposición' button with specific layout" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1094,87" sap2010:WorkflowViewState.IdRef="NClick_5" InUiElement="{x:Null}" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" UnblockInput="{x:Null}" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="GVCAmEro_kyNwucqi31EIg" DesignTimeRectangle="410, 157, 102, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' text='Exportar a...' tooltip='Exportar datos*' type='GuiButton' /&gt;" Guid="9d15c0c0-856e-4e2c-be5d-008918c03655" InformativeScreenshot="02e234bd8f96cc985974100ccedfe490.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/iCLkt_QxOkuIczVrt3iiRQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Exportar como' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
@@ -240,7 +248,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ClipboardMode="Never" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type &quot;C:\TEMP&quot; into SAP path field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="878,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InUiElement="{x:Null}" InteractionMode="SameAsCard" OutUiElement="{x:Null}" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" SecureText="{x:Null}" Text="[Path.GetDirectoryName(in_FilePath)]" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ClipboardMode="Never" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type &quot;C:\TEMP&quot; into SAP path field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1094,95" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InUiElement="{x:Null}" InteractionMode="SameAsCard" OutUiElement="{x:Null}" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" SecureText="{x:Null}" Text="[Path.GetDirectoryName(in_FilePath)]" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="tHG4iQ1cskmX66VUS7g2WQ" DesignTimeRectangle="87, 32, 370, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ctxtDY_PATH' type='GuiCTextField' /&gt;" Guid="c40702dc-5a04-4238-8428-d9396de5c035" InformativeScreenshot="868b67373465f2507840ed8a5d3271e2.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/1JU6gkxWRkuPEMToctlElw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Grabar fichero' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NTypeInto.Target>
@@ -251,7 +259,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ClipboardMode="Never" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type filename into SAP application field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="878,246" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InUiElement="{x:Null}" InteractionMode="SameAsCard" OutUiElement="{x:Null}" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" SecureText="{x:Null}" Text="[Path.GetFileName(in_FilePath)]" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ClipboardMode="Never" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type filename into SAP application field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1094,95" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InUiElement="{x:Null}" InteractionMode="SameAsCard" OutUiElement="{x:Null}" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" SecureText="{x:Null}" Text="[Path.GetFileName(in_FilePath)]" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="9qzJbo_6zU2OfmwzkaVe1g" DesignTimeRectangle="87, 54, 370, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ctxtDY_FILENAME' type='GuiCTextField' /&gt;" Guid="feb15792-6cb8-477a-bb87-1ae9f42f60fd" InformativeScreenshot="774e86e39dcb2b4a078f4febb206fa98.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/wPXWx__LrkCUCrHFn5yZ8g" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Grabar fichero' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NTypeInto.Target>
@@ -262,10 +270,10 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <ui:GetLastDownloadedFile DisplayName="Automates downloading, saving, and processing spare parts report in Excel." DownloadFolder="[Path.GetDirectoryName(in_FilePath)]" File="{x:Null}" FileResource="{x:Null}" sap:VirtualizedContainerService.HintSize="878,1202" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="{x:Null}" Timeout="{x:Null}">
+            <ui:GetLastDownloadedFile DisplayName="Automates downloading, saving, and processing spare parts report in Excel." DownloadFolder="[Path.GetDirectoryName(in_FilePath)]" File="{x:Null}" FileResource="{x:Null}" sap:VirtualizedContainerService.HintSize="1094,478" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="{x:Null}" Timeout="{x:Null}">
               <ui:GetLastDownloadedFile.Body>
                 <ActivityAction>
-                  <Sequence DisplayName="Clicks 'Crear' in SAP, then interacts with Excel" sap:VirtualizedContainerService.HintSize="499,919" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Clicks 'Crear' in SAP, then interacts with Excel" sap:VirtualizedContainerService.HintSize="499,195" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="CrearButtonExist" />
                     </Sequence.Variables>
@@ -274,7 +282,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="452,811" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="{x:Null}" NumberOfRetries="5" RetriedExceptionsLogLevel="{x:Null}" RetryInterval="00:00:00.5000000">
+                    <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="416,87" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="{x:Null}" NumberOfRetries="5" RetriedExceptionsLogLevel="{x:Null}" RetryInterval="00:00:00.5000000">
                       <ui:RetryScope.ActivityBody>
                         <ActivityAction>
                           <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,523" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -326,7 +334,7 @@
                         </ActivityFunc>
                       </ui:RetryScope.Condition>
                     </ui:RetryScope>
-                    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" ConnectionId="{x:Null}" ContinueOnError="True" DisplayName=".xlsx - Excel" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="{x:Null}" IsIncognito="{x:Null}" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" OutUiElement="{x:Null}" ScopeGuid="63d5d573-d4e5-4a80-8e51-32f683ab6594" Timeout="20" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
+                    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" ConnectionId="{x:Null}" ContinueOnError="True" DisplayName=".xlsx - Excel" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="{x:Null}" IsIncognito="{x:Null}" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" OutUiElement="{x:Null}" ScopeGuid="63d5d573-d4e5-4a80-8e51-32f683ab6594" Timeout="20" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
                       <uix:NApplicationCard.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
@@ -383,7 +391,7 @@
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1936, 1048" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhHY/j//z/jQGIGdAF641EHjDpg1AEMTjWr2Z2qVx8cEFyzppDBqXoNp1PNmv8DgNc6164RHCgHgCwXhkQB/R0AtxzsgEOnLlo6Vq/+71i9ikp49X+nGhDGsBjDcrAD3n76/vn+i4//qYH3nr/3368B5gjCloMd8P7Lz//UwGdvPv7vVzH7v13pImwOwGo51Rxw4fbT/96lM/7bFi/AFgXrQakd3WKqOeD87af/PYun/bcrWYjN5+td6tbitJxiB4B87lkyHWr5KmSL/xJjOdgBD56/LW1bsu9/y6JdJOLd/33KZ1NkOdgBVrkzOO0rlv23L19KMnaoXI4e7GDLnetwxzk6pmZBBPU58ZZT0wEk+5zaDiA6ztEx5dVxzZqZ5FoOdgC6AL3xqANGHTDqgAF3AAD5AWfDouj2iwAAAABJRU5ErkJggg==" InformativeScreenshot="fec0066ee56941bf5e7f3a471cbca0d9.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" Version="V2">
+        <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="z36YwRvFjEytknoDsVyeLw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhHY/j//z/jQGIGdAF641EHjDpg1AEMTjWr2Z2qVx8cEFyzppDBqXoNp1PNmv8DgNc6164RHCgHgCwXhkQB/R0AtxzsgEOnLlo6Vq/+71i9ikp49X+nGhDGsBjDcrAD3n76/vn+i4//qYH3nr/3368B5gjCloMd8P7Lz//UwGdvPv7vVzH7v13pImwOwGo51Rxw4fbT/96lM/7bFi/AFgXrQakd3WKqOeD87af/PYun/bcrWYjN5+td6tbitJxiB4B87lkyHWr5KmSL/xJjOdgBD56/LW1bsu9/y6JdJOLd/33KZ1NkOdgBVrkzOO0rlv23L19KMnaoXI4e7GDLnetwxzk6pmZBBPU58ZZT0wEk+5zaDiA6ztEx5dVxzZqZ5FoOdgC6AL3xqANGHTDqgAF3AAD5AWfDouj2iwAAAABJRU5ErkJggg==" InformativeScreenshot="fec0066ee56941bf5e7f3a471cbca0d9.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/p7GQg3Vl70e3dqcHeHVXrg" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" Version="V2">
           <uix:TargetApp.Arguments>
             <InArgument x:TypeArguments="x:String" />
           </uix:TargetApp.Arguments>
