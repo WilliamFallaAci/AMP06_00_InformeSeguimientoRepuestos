@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Automate SAP sales document input",
+  "Type": "Screen",
+  "Id": "LSJfqQSuyk6s9CCqdGVi7w",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/LSJfqQSuyk6s9CCqdGVi7w",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/9lkH7DM8FkmRosKFeVUTYw",
+  "Created": "2026-06-02T03:37:42.1179561Z",
+  "Updated": "2026-06-02T03:37:42.1179561Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

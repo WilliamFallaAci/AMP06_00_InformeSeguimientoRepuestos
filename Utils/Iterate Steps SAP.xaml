@@ -51,6 +51,7 @@
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>System.Security</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -111,29 +112,33 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Iterate_Steps_SAP" sap:VirtualizedContainerService.HintSize="1250,5741" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Iterate_Steps_SAP" sap:VirtualizedContainerService.HintSize="1250,6519" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each ColumnData" sap:VirtualizedContainerService.HintSize="593,5718" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_TransactionItem.ItemArray]">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each ColumnData" sap:VirtualizedContainerService.HintSize="550,6496" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_TransactionItem.ItemArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ColumnData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="591,5596" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="548,6374" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="Validation order:&#xA;1. disposicion&#xA;2. variante&#xA;3. checks&#xA;4. BOM&#xA;5. filtrar pedido&#xA;6. listas sal&#xA;7. vista posicion&#xA;8. ODM" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;disposicion&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="557,5536" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+            <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="Validation order:&#xA;1. disposicion&#xA;2. variante&#xA;3. checks&#xA;4. BOM&#xA;5. filtrar pedido&#xA;6. listas sal&#xA;7. vista posicion&#xA;8. ODM" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;disposicion&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="514,6314" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
               <ui:IfElseIfV2.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="555,25" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -146,14 +151,14 @@
                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;variante&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="555,403" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,403" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="521,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_GetVariante - Invoke Workflow File (Apps\SAP\SAP_GetVariante.xaml)" sap:VirtualizedContainerService.HintSize="521,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_GetVariante.xaml">
+                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_GetVariante - Invoke Workflow File (Apps\SAP\SAP_GetVariante.xaml)" sap:VirtualizedContainerService.HintSize="478,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_GetVariante.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_Variante">[in_Variante]</InArgument>
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -164,14 +169,14 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;checks&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="555,403" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,403" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="521,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_SelectChecks - Invoke Workflow File (Apps\SAP\SAP_SelectChecks.xaml)" sap:VirtualizedContainerService.HintSize="521,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_SelectChecks.xaml">
+                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_SelectChecks - Invoke Workflow File (Apps\SAP\SAP_SelectChecks.xaml)" sap:VirtualizedContainerService.HintSize="478,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_SelectChecks.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
@@ -181,14 +186,14 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToUpper.Contains(&quot;BOM&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_3">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="555,799" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,799" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="521,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="FilloutSAPBatches - Invoke Workflow File (Utils\FilloutSAPBatches.xaml)" sap:VirtualizedContainerService.HintSize="521,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Utils\FilloutSAPBatches.xaml">
+                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="FilloutSAPBatches - Invoke Workflow File (Utils\FilloutSAPBatches.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Utils\FilloutSAPBatches.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:Double" x:Key="in_TimeOut">[CDbl(in_Config("SAP_TimeoutMedium"))]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_BatchEnd">[Split(in_BatchIntervals,"-")(1).Trim]</InArgument>
@@ -202,7 +207,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:InvokeWorkflowFile>
-                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="SAP gestion ampliada" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="521,387" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="SAP gestion ampliada" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="478,387" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
                           <uix:NApplicationCard.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
@@ -254,14 +259,14 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;ejecutar&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_4">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="555,1071" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,1071" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="521,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
-                        <If Condition="[Not String.IsNullOrEmpty(in_BatchIntervals)]" DisplayName="Check batch intervals and fill out SAP batches" sap:VirtualizedContainerService.HintSize="521,392" sap2010:WorkflowViewState.IdRef="If_1">
+                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
+                        <If Condition="[Not String.IsNullOrEmpty(in_BatchIntervals)]" DisplayName="Check batch intervals and fill out SAP batches" sap:VirtualizedContainerService.HintSize="478,392" sap2010:WorkflowViewState.IdRef="If_1">
                           <If.Then>
                             <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_18">
                               <sap:WorkflowViewStateService.ViewState>
@@ -296,24 +301,24 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="SAP ejecutar" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="521,444" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="SAP ejecutar" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="478,444" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
                           <uix:NApplicationCard.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="519,302" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ejecutar' button in SAP" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="485,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ejecutar' button in SAP" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
                                   <uix:NClick.Target>
                                     <uix:TargetAnchorable DesignTimeRectangle="32, 123, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Ejecutar*(F8)' type='GuiButton' /&gt;" Guid="40482455-7614-4d24-98bf-2c7615e46673" InformativeScreenshot="b0f3b8160d861f5f14bde3d1e531d6a5.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                                   </uix:NClick.Target>
                                 </uix:NClick>
-                                <Pick DisplayName="Automate SAP export of spare parts tracking report to spreadsheet." sap:VirtualizedContainerService.HintSize="485,48" sap2010:WorkflowViewState.IdRef="Pick_1">
+                                <Pick DisplayName="Automate SAP export of spare parts tracking report to spreadsheet." sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Pick_1">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -452,14 +457,14 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;listas sal&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_5">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="555,622" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,622" sap2010:WorkflowViewState.IdRef="Sequence_10">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="521,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
-                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Interact with SAP to click a specific button" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="521,387" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
+                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Interact with SAP to click a specific button" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="478,387" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
                           <uix:NApplicationCard.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
@@ -511,14 +516,14 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;vista posicion&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_6">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="555,622" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,622" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="521,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
-                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Interact with SAP application to click 'Vista de posición'" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="521,387" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
+                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Interact with SAP application to click 'Vista de posición'" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="478,387" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
                           <uix:NApplicationCard.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
@@ -570,20 +575,20 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToUpper.Contains(&quot;ODM&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_7">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="555,578" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,578" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="521,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ODM_NavigateTo - Invoke Workflow File (Apps\ODM\ODM_NavigateTo.xaml)" sap:VirtualizedContainerService.HintSize="521,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Apps\ODM\ODM_NavigateTo.xaml">
+                        <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ODM_NavigateTo - Invoke Workflow File (Apps\ODM\ODM_NavigateTo.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Apps\ODM\ODM_NavigateTo.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_MenuName" />
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
-                        <Assign DisplayName="Assigns 'True' to the output variable 'out_ODMReport'." sap:VirtualizedContainerService.HintSize="521,166" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign DisplayName="Assigns 'True' to the output variable 'out_ODMReport'." sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="Assign_1">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[out_ODMReport]</OutArgument>
                           </Assign.To>
@@ -591,6 +596,69 @@
                             <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
                           </Assign.Value>
                         </Assign>
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xD;&#xA;ColumnData.ToString.ToLower.Contains(&quot;filtrar pedido&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_8">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,745" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Automate SAP sales document input" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="478,685" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="450,543" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type value into SAP sales document field low" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Text="[Split(in_Config(&quot;BatchTransactionZSD053&quot;).ToString,&quot;;&quot;)(0).Trim]" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable ContentHash="etM-v-YCEU2izxbTEW9GZA" DesignTimeRectangle="263, 313, 76, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/txtSP*LOW' tooltip='Número de documento del documento modelo' type='GuiTextField' /&gt;" Guid="e2c371f9-599d-4cae-9669-84ebe2eef422" InformativeScreenshot="36ca86c93354f4e6ecb8b86515f218fd.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/YPN3jGtKpUymZIbv9mlUkQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                                  </uix:NTypeInto.Target>
+                                </uix:NTypeInto>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type value into SAP sales document field high" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,237" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Text="[Split(in_Config(&quot;BatchTransactionZSD053&quot;).ToString,&quot;;&quot;)(1).Trim]" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable ContentHash="o6VTRnENlEmkG901GfwCtQ" DesignTimeRectangle="438, 313, 76, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/txtSP*HIGH' tooltip='Número de documento del documento modelo' type='GuiTextField' /&gt;" Guid="0ce81cda-eed5-4526-886d-0e7a27d3529a" InformativeScreenshot="2b3df72d9ce17776f8be9d6a95170eda.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/ewGi3Ey1-Uy1CaCG057j4Q" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                                  </uix:NTypeInto.Target>
+                                </uix:NTypeInto>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.OCREngine>
+                            <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+                              <ActivityFunc.Argument>
+                                <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                              </ActivityFunc.Argument>
+                            </ActivityFunc>
+                          </uix:NApplicationCard.OCREngine>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="BarhWsJsZEyHOP9tgbXqQQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhHY/j//z/jQGIGdAF641EHjDpg1AEMTjWr2Z2qVx8cEFyzppDBqXoNp1PNmv8DgNc6164RHCgHgCwXhkQB/R0AtxzsgEOnLlo6Vq/+71i9ikp49X+nGhDGsBjDcrAD3n76/vn+i4//qYH3nr/3368B5gjCloMd8P7Lz//UwGdvPv7vVzH7v13pImwOwGo51Rxw4fbT/96lM/7bFi/AFgXrQakd3WKqOeD87af/PYun/bcrWYjN5+td6tbitJxiB4B87lkyHWr5KmSL/xJjOdgBD56/LW1bsu9/y6JdJOLd/33KZ1NkOdgBVrkzOO0rlv23L19KMnaoXI4e7GDLnetwxzk6pmZBBPU58ZZT0wEk+5zaDiA6ztEx5dVxzZqZ5FoOdgC6AL3xqANGHTDqgAF3AAD5AWfDouj2iwAAAABJRU5ErkJggg==" InformativeScreenshot="65903354e1b9e9be0190715074fafc16.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/LSJfqQSuyk6s9CCqdGVi7w" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Informe de Cajas' /&gt;" Version="V2">
+                              <uix:TargetApp.Arguments>
+                                <InArgument x:TypeArguments="x:String" />
+                              </uix:TargetApp.Arguments>
+                              <uix:TargetApp.FilePath>
+                                <InArgument x:TypeArguments="x:String" />
+                              </uix:TargetApp.FilePath>
+                              <uix:TargetApp.WorkingDirectory>
+                                <InArgument x:TypeArguments="x:String" />
+                              </uix:TargetApp.WorkingDirectory>
+                            </uix:TargetApp>
+                          </uix:NApplicationCard.TargetApp>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NApplicationCard>
                       </Sequence>
                     </ui:IfElseIfBlock.Then>
                   </ui:IfElseIfBlock>
@@ -604,14 +672,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:IfElseIfV2.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="555,403" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,403" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="521,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_SelectDisposicion - Invoke Workflow File (Apps\SAP\SAP_SelectDisposicion.xaml)" sap:VirtualizedContainerService.HintSize="521,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_SelectDisposicion.xaml">
+                  <ui:LogMessage DisplayName="Log current step message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;====== Step &quot;+ColumnData.ToString+&quot; ======&quot;]" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_SelectDisposicion - Invoke Workflow File (Apps\SAP\SAP_SelectDisposicion.xaml)" sap:VirtualizedContainerService.HintSize="478,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_SelectDisposicion.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_Disposicion">[in_Disposicion]</InArgument>
                       <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>

@@ -184,7 +184,7 @@
         <OutArgument x:TypeArguments="x:String">[out_FullFinalReportPath]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Path.Combine(Path.GetDirectoryName(in_Config("InitialInpuPath").ToString.Trim),String.Format(in_Config("FinalReportName").ToString.Trim,Now.ToString("dd-MMM-yyyy HH-mm-ss")))]</InArgument>
+        <InArgument x:TypeArguments="x:String">[Path.Combine(in_Config("FinalFolderReportPath").ToString.Trim,String.Format(in_Config("FinalReportName").ToString.Trim,Now.ToString("dd-MMM-yyyy HH-mm-ss")))]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[out_FullFinalReportPath]" DisplayName="Copy initial input file to timestamped destination" sap:VirtualizedContainerService.HintSize="452,215" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_Config(&quot;InitialInpuPath&quot;).ToString.Trim]" />

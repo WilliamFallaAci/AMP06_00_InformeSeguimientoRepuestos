@@ -181,7 +181,7 @@
     </If>
     <Switch x:TypeArguments="x:String" DisplayName="Switches on transaction item, assigns variant from configuration" Expression="[in_TransactionItem(&quot;Transaction&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="505,57" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Switch.Default>
-        <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -196,7 +196,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence x:Key="ZMG002_01" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_16">
+      <Sequence x:Key="ZMG002_01" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_16">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -212,7 +212,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="ZMM026" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <Sequence x:Key="ZMM026" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_17">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -228,7 +228,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="LX02" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_18">
+      <Sequence x:Key="LX02" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_18">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -244,7 +244,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="COHV" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence x:Key="COHV" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -260,7 +260,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="ZCO017" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <Sequence x:Key="ZCO017" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_20">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -276,7 +276,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="MB52" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_21">
+      <Sequence x:Key="MB52" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_21">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -292,14 +292,14 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="ZSD053" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_22">
+      <Sequence x:Key="ZSD053" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_22">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Assign SAPVariantes to Disposicion" sap:VirtualizedContainerService.HintSize="419,166" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign DisplayName="Assign SAPVariantes to Disposicion" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_7">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[Disposicion]</OutArgument>
           </Assign.To>
@@ -308,7 +308,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="LT23" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_23">
+      <Sequence x:Key="LT23" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_23">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -324,7 +324,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="VL06O" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_24">
+      <Sequence x:Key="VL06O" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_24">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -382,6 +382,7 @@
                   </ui:InvokeWorkflowFile>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_DownloadReport - Invoke Workflow File (Apps\SAP\SAP_DownloadReport.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_DownloadReport.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Transaction">[in_TransactionItem("Transaction").ToString.Trim]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_Config("SAP_SheetName").ToString.Trim]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Path.Combine(System.Environment.CurrentDirectory,"Data\Temp\ReportDownloaded.xlsx")]</InArgument>
                       <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DataTableRecords">[DataTableRecords]</OutArgument>
@@ -492,6 +493,7 @@ False)]</InArgument>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_DownloadReport - Invoke Workflow File (Apps\SAP\SAP_DownloadReport.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_DownloadReport.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Transaction">[in_TransactionItem("Transaction").ToString.Trim]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_Config("SAP_SheetName").ToString.Trim]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Path.Combine(System.Environment.CurrentDirectory,"Data\Temp\ReportDownloaded.xlsx")]</InArgument>
                     <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DataTableRecords">[DataTableRecords]</OutArgument>

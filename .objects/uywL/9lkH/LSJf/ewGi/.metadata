@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Type value into SAP sales document field high",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "ewGi3Ey1-Uy1CaCG057j4Q",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/ewGi3Ey1-Uy1CaCG057j4Q",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/LSJfqQSuyk6s9CCqdGVi7w",
+  "Created": "2026-06-02T03:43:09.3704166Z",
+  "Updated": "2026-06-02T03:43:09.3704166Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
