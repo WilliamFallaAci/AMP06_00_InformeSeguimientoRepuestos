@@ -39,7 +39,9 @@
       "privateWorkflows": []
     },
     "processOptions": {
-      "ignoredFiles": []
+      "ignoredFiles": [
+        "Tests/Isolated.xaml"
+      ]
     },
     "fileInfoCollection": [
       {

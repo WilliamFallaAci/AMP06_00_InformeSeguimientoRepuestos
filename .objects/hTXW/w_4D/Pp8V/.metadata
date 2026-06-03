@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome PORTAL AMPO(1)",
+  "Type": "Screen",
+  "Id": "Pp8Vz7QlYUKXB76Kr2_UuA",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/Pp8Vz7QlYUKXB76Kr2_UuA",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/w_4D3n1-U0SmGHhM3E_ZmQ",
+  "Created": "2026-06-03T02:17:48.633667Z",
+  "Updated": "2026-06-03T02:17:48.633667Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

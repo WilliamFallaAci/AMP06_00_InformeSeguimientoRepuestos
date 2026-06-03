@@ -112,16 +112,20 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ODM_DonloadReport" sap:VirtualizedContainerService.HintSize="1250,2250" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ODM_DonloadReport" sap:VirtualizedContainerService.HintSize="1250,3621" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia descargar reporte en ODM&quot;]" />
-    <Assign DisplayName="Initialize a DataTable variable" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="569,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia descargar reporte en ODM&quot;]" />
+    <Assign DisplayName="Initialize a DataTable variable" sap:VirtualizedContainerService.HintSize="569,175" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[out_DataTableRecords]</OutArgument>
       </Assign.To>
@@ -129,48 +133,130 @@
         <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome PORTAL AMPO" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1421" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome PORTAL AMPO(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="569,2792" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1270" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="567,2641" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheck Action="Check" DisplayName="Check a specific checkbox on the web page." HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
+            <uix:NCheck Action="Check" DisplayName="Check a specific checkbox on the web page." HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="533,195" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NCheck.Target>
-                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="8f2eb2fa-b240-4d71-b25d-ba681ba2a37f" ContentHash="cuZbHUrZhEO_1UjHItfg8Q" DesignTimeRectangle="304, 468, 194, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LABEL' for='mat-checkbox*input' innertext='*Pendiente de Validaci*n' parentclass='mat-checkbox*' /&gt;" Guid="c2d216f6-5aa9-4f79-8aaf-4c738b7a74fd" InformativeScreenshot="0a58081a0015101bd53c5eb3c91668cb.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/bobxVdOkEEyUqr6onAQqAA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="8f2eb2fa-b240-4d71-b25d-ba681ba2a37f" DesignTimeRectangle="304, 468, 194, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LABEL' for='mat-checkbox*input' innertext='*Pendiente de Validaci*n' parentclass='mat-checkbox*' /&gt;" Guid="c2d216f6-5aa9-4f79-8aaf-4c738b7a74fd" InformativeScreenshot="0a58081a0015101bd53c5eb3c91668cb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NCheck.Target>
             </uix:NCheck>
-            <uix:NCheck Action="Check" DisplayName="Check the 'Aceptada' checkbox on the web page" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
+            <uix:NCheck Action="Check" DisplayName="Check the 'Aceptada' checkbox on the web page" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="533,195" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NCheck.Target>
-                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="8f2eb2fa-b240-4d71-b25d-ba681ba2a37f" ContentHash="XdPYZVhcn0ym54a0AxXPpg" DesignTimeRectangle="507, 468, 95, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LABEL' for='mat-checkbox*' innertext='*Aceptada' parentclass='mat-checkbox*' /&gt;" Guid="069914e0-f3ca-48f3-a157-bbf1df85f916" InformativeScreenshot="68ca8cac5a5587cadbab19a779d994e6.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/Zt_G3U0eOUGpjLaG98exIw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="8f2eb2fa-b240-4d71-b25d-ba681ba2a37f" DesignTimeRectangle="507, 468, 95, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LABEL' for='mat-checkbox*' innertext='*Aceptada' parentclass='mat-checkbox*' /&gt;" Guid="069914e0-f3ca-48f3-a157-bbf1df85f916" InformativeScreenshot="68ca8cac5a5587cadbab19a779d994e6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NCheck.Target>
             </uix:NCheck>
-            <uix:NCheck Action="Check" DisplayName="Check the 'Rechazada' checkbox on the web page." HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
+            <uix:NCheck Action="Check" DisplayName="Check the 'Rechazada' checkbox on the web page." HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="533,195" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NCheck.Target>
-                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="8f2eb2fa-b240-4d71-b25d-ba681ba2a37f" ContentHash="ZV6SGoqCbEW_FB2lgLAT_w" DesignTimeRectangle="611, 468, 104, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LABEL' for='mat-checkbox*' innertext='*Rechazada' parentclass='mat-checkbox*' /&gt;" Guid="e1196f88-61f0-4e24-b62f-ded4f454bcde" InformativeScreenshot="83511046a8a69168add39b68b67f0846.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/HKSnn9pq-U6Ms0ynMltMCQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="8f2eb2fa-b240-4d71-b25d-ba681ba2a37f" DesignTimeRectangle="611, 468, 104, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LABEL' for='mat-checkbox*' innertext='*Rechazada' parentclass='mat-checkbox*' /&gt;" Guid="e1196f88-61f0-4e24-b62f-ded4f454bcde" InformativeScreenshot="83511046a8a69168add39b68b67f0846.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NCheck.Target>
             </uix:NCheck>
-            <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DisplayName="Click 'Validación Proveedor' button on web page" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DisplayName="Click 'Validación Proveedor' button on web page" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="533,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="bd22243c-d8a6-4af2-9d6d-28b9ed600738" ContentHash="1O8JKwXYAkuVCmTnX4e-Gg" DesignTimeRectangle="304, 571, 95, 24" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' innertext='*Buscar*' type='button' /&gt;" Guid="5a4e4f00-e4cd-4247-a23a-3f7845efc044" InformativeScreenshot="7e58bb4e8e26e7428f5aa3d9b4fd81e3.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/iG487z41GkK-332QO7jn8A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="bd22243c-d8a6-4af2-9d6d-28b9ed600738" DesignTimeRectangle="304, 571, 95, 24" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' innertext='*Buscar*' type='button' /&gt;" Guid="5a4e4f00-e4cd-4247-a23a-3f7845efc044" InformativeScreenshot="7e58bb4e8e26e7428f5aa3d9b4fd81e3.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DisplayName="Clicks the 'Exportar Datos' button in the browser" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="c5c17293-a3d5-452c-8cab-397db49e5e0c" DesignTimeRectangle="1740, 595, 132, 30" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='buttonExportData' tag='BUTTON' innertext='*Exportar Datos*' type='button' /&gt;" Guid="82ea17c3-61e7-4d71-8de3-ab9b8c0f562a" InformativeScreenshot="8923d80da5c5ca4a30c0ec4b64284b6e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type report path into UI input field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,237" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Text="[string.Format(&quot;{0}[k(enter)]&quot;, in_FullReportPath)]" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="odm.ampo.com" CVScreenId="2a993a68-0997-4339-ac27-d92317e62b11" ContentHash="3HKf_4MYaUC8ynSjOi65QQ" DesignTimeRectangle="136, 389, 791, 17" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='Panel del explorador' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='ComboBox' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='Edit' /&gt;" Guid="cb183c5c-810f-41b0-91c8-bd6b753862bd" InformativeScreenshot="5d31512e1b0ec42fc8e5cd7e3142192a.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/l8lrFLijsUOxCIY3ic2S6Q" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Guardar como' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
+            <uix:NCheckState DelayBefore="[CDbl(in_Config(&quot;ODM_TimeoutLong&quot;)) * 2]" DisplayName="Check App State 'Exportar Datos'" EnableIfExists="False" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="533,278" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="odm.ampo.com" CVScreenId="5240c7a8-793f-45d0-a0d7-f810886b51aa" ContentHash="OZvaT8eH4Ei4Dpo-HRHQ-w" DesignTimeRectangle="1736, 554, 132, 30" ElementType="Button" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;webctrl id='buttonExportData' tag='BUTTON' innertext=' Exportar Datos ' type='button' /&gt;" Guid="60eb7a45-0d3a-4408-bf0c-e4fb4defc3dd" InformativeScreenshot="80fdda2187ecbd5da3afed608ec9784a.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/o7aQ6ecY-U-QwiKQ2iPUow" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry clicking 'Exportar Datos' button for report" sap:VirtualizedContainerService.HintSize="533,452" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="4" RetryInterval="00:00:02">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DisplayName="Clicks the 'Exportar Datos' button in the browser" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutLong&quot;))]" Version="V5">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="c5c17293-a3d5-452c-8cab-397db49e5e0c" DesignTimeRectangle="1740, 595, 132, 30" ElementType="Button" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Interactive]" FullSelectorArgument="&lt;webctrl id='buttonExportData' tag='BUTTON' innertext='*Exportar Datos*' type='button' /&gt;" Guid="82ea17c3-61e7-4d71-8de3-ab9b8c0f562a" InformativeScreenshot="8923d80da5c5ca4a30c0ec4b64284b6e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean" />
+              </ui:RetryScope.Condition>
+            </ui:RetryScope>
+            <ui:GetLastDownloadedFile File="{x:Null}" FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Automates downloading, saving, and processing spare parts report in Excel." DownloadFolder="[Path.GetDirectoryName(in_FullReportPath)]" sap:VirtualizedContainerService.HintSize="533,1072" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+              <ui:GetLastDownloadedFile.Body>
+                <ActivityAction>
+                  <Sequence DisplayName="Clicks 'Crear' in SAP, then interacts with Excel" sap:VirtualizedContainerService.HintSize="499,749" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="CrearButtonExist" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" ContinueOnError="True" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="452,689" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:00.5000000">
+                      <ui:RetryScope.ActivityBody>
+                        <ActivityAction>
+                          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,491" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DisplayName="Click 'Guardar como' button in browser" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutLong&quot;))]" Version="V5">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="odm.ampo.com" CVScreenId="2bc55466-1fee-44c8-856a-50593d45b4fd" CvElementArea="90, 98, 98, 26" CvTextArea="99, 105, 79, 12" CvTextArgument="Guardar como" CvType="Button" DesignTimeRectangle="91, 99, 97, 24" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Descargas' role='document' /&gt;&lt;ctrl name='Descargas' role='grouping' /&gt;&lt;ctrl name='¿Qué quieres hacer con exportValidationData (3).xlsx?' role='list item' /&gt;&lt;ctrl name='Guardar como' role='push button' /&gt;" Guid="0a4ad2d0-b4d9-49c4-816b-a8317ca3f13e" InformativeScreenshot="6c5f4fadc9b322e1388fcb7d0fd2caeb.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin*' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Complete" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type report path into UI input field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,237" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Text="[string.Format(&quot;{0}[k(enter)]&quot;, in_FullReportPath)]" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutLong&quot;))]" Version="V5">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="odm.ampo.com" CVScreenId="2a993a68-0997-4339-ac27-d92317e62b11" DesignTimeRectangle="136, 389, 791, 17" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='Panel del explorador' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='ComboBox' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='Edit' /&gt;" Guid="cb183c5c-810f-41b0-91c8-bd6b753862bd" InformativeScreenshot="5d31512e1b0ec42fc8e5cd7e3142192a.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Guardar como' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:RetryScope.ActivityBody>
+                      <ui:RetryScope.Condition>
+                        <ActivityFunc x:TypeArguments="x:Boolean" />
+                      </ui:RetryScope.Condition>
+                    </ui:RetryScope>
+                  </Sequence>
+                </ActivityAction>
+              </ui:GetLastDownloadedFile.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetLastDownloadedFile>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -182,7 +268,7 @@
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" ContentHash="jqk6Kv6uKEWXsNn7UkLUAQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVDhP7Y47ikJREESPjmBsNLFCbcHQXIw1my0YTGCiqSAK4idwB67pLEeuXAPfBjR4B5qmu7qKhpYvQjKQbCSLOjf1Tu29N+GF5CAZSm6SsWQrGUmukrNkL7lI/iWrpr8EHCVTyV0yk5wk6xpQjDvJRLIs+6a/BPxK5pI/Sbe8LPmp/Vn1rt/0tnyaBwlMNDmyh277AAAAAElFTkSuQmCC" InformativeScreenshot="f67b56fdeb270c6ae555f0958da75d00.jpg" Reference="oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA" Selector="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" Version="V2">
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" ContentHash="kl15y89R-kaqIl-w-ECY6w" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVDhP7Y47ikJREESPjmBsNLFCbcHQXIw1my0YTGCiqSAK4idwB67pLEeuXAPfBjR4B5qmu7qKhpYvQjKQbCSLOjf1Tu29N+GF5CAZSm6SsWQrGUmukrNkL7lI/iWrpr8EHCVTyV0yk5wk6xpQjDvJRLIs+6a/BPxK5pI/Sbe8LPmp/Vn1rt/0tnyaBwlMNDmyh277AAAAAElFTkSuQmCC" InformativeScreenshot="f67b56fdeb270c6ae555f0958da75d00.jpg" Reference="oCOFMf_dREKLlM0YaHnBwQ/Pp8Vz7QlYUKXB76Kr2_UuA" Selector="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" Version="V2">
           <uix:TargetApp.Arguments>
             <InArgument x:TypeArguments="x:String" />
           </uix:TargetApp.Arguments>
@@ -201,7 +287,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" ContinueOnError="True" DisplayName=".xlsx - Excel" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="63d5d573-d4e5-4a80-8e51-32f683ab6594" Timeout="20" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" ContinueOnError="True" DisplayName=".xlsx - Excel" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="569,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="63d5d573-d4e5-4a80-8e51-32f683ab6594" Timeout="20" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -243,8 +329,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[out_DataTableRecords]" DisplayName="Read Excel sheet data into a DataTable" sap:VirtualizedContainerService.HintSize="452,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_Config(&quot;ODM_SheetName&quot;).ToString.Trim]" WorkbookPath="[in_FullReportPath]" />
-    <ui:DeleteFileX DisplayName="Delete a file using the provided path" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_FullReportPath]" />
-    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza descargar reporte en ODM&quot;]" />
+    <ui:ReadRange WorkbookPathResource="{x:Null}" AddHeaders="False" DataTable="[out_DataTableRecords]" DisplayName="Read Excel sheet data into a DataTable" sap:VirtualizedContainerService.HintSize="569,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A2" SheetName="[in_Config(&quot;ODM_SheetName&quot;).ToString.Trim]" WorkbookPath="[in_FullReportPath]" />
+    <ui:DeleteFileX DisplayName="Delete a file using the provided path" sap:VirtualizedContainerService.HintSize="569,113" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_FullReportPath]" />
+    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="569,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza descargar reporte en ODM&quot;]" />
   </Sequence>
 </Activity>

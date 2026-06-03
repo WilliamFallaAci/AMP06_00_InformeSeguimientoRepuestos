@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Exportar Datos",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "o7aQ6ecY-U-QwiKQ2iPUow",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/o7aQ6ecY-U-QwiKQ2iPUow",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/Pp8Vz7QlYUKXB76Kr2_UuA",
+  "Created": "2026-06-03T02:17:48.7700353Z",
+  "Updated": "2026-06-03T02:17:48.7700353Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

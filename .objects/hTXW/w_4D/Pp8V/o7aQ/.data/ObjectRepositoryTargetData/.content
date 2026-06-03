@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="5xtLCWctC0Oixq4cfHdhwQ" Reference="oCOFMf_dREKLlM0YaHnBwQ/o7aQ6ecY-U-QwiKQ2iPUow" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odm.ampo.com" CVScreenId="5240c7a8-793f-45d0-a0d7-f810886b51aa" DesignTimeRectangle="1736, 554, 132, 30" ElementType="Button" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;webctrl id='buttonExportData' tag='BUTTON' innertext=' Exportar Datos ' type='button' /&gt;" Guid="60eb7a45-0d3a-4408-bf0c-e4fb4defc3dd" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]">
+      <imageRef attrName="InformativeScreenshot" originalValue="80fdda2187ecbd5da3afed608ec9784a.png" xmlns="">0d1x6zTdc10a3Oo3Qew3mFg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

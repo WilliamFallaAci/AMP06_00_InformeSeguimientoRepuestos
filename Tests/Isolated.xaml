@@ -1,0 +1,135 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Isolated" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Isolated_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Isolated" sap:VirtualizedContainerService.HintSize="1256,849.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="ExcelData" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,248" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;    ' 1. Configurar la cadena de conexión para Excel (.xlsx)&#xD;&#xA;    ' IMEX=1 le dice al motor que lea datos mixtos (números y texto) como texto para evitar valores nulos.&#xD;&#xA;    ' HDR=No indica que no use la primera fila como encabezado.&#xD;&#xA;    Dim strConex As String = &quot;Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot; &amp; in_RutaExcel &amp; &quot;;Extended Properties='Excel 12.0 Xml;HDR=No;IMEX=1';&quot;&#xD;&#xA;    &#xD;&#xA;    Dim dtTemporal As New System.Data.DataTable()&#xD;&#xA;&#xD;&#xA;    ' 2. Conectar al archivo y extraer los datos de la primera hoja&#xD;&#xA;    Using conexion As New System.Data.OleDb.OleDbConnection(strConex)&#xD;&#xA;        conexion.Open()&#xD;&#xA;        &#xD;&#xA;        ' Obtenemos el nombre de la primera hoja dinámicamente&#xD;&#xA;        Dim dtEsquema As System.Data.DataTable = conexion.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, Nothing)&#xD;&#xA;        Dim nombreHoja As String = dtEsquema.Rows(0)(&quot;TABLE_NAME&quot;).ToString()&#xD;&#xA;        &#xD;&#xA;        ' Traemos toda la información de esa hoja&#xD;&#xA;        Dim query As String = &quot;SELECT * FROM [&quot; &amp; nombreHoja &amp; &quot;]&quot;&#xD;&#xA;        &#xD;&#xA;        Using comando As New System.Data.OleDb.OleDbCommand(query, conexion)&#xD;&#xA;            Using adaptador As New System.Data.OleDb.OleDbDataAdapter(comando)&#xD;&#xA;                adaptador.Fill(dtTemporal)&#xD;&#xA;            End Using&#xD;&#xA;        End Using&#xD;&#xA;    End Using&#xD;&#xA;&#xD;&#xA;    ' 3. Lógica para simular el rango A2 (Omitir la primera fila del archivo)&#xD;&#xA;    If dtTemporal.Rows.Count &gt; 0 Then&#xD;&#xA;        ' Clonamos la estructura de la tabla (columnas)&#xD;&#xA;        out_dtDatos = dtTemporal.Clone()&#xD;&#xA;        &#xD;&#xA;        ' Importamos todas las filas a partir del índice 1 (que es la segunda fila del Excel)&#xD;&#xA;        For i As Integer = 1 To dtTemporal.Rows.Count - 1&#xD;&#xA;            out_dtDatos.ImportRow(dtTemporal.Rows(i))&#xD;&#xA;        Next&#xD;&#xA;    Else&#xD;&#xA;        ' Si el archivo estaba completamente vacío&#xD;&#xA;        out_dtDatos = dtTemporal&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;Catch ex As Exception&#xD;&#xA;    ' Captura cualquier error estructural y lo eleva a UiPath&#xD;&#xA;    Throw New Exception(&quot;Error al leer el Excel mediante Invoke Code: &quot; &amp; ex.Message)&#xD;&#xA;End Try" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_RutaExcel">
+                <Literal x:TypeArguments="x:String">C:\Users\aci-cns\Documents\UiPath\AMP06_00_InformeSeguimientoRepuestos\Data\Temp\ReportDownloaded.xlsx</Literal>
+              </InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtDatos">
+                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ExcelData" />
+              </OutArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;    ' 1. Configurar la cadena de conexión&#xD;&#xA;    ' Al cambiar HDR=Yes, forzamos a que la fila 1 (A1) se convierta en el nombre de las columnas,&#xD;&#xA;    ' logrando que el contenido de la DataTable empiece estrictamente desde la fila 2 (A2).&#xD;&#xA;    Dim strConex As String = &quot;Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot; &amp; in_RutaExcel &amp; &quot;;Extended Properties='Excel 12.0 Xml;HDR=Yes;IMEX=1';&quot;&#xD;&#xA;    &#xD;&#xA;    Dim dtTemporal As New System.Data.DataTable()&#xD;&#xA;&#xD;&#xA;    ' 2. Conectar al archivo y extraer los datos de la primera hoja&#xD;&#xA;    Using conexion As New System.Data.OleDb.OleDbConnection(strConex)&#xD;&#xA;        conexion.Open()&#xD;&#xA;        &#xD;&#xA;        ' Obtener el nombre de la primera hoja dinámicamente&#xD;&#xA;        Dim dtEsquema As System.Data.DataTable = conexion.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, Nothing)&#xD;&#xA;        Dim nombreHoja As String = dtEsquema.Rows(0)(&quot;TABLE_NAME&quot;).ToString()&#xD;&#xA;        &#xD;&#xA;        ' Seleccionar todos los registros (que ahora iniciarán en la fila 2)&#xD;&#xA;        Dim query As String = &quot;SELECT * FROM [&quot; &amp; nombreHoja &amp; &quot;]&quot;&#xD;&#xA;        &#xD;&#xA;        Using comando As New System.Data.OleDb.OleDbCommand(query, conexion)&#xD;&#xA;            Using adaptador As New System.Data.OleDb.OleDbDataAdapter(comando)&#xD;&#xA;                adaptador.Fill(dtTemporal)&#xD;&#xA;            End Using&#xD;&#xA;        End Using&#xD;&#xA;    End Using&#xD;&#xA;&#xD;&#xA;    ' 3. Asignar el resultado al argumento de salida de UiPath&#xD;&#xA;    out_dtDatos = dtTemporal&#xD;&#xA;&#xD;&#xA;Catch ex As Exception&#xD;&#xA;    ' Captura cualquier error y lo envía a la consola de UiPath&#xD;&#xA;    Throw New Exception(&quot;Error al leer el Excel desde A2 en Invoke Code: &quot; &amp; ex.Message)&#xD;&#xA;End Try" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="450,197" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_RutaExcel">C:\Users\aci-cns\Documents\UiPath\AMP06_00_InformeSeguimientoRepuestos\Data\Temp\ReportDownloaded.xlsx</InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtDatos">[ExcelData]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="WriteLine_1" />
+  </Sequence>
+</Activity>
