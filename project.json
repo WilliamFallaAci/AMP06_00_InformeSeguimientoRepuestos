@@ -64,6 +64,20 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Tests\\Apps\\SAP\\TestCase_SAP_SelectDisposicion.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "ae912d23-6466-4c63-b25d-685878f0f74d",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Apps\\SAP\\TestCase_SAP_Logout.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "639660f5-e32c-478e-b36d-42953408fd61",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Apps\\ODM\\TestCase_ODM_Logout.xaml"
       }
     ],
     "saveToCloud": false

@@ -116,9 +116,10 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ODM_DonloadReport" sap:VirtualizedContainerService.HintSize="1250,3621" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ODM_DonloadReport" sap:VirtualizedContainerService.HintSize="1250,3658" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -133,13 +134,13 @@
         <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome PORTAL AMPO(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="569,2792" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome PORTAL AMPO(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="569,2752" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="567,2641" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="567,2601" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -209,7 +210,7 @@
                 <ActivityFunc x:TypeArguments="x:Boolean" />
               </ui:RetryScope.Condition>
             </ui:RetryScope>
-            <ui:GetLastDownloadedFile File="{x:Null}" FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Automates downloading, saving, and processing spare parts report in Excel." DownloadFolder="[Path.GetDirectoryName(in_FullReportPath)]" sap:VirtualizedContainerService.HintSize="533,1072" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+            <ui:GetLastDownloadedFile File="{x:Null}" FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Automates downloading, saving, and processing spare parts report in Excel." DownloadFolder="[Path.GetDirectoryName(in_FullReportPath)]" sap:VirtualizedContainerService.HintSize="533,1032" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
               <ui:GetLastDownloadedFile.Body>
                 <ActivityAction>
                   <Sequence DisplayName="Clicks 'Crear' in SAP, then interacts with Excel" sap:VirtualizedContainerService.HintSize="499,749" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -329,7 +330,16 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:ReadRange WorkbookPathResource="{x:Null}" AddHeaders="False" DataTable="[out_DataTableRecords]" DisplayName="Read Excel sheet data into a DataTable" sap:VirtualizedContainerService.HintSize="569,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A2" SheetName="[in_Config(&quot;ODM_SheetName&quot;).ToString.Trim]" WorkbookPath="[in_FullReportPath]" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;    ' 1. Configurar la cadena de conexión&#xD;&#xA;    ' Al cambiar HDR=Yes, forzamos a que la fila 1 (A1) se convierta en el nombre de las columnas,&#xD;&#xA;    ' logrando que el contenido de la DataTable empiece estrictamente desde la fila 2 (A2).&#xD;&#xA;    Dim strConex As String = &quot;Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot; &amp; in_RutaExcel &amp; &quot;;Extended Properties='Excel 12.0 Xml;HDR=Yes;IMEX=1';&quot;&#xD;&#xA;    &#xD;&#xA;    Dim dtTemporal As New System.Data.DataTable()&#xD;&#xA;&#xD;&#xA;    ' 2. Conectar al archivo y extraer los datos de la primera hoja&#xD;&#xA;    Using conexion As New System.Data.OleDb.OleDbConnection(strConex)&#xD;&#xA;        conexion.Open()&#xD;&#xA;        &#xD;&#xA;        ' Obtener el nombre de la primera hoja dinámicamente&#xD;&#xA;        Dim dtEsquema As System.Data.DataTable = conexion.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, Nothing)&#xD;&#xA;        Dim nombreHoja As String = dtEsquema.Rows(0)(&quot;TABLE_NAME&quot;).ToString()&#xD;&#xA;        &#xD;&#xA;        ' Seleccionar todos los registros (que ahora iniciarán en la fila 2)&#xD;&#xA;        Dim query As String = &quot;SELECT * FROM [&quot; &amp; nombreHoja &amp; &quot;]&quot;&#xD;&#xA;        &#xD;&#xA;        Using comando As New System.Data.OleDb.OleDbCommand(query, conexion)&#xD;&#xA;            Using adaptador As New System.Data.OleDb.OleDbDataAdapter(comando)&#xD;&#xA;                adaptador.Fill(dtTemporal)&#xD;&#xA;            End Using&#xD;&#xA;        End Using&#xD;&#xA;    End Using&#xD;&#xA;&#xD;&#xA;    ' 3. Asignar el resultado al argumento de salida de UiPath&#xD;&#xA;    out_dtDatos = dtTemporal&#xD;&#xA;&#xD;&#xA;Catch ex As Exception&#xD;&#xA;    ' Captura cualquier error y lo envía a la consola de UiPath&#xD;&#xA;    Throw New Exception(&quot;Error al leer el Excel desde A2 en Invoke Code: &quot; &amp; ex.Message)&#xD;&#xA;End Try" DisplayName="Process Excel report for spare parts" sap:VirtualizedContainerService.HintSize="569,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_RutaExcel">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_FullReportPath" />
+        </InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtDatos">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_DataTableRecords" />
+        </OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
     <ui:DeleteFileX DisplayName="Delete a file using the provided path" sap:VirtualizedContainerService.HintSize="569,113" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_FullReportPath]" />
     <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="569,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza descargar reporte en ODM&quot;]" />
   </Sequence>

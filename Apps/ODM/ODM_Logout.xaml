@@ -94,7 +94,7 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ODM_Logout" sap:VirtualizedContainerService.HintSize="1250,954" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ODM_Logout" sap:VirtualizedContainerService.HintSize="1243,954" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -115,12 +115,12 @@
             </sap:WorkflowViewStateService.ViewState>
             <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DisplayName="Click 'A' dropdown element in web application" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" ContentHash="VbvRQ4krCEuNBQcKK845uA" DesignTimeRectangle="1796, 129, 54, 74" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' data-toggle='dropdown' parentclass='nav-item dropdown' parentid='main-wrapper' /&gt;" Guid="c7f366bb-49f2-4c10-8ee3-eeaba3b4baff" InformativeScreenshot="807e57b0c617bf98ef7e58712fa9bbc2.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/ib8nk83vbUeNJiZ63qNC1A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" DesignTimeRectangle="1796, 129, 54, 74" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' data-toggle='dropdown' parentclass='nav-item dropdown' parentid='main-wrapper' /&gt;" Guid="c7f366bb-49f2-4c10-8ee3-eeaba3b4baff" InformativeScreenshot="807e57b0c617bf98ef7e58712fa9bbc2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
             </uix:NClick>
             <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DisplayName="Click the 'Cerrar sesión' button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="5a7e7a53-127c-4883-a65a-f518e2ee2f35" DesignTimeRectangle="1579, 303, 270, 46" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' innertext='*Cerrar sesión' parentclass='dropdown-user' parentid='main-wrapper' /&gt;" Guid="1f84c691-c028-48c4-a04a-ed368961ec18" InformativeScreenshot="f9b5525c482a8f41b93c2bba5923f0c4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="5a7e7a53-127c-4883-a65a-f518e2ee2f35" DesignTimeRectangle="1579, 303, 270, 46" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' innertext='*Cerrar sesión' parentclass='dropdown-user' parentid='main-wrapper' /&gt;" Guid="1f84c691-c028-48c4-a04a-ed368961ec18" InformativeScreenshot="f9b5525c482a8f41b93c2bba5923f0c4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
             </uix:NClick>
           </Sequence>
@@ -134,7 +134,7 @@
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" ContentHash="jqk6Kv6uKEWXsNn7UkLUAQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVDhP7Y47ikJREESPjmBsNLFCbcHQXIw1my0YTGCiqSAK4idwB67pLEeuXAPfBjR4B5qmu7qKhpYvQjKQbCSLOjf1Tu29N+GF5CAZSm6SsWQrGUmukrNkL7lI/iWrpr8EHCVTyV0yk5wk6xpQjDvJRLIs+6a/BPxK5pI/Sbe8LPmp/Vn1rt/0tnyaBwlMNDmyh277AAAAAElFTkSuQmCC" InformativeScreenshot="f67b56fdeb270c6ae555f0958da75d00.jpg" Reference="oCOFMf_dREKLlM0YaHnBwQ/oS2zLfGpIESom4DnZATdTA" Selector="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" Version="V2">
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVDhP7Y47ikJREESPjmBsNLFCbcHQXIw1my0YTGCiqSAK4idwB67pLEeuXAPfBjR4B5qmu7qKhpYvQjKQbCSLOjf1Tu29N+GF5CAZSm6SsWQrGUmukrNkL7lI/iWrpr8EHCVTyV0yk5wk6xpQjDvJRLIs+6a/BPxK5pI/Sbe8LPmp/Vn1rt/0tnyaBwlMNDmyh277AAAAAElFTkSuQmCC" InformativeScreenshot="f67b56fdeb270c6ae555f0958da75d00.jpg" Selector="&lt;html app='msedge.exe' title='*P*AMPO*' /&gt;" Version="V2">
           <uix:TargetApp.Arguments>
             <InArgument x:TypeArguments="x:String" />
           </uix:TargetApp.Arguments>

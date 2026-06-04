@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SaveReportToExcelTemplate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="in_WriteData" Type="InArgument(x:Boolean)" />
     <x:Property Name="in_DataTableRecords" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_Transaction" Type="InArgument(x:String)" />
     <x:Property Name="in_FullFinalReportPath" Type="InArgument(x:String)" />
@@ -100,16 +101,56 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SaveReportToExcelTemplate" sap:VirtualizedContainerService.HintSize="1256,523.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SaveReportToExcelTemplate" sap:VirtualizedContainerService.HintSize="1243,1311" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Range" />
+      <Variable x:TypeArguments="sd:DataTable" Name="RangeTable" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Inicia guardar reporte en la hoja: &quot;+in_Transaction+&quot;, del reporte: &quot;+Path.GetFileName(in_FullFinalReportPath)]" />
-    <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[in_DataTableRecords]" DisplayName="Append data table to Excel sheet" sap:VirtualizedContainerService.HintSize="450,148" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="[in_Transaction]" WorkbookPath="[in_FullFinalReportPath]" />
-    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="450,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Finaliza guardar reporte en la hoja: &quot;+in_Transaction+&quot;, del reporte: &quot;+Path.GetFileName(in_FullFinalReportPath)]" />
+    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Inicia guardar reporte en la hoja: &quot;+in_Transaction+&quot;, del reporte: &quot;+Path.GetFileName(in_FullFinalReportPath)]" />
+    <If Condition="[in_WriteData]" DisplayName="Conditionally write or append data to Excel." sap:VirtualizedContainerService.HintSize="452,947" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,609" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GenerateDataTable ColumnSizes="{x:Null}" Positions="{x:Null}" CSVParsing="False" ColumnSeparators=";" DataTable="[RangeTable]" DisplayName="Generate data table from configuration text" sap:VirtualizedContainerService.HintSize="416,235" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[in_Config(&quot;RangeData&quot;).ToString.Trim]" NewLineSeparator="&#xA;" UseColumnHeader="True" />
+          <Assign DisplayName="Assign Range based on transaction or default." sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Range]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(RangeTable.AsEnumerable.Any(Function (row) row("Transaction").ToString.Trim.Equals(in_Transaction)),
+		RangeTable.AsEnumerable.Where(Function (row) row("Transaction").ToString.Trim.Equals(in_Transaction)).
+					Select(Function (row) row("Range").ToString.Trim).FirstOrDefault,
+	in_Config("DefaultRange").ToString.Trim)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:WriteRange WorkbookPathResource="{x:Null}" AddHeaders="False" DataTable="[in_DataTableRecords]" DisplayName="Write Range data table to Excel sheet" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Transaction]" StartingCell="[Range]" WorkbookPath="[in_FullFinalReportPath]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,199" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[in_DataTableRecords]" DisplayName="Append data table to Excel sheet" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="[in_Transaction]" WorkbookPath="[in_FullFinalReportPath]" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Finaliza guardar reporte en la hoja: &quot;+in_Transaction+&quot;, del reporte: &quot;+Path.GetFileName(in_FullFinalReportPath)]" />
   </Sequence>
 </Activity>
