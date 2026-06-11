@@ -1,15 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
-    <x:Property Name="in_FullFinalReportPath" Type="InArgument(x:String)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_FullFinalReportPath" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -105,7 +97,7 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="1250,1963" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="1190,1963" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -114,6 +106,12 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
     <If Condition="[Not String.IsNullOrEmpty(in_FullFinalReportPath)]" DisplayName="Execute a macro in a specified Excel report" sap:VirtualizedContainerService.HintSize="488,1212" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1048" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -136,15 +134,9 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim excelApp As Microsoft.Office.Interop.Excel.Application = Nothing&#xA;Dim excelWorkbook As Microsoft.Office.Interop.Excel.Workbook = Nothing&#xA;&#xA;Try&#xA;    ' Inicializar la aplicación de Excel de fondo&#xA;    excelApp = New Microsoft.Office.Interop.Excel.Application()&#xA;    excelApp.Visible = False ' Cambiar a True si deseas ver el proceso&#xA;    excelApp.DisplayAlerts = False ' Evita ventanas emergentes que detengan el script&#xA;&#xA;    ' Abrir el libro de Excel&#xA;    excelWorkbook = excelApp.Workbooks.Open(in_WorkbookPath)&#xA;&#xA;    ' Ejecutar la macro&#xA;    excelApp.Run(in_MacroName)&#xA;&#xA;    ' Guardar y cerrar el libro&#xA;    excelWorkbook.Save()&#xA;    excelWorkbook.Close(True)&#xA;&#xA;Catch ex As Exception&#xA;    ' Capturar y relanzar cualquier error para que UiPath lo detecte&#xA;    Throw New Exception(&quot;Error al ejecutar la macro de Excel: &quot; &amp; ex.Message)&#xA;&#x9;outException = ex.Message&#xA;&#xA;Finally&#xA;    ' Limpieza absoluta de los objetos COM para evitar que Excel se quede colgado en administrador de tareas&#xA;    If excelWorkbook IsNot Nothing Then&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(excelWorkbook)&#xA;    End If&#xA;    &#xA;    If excelApp IsNot Nothing Then&#xA;        excelApp.Quit()&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp)&#xA;    End If&#xA;    &#xA;    ' Forzar la recolección de basura por seguridad&#xA;    GC.Collect()&#xA;    GC.WaitForPendingFinalizers()&#xA;End Try" DisplayName="Execute Excel macro via VB.NET code" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                   <ui:InvokeCode.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_FullFinalReportPath" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_MacroName">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MacroName&quot;).ToString.Trim" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="outException">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExceptionMessage" />
-                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_FullFinalReportPath]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_MacroName">[in_Config("MacroName").ToString.Trim]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="outException">[ExceptionMessage]</OutArgument>
                   </ui:InvokeCode.Arguments>
                 </ui:InvokeCode>
               </Sequence>

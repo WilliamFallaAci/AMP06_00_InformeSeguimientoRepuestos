@@ -129,7 +129,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1250,1719" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1190,1719" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -187,6 +187,6 @@
         <InArgument x:TypeArguments="x:String">[Path.Combine(in_Config("FinalFolderReportPath").ToString.Trim,String.Format(in_Config("FinalReportName").ToString.Trim,Now.ToString("dd-MMM-yyyy HH-mm-ss")))]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[out_FullFinalReportPath]" DisplayName="Copy initial input file to timestamped destination" sap:VirtualizedContainerService.HintSize="452,215" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_Config(&quot;InitialInpuPath&quot;).ToString.Trim]" />
+    <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[out_FullFinalReportPath]" DisplayName="Copy initial input file to timestamped destination" sap:VirtualizedContainerService.HintSize="452,215" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[in_Config(&quot;InitialInpuPath&quot;).ToString.Trim]" />
   </Sequence>
 </Activity>
