@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ZXXBWZc53USLeOiEcvCVGA" Reference="oCOFMf_dREKLlM0YaHnBwQ/W6bWI8XDo0iNG6MmUZV_Yw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="0, 0, 419, 87" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='número de pedidos a *? ' role='text' aastate='solo lectura' /&gt;" Guid="b6193e5b-6ec3-4b37-9f92-1af097311465" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Es posible que la aplicación se suspenda o se cancele' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="798119b48c6b5d051b456ad0f92fda3e.png" xmlns="">0Zq4EyJkKIUKYvXMISOH5uw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

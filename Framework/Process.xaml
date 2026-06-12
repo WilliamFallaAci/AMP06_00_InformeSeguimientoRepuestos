@@ -135,6 +135,11 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1190,3029" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="ReportRange">
+        <Variable.Default>
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Empty" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="Disposicion" />
       <Variable x:TypeArguments="x:String" Name="Variante" />
       <Variable x:TypeArguments="sd:DataTable" Name="DataTableRecords" />
@@ -365,7 +370,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Iterate Steps SAP - Invoke Workflow File (Utils\Iterate Steps SAP.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Utils\Iterate Steps SAP.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Iterate Steps SAP - Invoke Workflow File (Utils\Iterate Steps SAP.xaml)" sap:VirtualizedContainerService.HintSize="416,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Utils\Iterate Steps SAP.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_NextBatch">[NextBatch]</OutArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_BatchIntervals">[BatchIntervals]</InArgument>
@@ -449,7 +454,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_DownloadReport - Invoke Workflow File (Apps\SAP\SAP_DownloadReport.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_DownloadReport.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_DownloadReport - Invoke Workflow File (Apps\SAP\SAP_DownloadReport.xaml)" sap:VirtualizedContainerService.HintSize="416,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_DownloadReport.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_Transaction">[in_TransactionItem("Transaction").ToString.Trim]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_Config("SAP_SheetName").ToString.Trim]</InArgument>
@@ -466,6 +471,7 @@
                   </ui:InvokeWorkflowFile>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SaveReportToExcelTemplate - Invoke Workflow File (Utils\SaveReportToExcelTemplate.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Utils\SaveReportToExcelTemplate.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="io_ReportRange">[ReportRange]</InOutArgument>
                       <InArgument x:TypeArguments="x:Boolean" x:Key="in_WriteData" xml:space="preserve">[If(Counter.Equals(0),
 		True,
 		False)]</InArgument>
@@ -584,6 +590,7 @@ False)]</InArgument>
           </If>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SaveReportToExcelTemplate - Invoke Workflow File (Utils\SaveReportToExcelTemplate.xaml)" sap:VirtualizedContainerService.HintSize="469,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Utils\SaveReportToExcelTemplate.xaml">
             <ui:InvokeWorkflowFile.Arguments>
+              <InOutArgument x:TypeArguments="x:String" x:Key="io_ReportRange">[ReportRange]</InOutArgument>
               <InArgument x:TypeArguments="x:Boolean" x:Key="in_WriteData">True</InArgument>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DataTableRecords">[DataTableRecords]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_Transaction" xml:space="preserve">[If(ODMReport,

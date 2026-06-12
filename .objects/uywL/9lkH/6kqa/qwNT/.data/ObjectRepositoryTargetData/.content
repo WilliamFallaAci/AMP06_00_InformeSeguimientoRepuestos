@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ydk4UySgVU6mAFhR7WwCVw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="143, 119, 104, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/btnBUTTON*' text='*No' tooltip='No' type='GuiButton' /&gt;" Guid="59d27d02-aa25-4e27-9ab9-7a6f99c45ef1" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Es posible que la aplicación se suspenda o se cancele' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="bb6cb4da4546a15dc1bf78819a2bd7ac.png" xmlns="">0CrAlSJ04-kSI5mhQCar_4Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
