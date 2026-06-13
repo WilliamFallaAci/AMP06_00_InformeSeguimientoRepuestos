@@ -85,6 +85,13 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Tests\\Apps\\ODM\\TestCase_ODM_Login.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "050724a1-b7b7-436e-9c2f-d8da5cb630c9",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Apps\\SAP\\TestCase_SAP_Login.xaml"
       }
     ],
     "saveToCloud": false
