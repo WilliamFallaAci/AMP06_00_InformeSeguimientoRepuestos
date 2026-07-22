@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="YVYEBduGAkGg8pc_fc-bjA" Reference="oCOFMf_dREKLlM0YaHnBwQ/BDuGcOyTiUacKwaAGPqADA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="49, 161, 77, 19" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap colName='NOMBRECOMPRADOR' id='usr/cntlGRID*/shellcont/shell/shellcont[*]/shell' /&gt;" Guid="62417256-2056-429c-a1dd-97b16af80f93" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='MM: Monitor seguimiento AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="7bc4623c991c7ee582d1a04622208999.png" xmlns="">0he9AoKDXcUGnOMIeV4dKpA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

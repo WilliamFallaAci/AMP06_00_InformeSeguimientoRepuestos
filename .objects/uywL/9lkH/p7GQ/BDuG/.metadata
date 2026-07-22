@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Documento compras",
+  "Type": "Element",
+  "Id": "BDuGcOyTiUacKwaAGPqADA",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/BDuGcOyTiUacKwaAGPqADA",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/p7GQg3Vl70e3dqcHeHVXrg",
+  "Created": "2026-07-22T03:11:23.9157665Z",
+  "Updated": "2026-07-22T03:11:23.9157665Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
