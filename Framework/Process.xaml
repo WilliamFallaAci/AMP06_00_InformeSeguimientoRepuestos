@@ -133,7 +133,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1180,3261" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1180,3318" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[String.Empty]" Name="ReportRange" />
       <Variable x:TypeArguments="x:String" Name="Disposicion" />
@@ -344,7 +344,7 @@
         </Assign>
       </Sequence>
     </Switch>
-    <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;Split(&quot;ZMG002_01;ZMM026;COHV;ZPP029_1&quot;,&quot;;&quot;c).Any(Function (str) str.Trim.Contains(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim))]" DisplayName="Process SAP reports for spare parts tracking based on transaction type." sap:VirtualizedContainerService.HintSize="505,2362" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;Split(&quot;ZMG002_01;ZMM026;COHV;ZPP029_1&quot;,&quot;;&quot;c).Any(Function (str) str.Trim.Contains(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim))]" DisplayName="Process SAP reports for spare parts tracking based on transaction type." sap:VirtualizedContainerService.HintSize="505,2419" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="503,1055" sap2010:WorkflowViewState.IdRef="Sequence_48">
           <sap:WorkflowViewStateService.ViewState>
@@ -408,7 +408,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:String" Name="BatchIntervals" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,816" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,456" sap2010:WorkflowViewState.IdRef="Sequence_28">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="StopBatches" />
                     <Variable x:TypeArguments="x:Boolean" Name="NextBatch" />
@@ -418,7 +418,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Iterate Steps SAP - Invoke Workflow File (Utils\Iterate Steps SAP.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Utils\Iterate Steps SAP.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Iterate Steps SAP - Invoke Workflow File (Utils\Iterate Steps SAP.xaml)" sap:VirtualizedContainerService.HintSize="416,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Utils\Iterate Steps SAP.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_StopBatches">[StopBatches]</OutArgument>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_NextBatch">[NextBatch]</OutArgument>
@@ -533,7 +533,7 @@ False)]</InArgument>
                       </Sequence>
                     </ui:IfElseIfV2.Then>
                   </ui:IfElseIfV2>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_DownloadReport - Invoke Workflow File (Apps\SAP\SAP_DownloadReport.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_DownloadReport.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_DownloadReport - Invoke Workflow File (Apps\SAP\SAP_DownloadReport.xaml)" sap:VirtualizedContainerService.HintSize="416,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_DownloadReport.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_Transaction">[in_TransactionItem("Transaction").ToString.Trim]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_Config("SAP_SheetName").ToString.Trim]</InArgument>
@@ -548,7 +548,7 @@ False)]</InArgument>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SaveReportToExcelTemplate - Invoke Workflow File (Utils\SaveReportToExcelTemplate.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Utils\SaveReportToExcelTemplate.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SaveReportToExcelTemplate - Invoke Workflow File (Utils\SaveReportToExcelTemplate.xaml)" sap:VirtualizedContainerService.HintSize="416,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Utils\SaveReportToExcelTemplate.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InOutArgument x:TypeArguments="x:String" x:Key="io_ReportRange">[ReportRange]</InOutArgument>
                       <InArgument x:TypeArguments="x:Boolean" x:Key="in_WriteData" xml:space="preserve">[If(Counter.Equals(0),
@@ -566,7 +566,7 @@ False)]</InArgument>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_GoBackTransaction - Invoke Workflow File (Apps\SAP\SAP_GoBackTransaction.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_GoBackTransaction.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_GoBackTransaction - Invoke Workflow File (Apps\SAP\SAP_GoBackTransaction.xaml)" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_GoBackTransaction.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:Boolean" x:Key="RequiredBatches" xml:space="preserve">[If(Counter + 1 &lt; in_Config("SAPBatchIntervals").ToString.Split(";"c).Count,
 True,
@@ -593,7 +593,7 @@ False)]</InArgument>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="503,1177" sap2010:WorkflowViewState.IdRef="Sequence_49">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="503,1234" sap2010:WorkflowViewState.IdRef="Sequence_49">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="ODMReport" />
           </Sequence.Variables>
@@ -665,6 +665,77 @@ False)]</InArgument>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
+              </Sequence>
+            </If.Else>
+          </If>
+          <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xD;&#xA;in_TransactionItem(&quot;Transaction&quot;).ToString.Trim.Equals(&quot;LT23&quot;)]" DisplayName="Conditionally add and reorder columns in a DataTable" sap:VirtualizedContainerService.HintSize="469,57" sap2010:WorkflowViewState.IdRef="If_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,279" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:AddDataColumn x:TypeArguments="x:String" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AllowDBNull="True" ColumnName="Column1" DataTable="[DataTableRecords]" DisplayName="Add a data column to a DataTable" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:AddDataColumn>
+                <ui:AddDataColumn x:TypeArguments="x:String" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AllowDBNull="True" ColumnName="Column2" DataTable="[DataTableRecords]" DisplayName="Add a data column to a DataTable" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:AddDataColumn>
+                <InvokeMethod DisplayName="Set a specific data table column's ordinal position" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="SetOrdinal">
+                  <InvokeMethod.TargetObject>
+                    <InArgument x:TypeArguments="sd:DataColumn">[DataTableRecords.Columns("Column1")]</InArgument>
+                  </InvokeMethod.TargetObject>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <Literal x:TypeArguments="x:Int32" Value="1" />
+                  </InArgument>
+                </InvokeMethod>
+                <InvokeMethod DisplayName="Invoke SetOrdinal method on a DataTable column" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetOrdinal">
+                  <InvokeMethod.TargetObject>
+                    <InArgument x:TypeArguments="sd:DataColumn">[DataTableRecords.Columns("Column2")]</InArgument>
+                  </InvokeMethod.TargetObject>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <Literal x:TypeArguments="x:Int32" Value="2" />
+                  </InArgument>
+                </InvokeMethod>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </Sequence>
             </If.Else>
           </If>
