@@ -179,7 +179,7 @@
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[out_TransactionData]" DisplayName="Read SAP transactions from Excel." sap:VirtualizedContainerService.HintSize="452,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="TransaccionesSAP" WorkbookPath="[Path.Combine(System.Environment.CurrentDirectory,&quot;Data\Input\TransaccionesSAP.xlsx&quot;)]" />
-    <If Condition="[String.IsNullOrEmpty(io_FullFinalReportPath) AndAlso&#xD;&#xA;Not File.Exists(io_FullFinalReportPath)]" DisplayName="Checks report path and generates if invalid" sap:VirtualizedContainerService.HintSize="452,670" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[String.IsNullOrEmpty(io_FullFinalReportPath) AndAlso&#xA;Not File.Exists(io_FullFinalReportPath)]" DisplayName="Checks report path and generates if invalid" sap:VirtualizedContainerService.HintSize="452,670" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,450" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
@@ -195,7 +195,7 @@
               <InArgument x:TypeArguments="x:String">[Path.Combine(in_Config("FinalFolderReportPath").ToString.Trim,String.Format(in_Config("FinalReportName").ToString.Trim,Now.ToString("dd-MMM-yyyy HH-mm-ss")))]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[io_FullFinalReportPath]" DisplayName="Copy initial input file to timestamped destination" sap:VirtualizedContainerService.HintSize="416,215" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[in_Config(&quot;InitialInpuPath&quot;).ToString.Trim]" />
+          <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[io_FullFinalReportPath]" DisplayName="Copy initial input file to timestamped destination" sap:VirtualizedContainerService.HintSize="416,215" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[Path.Combine(System.Environment.CurrentDirectory,&quot;Data\Input\SEGUIMIENTO REPUESTOS Plantilla_v2_UiPath.xlsm&quot;)]" />
         </Sequence>
       </If.Then>
       <If.Else>
