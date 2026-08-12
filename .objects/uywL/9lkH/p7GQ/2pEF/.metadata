@@ -1,0 +1,14 @@
+﻿{
+  "Name": "CTextField Layout",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "2pEF_J47rU-3VN2dXyNrgg",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/2pEF_J47rU-3VN2dXyNrgg",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/p7GQg3Vl70e3dqcHeHVXrg",
+  "Created": "2026-08-12T18:40:39.5618838Z",
+  "Updated": "2026-08-12T18:40:39.5618838Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

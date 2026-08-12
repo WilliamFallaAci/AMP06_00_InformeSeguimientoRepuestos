@@ -1,0 +1,14 @@
+﻿{
+  "Name": "ROCKETBOT",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "w1Q6CRAdMEiD1yDRRm_zFw",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/w1Q6CRAdMEiD1yDRRm_zFw",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/p7GQg3Vl70e3dqcHeHVXrg",
+  "Created": "2026-08-12T19:01:06.1119342Z",
+  "Updated": "2026-08-12T19:01:06.1119342Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
