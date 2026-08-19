@@ -133,13 +133,13 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ColumnData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="558,313" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1748,313" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="Validation order:&#xA;1. disposicion&#xA;2. variante&#xA;3. checks&#xA;4. BOM&#xA;5. filtrar pedido&#xA;6. listas sal&#xA;7. vista posicion&#xA;8. ODM" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;disposicion&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="524,253" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+            <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="Validation order:&#xA;1. disposicion&#xA;2. variante&#xA;3. checks&#xA;4. BOM&#xA;5. filtrar pedido&#xA;6. listas sal&#xA;7. vista posicion&#xA;8. ODM" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;disposicion&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1714,253" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
               <ui:IfElseIfV2.Else>
                 <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
@@ -407,13 +407,13 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,639" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NCheckState DisplayName="Check App State 'No existen datos para e…'" EnableIfNotExists="False" Exists="[out_StopBatches]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutShort&quot;))]" Version="V5">
+                                      <uix:NCheckState DisplayName="Check App State 'No existen datos para e…'" EnableIfNotExists="False" Exists="[out_StopBatches]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,531" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutShort&quot;))]" Version="V5">
                                         <uix:NCheckState.IfExists>
                                           <Sequence DisplayName="Click 'Continuar' button in SAP application" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -442,12 +442,12 @@
                                         </uix:NCheckState.Target>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </uix:NCheckState>
-                                      <If Condition="[out_StopBatches]" DisplayName="Check condition and break loop" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_3">
+                                      <If Condition="[out_StopBatches]" DisplayName="Check condition and break loop" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="If_3">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -478,7 +478,7 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,25" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -488,21 +488,22 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <uix:NCheckState DisplayName="Handle SAP application suspension or cancellation warning" EnableIfNotExists="False" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutShort&quot;))]" Version="V5">
+                                <uix:NCheckState DisplayName="Handle SAP application suspension or cancellation warning" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutShort&quot;))]" Version="V5">
                                   <uix:NCheckState.IfExists>
-                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'No' on application suspension dialog" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="417,162" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="SameAsCard" KeyModifiers="[UiPath.UIAutomationNext.Enums.NKeyModifiers.Alt]" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'No' on application suspension dialog" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,162" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="SameAsCard" KeyModifiers="[UiPath.UIAutomationNext.Enums.NKeyModifiers.Alt]" MouseButton="Left" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
                                       <uix:NClick.Target>
                                         <uix:TargetAnchorable ContentHash="ydk4UySgVU6mAFhR7WwCVw" DesignTimeRectangle="143, 119, 104, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/btnBUTTON*' text='*No' tooltip='No' type='GuiButton' /&gt;" Guid="59d27d02-aa25-4e27-9ab9-7a6f99c45ef1" InformativeScreenshot="bb6cb4da4546a15dc1bf78819a2bd7ac.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/qwNT2s3vmUSfRv_VX2Gn-A" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Es posible que la aplicación se suspenda o se cancele' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                                       </uix:NClick.Target>
                                     </uix:NClick>
                                   </uix:NCheckState.IfExists>
                                   <uix:NCheckState.IfNotExists>
-                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log message about no order limit window" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;************************ No hay ventana de limitar pedidos ************************&quot;]" />
                                     </Sequence>
                                   </uix:NCheckState.IfNotExists>
                                   <uix:NCheckState.Target>
@@ -553,148 +554,162 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </uix:NCheckState>
-                                <Pick DisplayName="Automate SAP export of spare parts tracking report to spreadsheet." sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Pick_1">
+                                <Switch x:TypeArguments="x:String" DisplayName="Automate SAP spare parts tracking report processing" Expression="[in_TransactionItem(&quot;Transaction&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                                  <Switch.Default>
+                                    <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Pick DisplayName="Automate SAP export of spare parts tracking report to spreadsheet." sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Pick_1">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <PickBranch DisplayName="PickBranch - with selector" sap:VirtualizedContainerService.HintSize="374,40" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <PickBranch.Trigger>
+                                            <uix:NCheckElement Result="{x:Null}" ContinueOnError="True" DelayBefore="0" DisplayName="Check Element 'Abrir'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="334,111" sap2010:WorkflowViewState.IdRef="NCheckElement_1" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+                                              <uix:NCheckElement.Target>
+                                                <uix:TargetAnchorable ContentHash="u-gug5EeHkSILoYwaODbSA" DesignTimeRectangle="240, 123, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Hoja de cálculo...*' type='GuiButton' /&gt;" Guid="6932f925-05f3-475a-b91a-cc9772213a41" InformativeScreenshot="29edf8665a28dcb7cc184a97a6e57a28.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/5tpozEoby0-ks5H9sjUgGw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                                              </uix:NCheckElement.Target>
+                                            </uix:NCheckElement>
+                                          </PickBranch.Trigger>
+                                          <uix:NCheckState DisplayName="Check App State 'SAPGUI.GridViewCtrl.1'" EnableIfExists="False" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="334,246" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                                            <uix:NCheckState.IfExists>
+                                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Sequence>
+                                            </uix:NCheckState.IfExists>
+                                            <uix:NCheckState.IfNotExists>
+                                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Sequence>
+                                            </uix:NCheckState.IfNotExists>
+                                            <uix:NCheckState.Target>
+                                              <uix:TargetAnchorable DesignTimeRectangle="25, 159, 1756, 835" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Hoja de cálculo...*' type='GuiButton' /&gt;" Guid="752eab01-f75c-4405-8419-9ce6770e1556" InformativeScreenshot="54291ebe0d43358235afb8d14594ae5a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
+                                            </uix:NCheckState.Target>
+                                          </uix:NCheckState>
+                                        </PickBranch>
+                                        <PickBranch DisplayName="PickBranch without selector" sap:VirtualizedContainerService.HintSize="374,40" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <PickBranch.Trigger>
+                                            <uix:NCheckElement Result="{x:Null}" ContinueOnError="True" DelayBefore="0" DisplayName="Check Element 'saplogon.exe Tratamient…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="341,111" sap2010:WorkflowViewState.IdRef="NCheckElement_2" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;)) + 1]" Version="V5">
+                                              <uix:NCheckElement.Target>
+                                                <uix:TargetAnchorable ContentHash="oFZftG3sbkWGiDlfoduZRg" DesignTimeRectangle="324, 124, 40, 24" ElementVisibilityArgument="Interactive" Guid="4332629f-a0a3-45a3-aa7f-f723354e74cb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVFhHzdbNS9twGAfw/CG7evE6dvWyi3/ESg8J1n/Aw84i7qI4kCkrtNSLQ7Qy2GADX0A2nZ48WJwITqLYWrFNTOt86+8rz88m/l7Sl2xS+8AXyjdNng/JITEui+fo5hi51TV0c4zi1ja6Od0PtKxBxOPxoKDf1D1nRI+x+GkUlpUICssaAHXs+g9wY3c0tPPBM/AIdI9mFGAC1L0emYfxZqxh6DhqlScNuznhu0VPQyAhMqv7DUPHUf3xtLnNRweKM/ElxyMCY7GYFG1plNwVowN9lJgAqMz/ItntUXSgOD6w0Uh30luKHHa9pwOdECB1ze4gTd9QP0/YcKD7OXJYdZ3vloBlO6MBqROBKM/KqQNHl1+GIjlQPaeNMG+Z7/4noH/HxBAwDPlsQB8k5u3XFxoyCtA7TsO1U7jMZ8KB54dpDUidBCylowNL6ZZxDj/gdO89XvX2oHI8DeZ947sl4NlBSgNSFwZU0/QRh4BUXKGOo1zlk2Bulu+WgIX9pAakTnyTqBen8YEqrh3g3/xHXNhTAY6CUgY1N8t3S8CT39MakLpm72IfGIajaQUkjIijMGcBNSfLd0tAe2dSA1JHf9YvXE+LaQVk5Tmwi+9glZ9glQ0wbwXMWeQ7VY9xsD2uAam7K89rF6aIb4tmUc9rJ7RT9Ri5X+80IHXVwiyuCsmOhnaqHiM1NQTTHAwK00yAup31YexujnQ0tPPBIwDp69U0TQFo8i9a9TO8c5E999mLAloZYMrQAAAAAElFTkSuQmCC" InformativeScreenshot="21e0e26f73a97f02bb40cd65916bb35d.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/tOi9b_UtlkepusXdf5zUKg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive">
+                                                  <uix:TargetAnchorable.PointOffset>
+                                                    <uix:PointOffset X="11" Y="4" />
+                                                  </uix:TargetAnchorable.PointOffset>
+                                                </uix:TargetAnchorable>
+                                              </uix:NCheckElement.Target>
+                                            </uix:NCheckElement>
+                                          </PickBranch.Trigger>
+                                          <uix:NCheckState DisplayName="Check App State 'SAPGUI.GridViewCtrl.1(1)'" EnableIfExists="False" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="341,246" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                                            <uix:NCheckState.IfExists>
+                                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Sequence>
+                                            </uix:NCheckState.IfExists>
+                                            <uix:NCheckState.IfNotExists>
+                                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Sequence>
+                                            </uix:NCheckState.IfNotExists>
+                                            <uix:NCheckState.Target>
+                                              <uix:TargetAnchorable DesignTimeRectangle="25, 159, 1756, 835" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;ctrl name=' ' role='split button' idx='4' /&gt;&lt;ctrl name='Abrir' role='drop down button' text='Abrir' /&gt;" Guid="b7c6cb60-8419-4714-8ef9-b35f192e84ac" InformativeScreenshot="28e373ddb14830216ea6c766a8cfd02b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
+                                            </uix:NCheckState.Target>
+                                          </uix:NCheckState>
+                                        </PickBranch>
+                                        <PickBranch DisplayName="PickBranch - with selector fichero" sap:VirtualizedContainerService.HintSize="374,40" sap2010:WorkflowViewState.IdRef="PickBranch_4">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <PickBranch.Trigger>
+                                            <uix:NCheckElement Result="{x:Null}" ContinueOnError="True" DelayBefore="0" DisplayName="Check Element fichero" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="334,111" sap2010:WorkflowViewState.IdRef="NCheckElement_4" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;)) + 2]" Version="V5">
+                                              <uix:NCheckElement.Target>
+                                                <uix:TargetAnchorable DesignTimeRectangle="240, 123, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Fichero local...*' type='GuiButton' /&gt;" Guid="868aae17-a8e2-4663-9d9f-e9d2ee04d62e" InformativeScreenshot="118511480c3baae3e9bca5638f6ff3a9.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Visualizar stocks en almacén por material' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                                              </uix:NCheckElement.Target>
+                                            </uix:NCheckElement>
+                                          </PickBranch.Trigger>
+                                          <uix:NCheckState DisplayName="Check SAP grid view control state" EnableIfExists="False" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="334,246" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
+                                            <uix:NCheckState.IfExists>
+                                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Sequence>
+                                            </uix:NCheckState.IfExists>
+                                            <uix:NCheckState.IfNotExists>
+                                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Sequence>
+                                            </uix:NCheckState.IfNotExists>
+                                            <uix:NCheckState.Target>
+                                              <uix:TargetAnchorable DesignTimeRectangle="25, 159, 1791, 835" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/cntlGRID*/shellcont/shell/shellcont[*]/shell' /&gt;" Guid="2f465711-f670-46f4-b453-f8f6afd2ed19" InformativeScreenshot="a385b363a06ac65256c75dc770b64eb7.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Visualizar stocks en almacén por material' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                                            </uix:NCheckState.Target>
+                                          </uix:NCheckState>
+                                        </PickBranch>
+                                      </Pick>
+                                    </Sequence>
+                                  </Switch.Default>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <PickBranch DisplayName="PickBranch - with selector" sap:VirtualizedContainerService.HintSize="374,40" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+                                  <Sequence x:Key="COHV" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,369" sap2010:WorkflowViewState.IdRef="Sequence_50">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <PickBranch.Trigger>
-                                      <uix:NCheckElement Result="{x:Null}" ContinueOnError="True" DelayBefore="0" DisplayName="Check Element 'Abrir'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="334,111" sap2010:WorkflowViewState.IdRef="NCheckElement_1" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
-                                        <uix:NCheckElement.Target>
-                                          <uix:TargetAnchorable ContentHash="u-gug5EeHkSILoYwaODbSA" DesignTimeRectangle="240, 123, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Hoja de cálculo...*' type='GuiButton' /&gt;" Guid="6932f925-05f3-475a-b91a-cc9772213a41" InformativeScreenshot="29edf8665a28dcb7cc184a97a6e57a28.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/5tpozEoby0-ks5H9sjUgGw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-                                        </uix:NCheckElement.Target>
-                                      </uix:NCheckElement>
-                                    </PickBranch.Trigger>
-                                    <uix:NCheckState DisplayName="Check App State 'SAPGUI.GridViewCtrl.1'" EnableIfExists="False" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="334,246" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
-                                      <uix:NCheckState.IfExists>
-                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Sequence>
-                                      </uix:NCheckState.IfExists>
-                                      <uix:NCheckState.IfNotExists>
-                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Sequence>
-                                      </uix:NCheckState.IfNotExists>
-                                      <uix:NCheckState.Target>
-                                        <uix:TargetAnchorable DesignTimeRectangle="25, 159, 1756, 835" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Hoja de cálculo...*' type='GuiButton' /&gt;" Guid="752eab01-f75c-4405-8419-9ce6770e1556" InformativeScreenshot="54291ebe0d43358235afb8d14594ae5a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
-                                      </uix:NCheckState.Target>
-                                    </uix:NCheckState>
-                                  </PickBranch>
-                                  <PickBranch DisplayName="PickBranch without selector" sap:VirtualizedContainerService.HintSize="374,40" sap2010:WorkflowViewState.IdRef="PickBranch_2">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <PickBranch.Trigger>
-                                      <uix:NCheckElement Result="{x:Null}" ContinueOnError="True" DelayBefore="0" DisplayName="Check Element 'saplogon.exe Tratamient…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="341,111" sap2010:WorkflowViewState.IdRef="NCheckElement_2" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;)) + 1]" Version="V5">
-                                        <uix:NCheckElement.Target>
-                                          <uix:TargetAnchorable ContentHash="oFZftG3sbkWGiDlfoduZRg" DesignTimeRectangle="324, 124, 40, 24" ElementVisibilityArgument="Interactive" Guid="4332629f-a0a3-45a3-aa7f-f723354e74cb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVFhHzdbNS9twGAfw/CG7evE6dvWyi3/ESg8J1n/Aw84i7qI4kCkrtNSLQ7Qy2GADX0A2nZ48WJwITqLYWrFNTOt86+8rz88m/l7Sl2xS+8AXyjdNng/JITEui+fo5hi51TV0c4zi1ja6Od0PtKxBxOPxoKDf1D1nRI+x+GkUlpUICssaAHXs+g9wY3c0tPPBM/AIdI9mFGAC1L0emYfxZqxh6DhqlScNuznhu0VPQyAhMqv7DUPHUf3xtLnNRweKM/ElxyMCY7GYFG1plNwVowN9lJgAqMz/ItntUXSgOD6w0Uh30luKHHa9pwOdECB1ze4gTd9QP0/YcKD7OXJYdZ3vloBlO6MBqROBKM/KqQNHl1+GIjlQPaeNMG+Z7/4noH/HxBAwDPlsQB8k5u3XFxoyCtA7TsO1U7jMZ8KB54dpDUidBCylowNL6ZZxDj/gdO89XvX2oHI8DeZ947sl4NlBSgNSFwZU0/QRh4BUXKGOo1zlk2Bulu+WgIX9pAakTnyTqBen8YEqrh3g3/xHXNhTAY6CUgY1N8t3S8CT39MakLpm72IfGIajaQUkjIijMGcBNSfLd0tAe2dSA1JHf9YvXE+LaQVk5Tmwi+9glZ9glQ0wbwXMWeQ7VY9xsD2uAam7K89rF6aIb4tmUc9rJ7RT9Ri5X+80IHXVwiyuCsmOhnaqHiM1NQTTHAwK00yAup31YexujnQ0tPPBIwDp69U0TQFo8i9a9TO8c5E999mLAloZYMrQAAAAAElFTkSuQmCC" InformativeScreenshot="21e0e26f73a97f02bb40cd65916bb35d.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/tOi9b_UtlkepusXdf5zUKg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive">
-                                            <uix:TargetAnchorable.PointOffset>
-                                              <uix:PointOffset X="11" Y="4" />
-                                            </uix:TargetAnchorable.PointOffset>
-                                          </uix:TargetAnchorable>
-                                        </uix:NCheckElement.Target>
-                                      </uix:NCheckElement>
-                                    </PickBranch.Trigger>
-                                    <uix:NCheckState DisplayName="Check App State 'SAPGUI.GridViewCtrl.1(1)'" EnableIfExists="False" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="341,246" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
-                                      <uix:NCheckState.IfExists>
-                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Sequence>
-                                      </uix:NCheckState.IfExists>
-                                      <uix:NCheckState.IfNotExists>
-                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Sequence>
-                                      </uix:NCheckState.IfNotExists>
-                                      <uix:NCheckState.Target>
-                                        <uix:TargetAnchorable DesignTimeRectangle="25, 159, 1756, 835" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;ctrl name=' ' role='split button' idx='4' /&gt;&lt;ctrl name='Abrir' role='drop down button' text='Abrir' /&gt;" Guid="b7c6cb60-8419-4714-8ef9-b35f192e84ac" InformativeScreenshot="28e373ddb14830216ea6c766a8cfd02b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
-                                      </uix:NCheckState.Target>
-                                    </uix:NCheckState>
-                                  </PickBranch>
-                                  <PickBranch DisplayName="PickBranch - with selector fichero" sap:VirtualizedContainerService.HintSize="374,40" sap2010:WorkflowViewState.IdRef="PickBranch_4">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <PickBranch.Trigger>
-                                      <uix:NCheckElement Result="{x:Null}" ContinueOnError="True" DelayBefore="0" DisplayName="Check Element fichero" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="334,111" sap2010:WorkflowViewState.IdRef="NCheckElement_4" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;)) + 2]" Version="V5">
-                                        <uix:NCheckElement.Target>
-                                          <uix:TargetAnchorable DesignTimeRectangle="240, 123, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Fichero local...*' type='GuiButton' /&gt;" Guid="868aae17-a8e2-4663-9d9f-e9d2ee04d62e" InformativeScreenshot="118511480c3baae3e9bca5638f6ff3a9.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Visualizar stocks en almacén por material' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-                                        </uix:NCheckElement.Target>
-                                      </uix:NCheckElement>
-                                    </PickBranch.Trigger>
-                                    <uix:NCheckState DisplayName="Check SAP grid view control state" EnableIfExists="False" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="334,246" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V5">
-                                      <uix:NCheckState.IfExists>
-                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_26">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Sequence>
-                                      </uix:NCheckState.IfExists>
-                                      <uix:NCheckState.IfNotExists>
-                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_27">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Sequence>
-                                      </uix:NCheckState.IfNotExists>
-                                      <uix:NCheckState.Target>
-                                        <uix:TargetAnchorable DesignTimeRectangle="25, 159, 1791, 835" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/cntlGRID*/shellcont/shell/shellcont[*]/shell' /&gt;" Guid="2f465711-f670-46f4-b453-f8f6afd2ed19" InformativeScreenshot="a385b363a06ac65256c75dc770b64eb7.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Visualizar stocks en almacén por material' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-                                      </uix:NCheckState.Target>
-                                    </uix:NCheckState>
-                                  </PickBranch>
-                                  <PickBranch DisplayName="PickBranch without selector" sap:VirtualizedContainerService.HintSize="374,40" sap2010:WorkflowViewState.IdRef="PickBranch_3">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <PickBranch.Trigger>
-                                      <uix:NCheckElement Result="{x:Null}" ContinueOnError="True" DelayBefore="0" DisplayName="Check for existence of SAP Logon element" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="336,111" sap2010:WorkflowViewState.IdRef="NCheckElement_3" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;)) + 3]" Version="V5">
-                                        <uix:NCheckElement.Target>
-                                          <uix:TargetAnchorable ContentHash="uKNh2u4NCU-niprRkVHF6Q" DesignTimeRectangle="51, 129, 24, 17" ElementVisibilityArgument="Interactive" Guid="b745df00-2e39-4776-9a24-9ddbf9beb6ad" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAARCAYAAADHeGwwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEjSURBVDhPrY3NSsNAGEXnfdUn8AF0VVxYEAoW3dSFKN25sDsRcdWFglKokkIbIpqGGGibZK7cQMY4P7TqLM7m+y7niMuzPcjlC7AKvEAXne2DXUT3Q4hkcgq5mgLlpxfoonNne+s7gHwGZDd+yGeWQBGZwwZCCOPmpIjMgMwn5lALbBqhywwsn4H02kkdqCKWfxO6fgTmDGS3QNJ30gxUEcumhi46VSAOTiDTARD3nOiBKmLZEbro/HfAFfEW0DfOwPtrFzK9Aj66Tgy5ZVNDF50q8DY+hkwujKEroP906KJTBcJRB+WGAf1ugy46VWD6dIRyvj6g31zQRacKBA+HawO/gS46VWA8bKGIz43hX6GLThV4vNtHFvawCDteoIvOOvAFuwdMLK71PLoAAAAASUVORK5CYII=" InformativeScreenshot="3bff15c7539acae7277172bcdaeea60e.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/5n9Jz--oK0OWe7KZqzvWpA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="None" />
-                                        </uix:NCheckElement.Target>
-                                      </uix:NCheckElement>
-                                    </PickBranch.Trigger>
-                                    <ui:LogMessage DisplayName="Log a specific message &quot;Funciones ALV&quot;" sap:VirtualizedContainerService.HintSize="336,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[&quot;Funciones ALV&quot;]" />
-                                  </PickBranch>
-                                </Pick>
+                                    <uix:NCheckElement Result="{x:Null}" ContinueOnError="True" DelayBefore="0" DisplayName="Check for existence of SAP Logon element" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,143" sap2010:WorkflowViewState.IdRef="NCheckElement_3" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+                                      <uix:NCheckElement.Target>
+                                        <uix:TargetAnchorable ContentHash="uKNh2u4NCU-niprRkVHF6Q" DesignTimeRectangle="51, 129, 24, 17" ElementVisibilityArgument="Interactive" Guid="b745df00-2e39-4776-9a24-9ddbf9beb6ad" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAARCAYAAADHeGwwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEjSURBVDhPrY3NSsNAGEXnfdUn8AF0VVxYEAoW3dSFKN25sDsRcdWFglKokkIbIpqGGGibZK7cQMY4P7TqLM7m+y7niMuzPcjlC7AKvEAXne2DXUT3Q4hkcgq5mgLlpxfoonNne+s7gHwGZDd+yGeWQBGZwwZCCOPmpIjMgMwn5lALbBqhywwsn4H02kkdqCKWfxO6fgTmDGS3QNJ30gxUEcumhi46VSAOTiDTARD3nOiBKmLZEbro/HfAFfEW0DfOwPtrFzK9Aj66Tgy5ZVNDF50q8DY+hkwujKEroP906KJTBcJRB+WGAf1ugy46VWD6dIRyvj6g31zQRacKBA+HawO/gS46VWA8bKGIz43hX6GLThV4vNtHFvawCDteoIvOOvAFuwdMLK71PLoAAAAASUVORK5CYII=" InformativeScreenshot="3bff15c7539acae7277172bcdaeea60e.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/5n9Jz--oK0OWe7KZqzvWpA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="None" />
+                                      </uix:NCheckElement.Target>
+                                    </uix:NCheckElement>
+                                    <ui:LogMessage DisplayName="Log a specific message &quot;Funciones ALV&quot;" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[&quot;Funciones ALV&quot;]" />
+                                  </Sequence>
+                                </Switch>
                               </Sequence>
                             </ActivityAction>
                           </uix:NApplicationCard.Body>
