@@ -121,25 +121,25 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Iterate_Steps_SAP" sap:VirtualizedContainerService.HintSize="1163,6753" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Iterate_Steps_SAP" sap:VirtualizedContainerService.HintSize="1163,6810" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each ColumnData" sap:VirtualizedContainerService.HintSize="550,6730" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_TransactionItem.ItemArray]">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each ColumnData" sap:VirtualizedContainerService.HintSize="550,6787" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_TransactionItem.ItemArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ColumnData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1748,313" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="548,6665" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="Validation order:&#xA;1. disposicion&#xA;2. variante&#xA;3. checks&#xA;4. BOM&#xA;5. filtrar pedido&#xA;6. listas sal&#xA;7. vista posicion&#xA;8. ODM" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;disposicion&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1714,253" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+            <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="Validation order:&#xA;1. disposicion&#xA;2. variante&#xA;3. checks&#xA;4. BOM&#xA;5. filtrar pedido&#xA;6. listas sal&#xA;7. vista posicion&#xA;8. ODM" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;disposicion&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="514,6605" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
               <ui:IfElseIfV2.Else>
                 <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
@@ -263,7 +263,7 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not String.IsNullOrEmpty(ColumnData.ToString.Trim) AndAlso&#xA;ColumnData.ToString.ToLower.Contains(&quot;ejecutar&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_4">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,1299" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,1356" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -305,13 +305,13 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="SAP ejecutar" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="478,672" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="SAP ejecutar" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="478,729" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutMedium&quot;))]" Version="V2">
                           <uix:NApplicationCard.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="450,530" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <Sequence DisplayName="Do - Easy Access" sap:VirtualizedContainerService.HintSize="450,587" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -407,13 +407,13 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,639" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NCheckState DisplayName="Check App State 'No existen datos para e…'" EnableIfNotExists="False" Exists="[out_StopBatches]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,531" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutShort&quot;))]" Version="V5">
+                                      <uix:NCheckState DisplayName="Check App State 'No existen datos para e…'" EnableIfNotExists="False" Exists="[out_StopBatches]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutShort&quot;))]" Version="V5">
                                         <uix:NCheckState.IfExists>
                                           <Sequence DisplayName="Click 'Continuar' button in SAP application" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -442,12 +442,12 @@
                                         </uix:NCheckState.Target>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </uix:NCheckState>
-                                      <If Condition="[out_StopBatches]" DisplayName="Check condition and break loop" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="If_3">
+                                      <If Condition="[out_StopBatches]" DisplayName="Check condition and break loop" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_3">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -478,7 +478,64 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,25" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <If Condition="[in_TransactionItem(&quot;Transaction&quot;).ToString.Trim.Equals(&quot;COHV&quot;)]" DisplayName="Check report tracking spare parts status for COHV" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="If_4">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If.Then>
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,445" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NCheckState DisplayName="Check for &quot;No existen datos&quot; in SAP and break loop" EnableIfNotExists="False" Exists="[out_StopBatches]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,385" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="3ff037db-8a25-4589-bb10-57ded4101b43" Timeout="[CDbl(in_Config(&quot;SAP_TimeoutShort&quot;))]" Version="V5">
+                                        <uix:NCheckState.IfExists>
+                                          <Sequence DisplayName="Immediately exit the current loop" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:Break DisplayName="Break the current loop" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Break_3" />
+                                          </Sequence>
+                                        </uix:NCheckState.IfExists>
+                                        <uix:NCheckState.IfNotExists>
+                                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Sequence>
+                                        </uix:NCheckState.IfNotExists>
+                                        <uix:NCheckState.Target>
+                                          <uix:TargetAnchorable DesignTimeRectangle="22, 1011, 1892, 29" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='sbar' text='No existen datos para la selección*' type='GuiStatusbar' /&gt;" Guid="0fafd8e2-9481-4047-9be9-003258d4c6c7" InformativeScreenshot="0e45007875649225ce7a4468747a14c0.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                                        </uix:NCheckState.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NCheckState>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,25" sap2010:WorkflowViewState.IdRef="Sequence_52">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -507,7 +564,7 @@
                                     </Sequence>
                                   </uix:NCheckState.IfNotExists>
                                   <uix:NCheckState.Target>
-                                    <uix:TargetAnchorable ContentHash="0HjHqyJEcEWcZL-YNshP7Q" DesignTimeRectangle="0, 0, 419, 87" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='número de pedidos a *? ' role='text' aastate='solo lectura' /&gt;" Guid="b6193e5b-6ec3-4b37-9f92-1af097311465" InformativeScreenshot="798119b48c6b5d051b456ad0f92fda3e.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/W6bWI8XDo0iNG6MmUZV_Yw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Es posible que la aplicación se suspenda o se cancele' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                                    <uix:TargetAnchorable ContentHash="0HjHqyJEcEWcZL-YNshP7Q" DesignTimeRectangle="0, 0, 419, 87" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='*número de pedidos a *? ' role='text' /&gt;" Guid="b6193e5b-6ec3-4b37-9f92-1af097311465" InformativeScreenshot="798119b48c6b5d051b456ad0f92fda3e.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/W6bWI8XDo0iNG6MmUZV_Yw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Es posible que la aplicación se suspenda o se cancele' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                                   </uix:NCheckState.Target>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">

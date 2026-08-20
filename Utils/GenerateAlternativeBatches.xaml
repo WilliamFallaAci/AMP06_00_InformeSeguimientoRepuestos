@@ -1,5 +1,7 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GenerateAlternativeBatches" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GenerateAlternativeBatches" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
     <x:Property Name="out_BatchIntervals" Type="OutArgument(x:String)" />
     <x:Property Name="in_BatchIntervals" Type="InArgument(x:String)" />
   </x:Members>
@@ -90,10 +92,12 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GenerateAlternativeBatches" sap:VirtualizedContainerService.HintSize="1180,1221" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GenerateAlternativeBatches" sap:VirtualizedContainerService.HintSize="1163,1396" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="IntervalToSplit" />
       <Variable x:TypeArguments="x:String" Name="BatchIntervalAux" />
       <Variable x:TypeArguments="x:String" Name="IntervalBatches" />
       <Variable x:TypeArguments="x:String" Name="EndBatch" />
@@ -104,6 +108,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="550,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[IntervalToSplit]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[CInt(in_Config("SplitBatchInterval"+in_TransactionItem("Transaction").ToString.Trim))]</InArgument>
+      </Assign.Value>
+    </Assign>
     <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Filter batch intervals based on a numeric condition" sap:VirtualizedContainerService.HintSize="550,835" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_BatchIntervals.Split(&quot;;&quot;c)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
@@ -116,7 +128,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CInt(Split(CurrentInterval,&quot;-&quot;)(1)) &lt; 35002000]" DisplayName="Checks an interval value and either appends it or breaks." sap:VirtualizedContainerService.HintSize="514,644" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[CInt(Split(CurrentInterval,&quot;-&quot;)(1)) &lt; IntervalToSplit]" DisplayName="Checks an interval value and either appends it or breaks." sap:VirtualizedContainerService.HintSize="514,644" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,226" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -173,17 +185,11 @@ BatchIntervalAux+";"+CurrentInterval)]</InArgument>
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim inicio As Int32 = CInt(in_StartBatch)&#xD;&#xA;Dim finMaximo As Int32 = CInt(in_EndBatch)&#xD;&#xA;Dim tamanoIntervalo As Int32 = 750&#xD;&#xA;&#xD;&#xA;Dim actual As Int32 = inicio&#xD;&#xA;Dim sb As New System.Text.StringBuilder()&#xD;&#xA;Dim esPrimero As Boolean = True&#xD;&#xA;&#xD;&#xA;While actual &lt;= finMaximo&#xD;&#xA;    Dim limiteSuperior As Int32 = actual + tamanoIntervalo - 1&#xD;&#xA;    If limiteSuperior &gt; finMaximo Then&#xD;&#xA;        limiteSuperior = finMaximo&#xD;&#xA;    End If&#xD;&#xA;    &#xD;&#xA;    ' Añadir punto y coma antes de cada elemento, excepto el primero&#xD;&#xA;    If Not esPrimero Then&#xD;&#xA;        sb.Append(&quot;;&quot;)&#xD;&#xA;    Else&#xD;&#xA;        esPrimero = False&#xD;&#xA;    End If&#xD;&#xA;    &#xD;&#xA;    sb.Append(actual.ToString() &amp; &quot;-&quot; &amp; limiteSuperior.ToString())&#xD;&#xA;    actual += tamanoIntervalo&#xD;&#xA;End While&#xD;&#xA;&#xD;&#xA;' Guarda el archivo directamente en la carpeta del proyecto de UiPath&#xD;&#xA;out_IntervalBatches = sb.ToString()" DisplayName="Calculate batch intervals using VB.Net code" sap:VirtualizedContainerService.HintSize="550,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim inicio As Int32 = CInt(in_StartBatch)&#xA;Dim finMaximo As Int32 = CInt(in_EndBatch)&#xA;Dim tamanoIntervalo As Int32 = 750&#xA;&#xA;Dim actual As Int32 = inicio&#xA;Dim sb As New System.Text.StringBuilder()&#xA;Dim esPrimero As Boolean = True&#xA;&#xA;While actual &lt;= finMaximo&#xA;    Dim limiteSuperior As Int32 = actual + tamanoIntervalo - 1&#xA;    If limiteSuperior &gt; finMaximo Then&#xA;        limiteSuperior = finMaximo&#xA;    End If&#xA;    &#xA;    ' Añadir punto y coma antes de cada elemento, excepto el primero&#xA;    If Not esPrimero Then&#xA;        sb.Append(&quot;;&quot;)&#xA;    Else&#xA;        esPrimero = False&#xA;    End If&#xA;    &#xA;    sb.Append(actual.ToString() &amp; &quot;-&quot; &amp; limiteSuperior.ToString())&#xA;    actual += tamanoIntervalo&#xA;End While&#xA;&#xA;' Guarda el archivo directamente en la carpeta del proyecto de UiPath&#xA;out_IntervalBatches = sb.ToString()" DisplayName="Calculate batch intervals using VB.Net code" sap:VirtualizedContainerService.HintSize="550,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_StartBatch">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="StartBatch" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_EndBatch">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="EndBatch" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_IntervalBatches">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="IntervalBatches" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_StartBatch">[StartBatch]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_EndBatch">[EndBatch]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_IntervalBatches">[IntervalBatches]</OutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
     <Assign sap:VirtualizedContainerService.HintSize="550,166" sap2010:WorkflowViewState.IdRef="Assign_1">
