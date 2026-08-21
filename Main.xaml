@@ -116,7 +116,7 @@
         <av:Point x:Key="ShapeLocation">45,135</av:Point>
         <x:Double x:Key="StateContainerWidth">974</x:Double>
         <x:Double x:Key="StateContainerHeight">722</x:Double>
-        <av:PointCollection x:Key="ConnectorLocation">95,160 125,160 125,128 164,128</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">95,160 125,160 125,128.25 164,128.25</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
@@ -261,7 +261,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="534,3394" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="240,192" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="488,2896" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -292,6 +292,7 @@
                           <InArgument x:TypeArguments="x:String" x:Key="in_FullFinalReportPath">[FullFinalReportPath]</InArgument>
                           <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[TransactionItem]</InArgument>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="io_ReportRange">[ReportRange]</InOutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <TryCatch DisplayName="Try Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="452,591" sap2010:WorkflowViewState.IdRef="TryCatch_10">
@@ -991,7 +992,7 @@
         <Transition sap2010:Annotation.AnnotationText="This is a simple mecanism to stop the process.&#xA;In reallife scenario you can stop the process when there is no more data to process or on a schedule." DisplayName="No Data" sap:VirtualizedContainerService.HintSize="448.8,583.2" sap2010:WorkflowViewState.IdRef="Transition_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">659.5,215 659.5,185 660,185 660,145</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">659.5,215 659.5,184.99999999999997 660,184.99999999999997 660,145</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">38</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">39</x:Int32>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -1012,6 +1013,7 @@
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
     <StateMachine.Variables>
+      <Variable x:TypeArguments="x:String" Default="[String.Empty]" Name="ReportRange" />
       <Variable x:TypeArguments="x:String" Default="[String.Empty]" Name="FullFinalReportPath" />
       <Variable x:TypeArguments="sd:DataRow" sap2010:Annotation.AnnotationText="Transaction item to be processed. The type of this variable can be changed to match the transaction type in the process. For example, when processing data from a spreadsheet that is read into a DataTable, this type can be changed to DataRow. " Name="TransactionItem" />
       <Variable x:TypeArguments="s:Exception" sap2010:Annotation.AnnotationText="Used during transitions between states to represent exceptions other than business exceptions." Name="SystemException" />
@@ -1022,11 +1024,7 @@
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Transaction ID used for information and logging purposes. Ideally, the ID should be unique for each transaction. " Name="TransactionID" />
       <Variable x:TypeArguments="sd:DataTable" sap2010:Annotation.AnnotationText="Used in case transactions are stored in a DataTable, for example, after being retrieved from a spreadsheet." Name="TransactionData" />
       <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="Used to control the number of consecutive system exceptions." Default="0" Name="ConsecutiveSystemExceptions" />
-      <Variable x:TypeArguments="x:String" Name="BatchIntervalsAdvance">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Empty" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[String.Empty]" Name="BatchIntervalsAdvance" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

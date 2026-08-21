@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="yJKD40FRYkmHmJcxVtA_yA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="70, 54, 300, 41" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd title='PSA: Mensaje de sistema SAP:  Error interno de programa control *' aaname='PSA: Mensaje de sistema SAP:  Error interno de programa control de tareas.Sesión ABAP finalizada (location IDSSRVPSAP01_PSA_00-W62)' aastate='solo lectura' /&gt;" Guid="60744ff1-5fd8-49dc-a5c5-6cbb87334ea7" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='SAP GUI for Windows*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="721f3171131930b3e3cfcb541eebfb9f.png" xmlns="">0haWq3f-sSE68PmrJrSsZhw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

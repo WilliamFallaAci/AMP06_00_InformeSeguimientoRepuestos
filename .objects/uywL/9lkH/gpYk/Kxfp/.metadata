@@ -1,0 +1,14 @@
+﻿{
+  "Name": "PSA Mensaje de sistema…",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "KxfpLIBQgkmPhNEfy-a8rA",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/KxfpLIBQgkmPhNEfy-a8rA",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/gpYkLUtigE-UT4tioq4VBQ",
+  "Created": "2026-08-20T20:33:39.4186146Z",
+  "Updated": "2026-08-20T20:33:39.4186146Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
