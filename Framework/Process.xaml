@@ -185,7 +185,7 @@
     </If>
     <Switch x:TypeArguments="x:String" DisplayName="Switches on transaction item, assigns variant from configuration" Expression="[in_TransactionItem(&quot;Transaction&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="505,57" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Switch.Default>
-        <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -200,7 +200,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence x:Key="ZMG002_01" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_16">
+      <Sequence x:Key="ZMG002_01" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_16">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -216,7 +216,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="ZMM026" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <Sequence x:Key="ZMM026" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_17">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -232,7 +232,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="LX02" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_18">
+      <Sequence x:Key="LX02" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_18">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -248,7 +248,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="COHV" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence x:Key="COHV" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -264,7 +264,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="ZCO017" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <Sequence x:Key="ZCO017" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_20">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -280,7 +280,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="MB52" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_21">
+      <Sequence x:Key="MB52" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_21">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -296,7 +296,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="ZSD053" DisplayName="Body" sap:VirtualizedContainerService.HintSize="453,25" sap2010:WorkflowViewState.IdRef="Sequence_22">
+      <Sequence x:Key="ZSD053" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_22">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -312,7 +312,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="LT23" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_23">
+      <Sequence x:Key="LT23" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_23">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -328,21 +328,35 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="VL06O" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_24">
+      <Sequence x:Key="VL06O" DisplayName="Body" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_24">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Assign SAPVariantes to Variante" sap:VirtualizedContainerService.HintSize="419,166" sap2010:WorkflowViewState.IdRef="Assign_9">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:String">[Variante]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[Split(in_Config("SAPVariantes").ToString,"|")(0).Trim]</InArgument>
-          </Assign.Value>
-        </Assign>
+        <ui:MultipleAssign DisplayName="Initialize 'Variante' and 'Disposicion' variables" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+          <ui:MultipleAssign.AssignOperations>
+            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                <ui:AssignOperation.To>
+                  <OutArgument x:TypeArguments="x:String">[Variante]</OutArgument>
+                </ui:AssignOperation.To>
+                <ui:AssignOperation.Value>
+                  <InArgument x:TypeArguments="x:String">[Split(in_Config("SAPVariantes").ToString,"|")(0).Trim]</InArgument>
+                </ui:AssignOperation.Value>
+              </ui:AssignOperation>
+              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                <ui:AssignOperation.To>
+                  <OutArgument x:TypeArguments="x:String">[Disposicion]</OutArgument>
+                </ui:AssignOperation.To>
+                <ui:AssignOperation.Value>
+                  <InArgument x:TypeArguments="x:String">[Split(in_Config("SAPDisposicion").ToString,"|")(0).Trim]</InArgument>
+                </ui:AssignOperation.Value>
+              </ui:AssignOperation>
+            </scg:List>
+          </ui:MultipleAssign.AssignOperations>
+        </ui:MultipleAssign>
       </Sequence>
     </Switch>
     <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;Split(&quot;ZMG002_01;ZMM026;COHV;ZPP029_1&quot;,&quot;;&quot;c).Any(Function (str) str.Trim.Contains(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim))]" DisplayName="Process SAP reports for spare parts tracking based on transaction type." sap:VirtualizedContainerService.HintSize="505,2717" sap2010:WorkflowViewState.IdRef="If_2">
