@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome PORTAL AMPO(1)",
+  "Type": "App",
+  "Id": "ISqJazHHwk2IDfrm4V-oTA",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/ISqJazHHwk2IDfrm4V-oTA",
+  "Created": "2026-09-18T01:11:15.2407173Z",
+  "Updated": "2026-09-18T01:11:15.2407173Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

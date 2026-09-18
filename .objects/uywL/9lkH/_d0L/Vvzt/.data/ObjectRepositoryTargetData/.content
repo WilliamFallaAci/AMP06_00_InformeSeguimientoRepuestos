@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="CZ-FTR2JW0ef0exIrL_DqQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="448, 125, 40, 24" ElementVisibilityArgument="Interactive" Guid="1a77bf9f-690d-4e0c-ab96-0744b6fe1514" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJhSURBVFhH1ZbbbhJRFIb7Cl75BN5478N4hWYmpX0AH8CYRm+qNh6owUDQGEy0kEaMNqmtEtp6qKaJQyySIDKUQ4kD0wEsBfZv1rIxzsYyECjFiy+z1p8J/3exyeyJ+GoU48zE7vstjDP/n6DL5YKqTp0o5HCkoKpOIvz4KkTjG3CQGRrhj587MhnqpG5VdXcTdMPUH0Ac5IB2dSB2Gk3s1C2eHy6/+Z3VLc7ldwnqpO6eBC9cVAYCtRhKP0vYLKZ59jwJ85N2ymnuoJnvT7ClnbdBWWA1aYOyR5vTNv4lOHvf7yzY2j05wZm5W46CoqmPUNBaRrZWxEYuxfPl2Rv8pJ1ymmVEI9GbYGUYZ9BcxFcrh9e5JM8saC7yTjnNMqK2zt2OguVMgEvMO6dtUKY9C9qgrB07ZYMFy0F8MnUs6ds8s2A5yDvlNMsI6xV3j0wwZuiISIK0Uy7Lja2glfXDzPhQzwd6F/yR9necqX6B4UfMSCOix3lmQcPPO+U0V9J3UUzM4dzZM6hm5yGsl9ztKFhK+bjEikZtULag3bNB2c1I3EYvgiRXOJQj9vNeCDPE3Y6ChaT3WAVX8gnsZTx/5AgYAbTNEHc7Cua2549VcM34bpMjRGUB7UqIux0FM9rtjjPVL7Igf0kOBT+UdYi9JYjqGkR1A8JagaiEWZC6HQVTW9fRKj/lHxyEvwX5Wyz9SWSok7odBeNvr6FWCGK/4B2I5/kktOwLnuk2Q0/aKZffJaiTursKKoobPs8laOtX8OXdzNCg+6CcyVAndSvKVDdBhW/V8jV8dEyyw5GC48Yv7uHPbYoyeqsAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratamiento en masa: Cabeceras de orden' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="5dc6f2bf0b542c767f947564c79cd7b0.png" xmlns="">01E2UdCSqV0295vIwQN6ZZQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

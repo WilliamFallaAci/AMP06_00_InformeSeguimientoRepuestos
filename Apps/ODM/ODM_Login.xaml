@@ -106,7 +106,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ODM_Login" sap:VirtualizedContainerService.HintSize="1250,1879" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ODM_Login" sap:VirtualizedContainerService.HintSize="1163,1657" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="User" />
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
@@ -118,50 +118,63 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia login en ODM&quot;]" />
     <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;ODM_Creds&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Retrieve robot credential from asset" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="452,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[User]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome PORTAL AMPO" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1339" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Always]" ScopeGuid="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome PORTAL AMPO" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1117" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Always]" ScopeGuid="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1188" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,914" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Enter username into the login form" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Text="[User]" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Enter username into the login form" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="435,95" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Text="[User]" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="ed40604d-70e8-400a-b913-828f135136f6" ContentHash="M3v9Tgasv0qLFIBf8DTF2w" DesignTimeRectangle="1546, 238, 365, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' name='user' parentid='loginform' type='text' /&gt;" Guid="9efb283a-d0e7-43e5-aa44-4e260a5c34eb" InformativeScreenshot="07e27061b214c946f7d69140de21285b.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/L6rHNDz68k-Pdcy1tc8DpQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Enter password into web field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" SecureText="[Password]" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Enter password into web field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="435,95" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" SecureText="[Password]" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="ed40604d-70e8-400a-b913-828f135136f6" DesignTimeRectangle="1546, 301, 324, 38" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' name='pass' parentid='loginform' placeholder='Contraseña' /&gt;" Guid="ee386f50-c8ba-4989-9dde-8d00049060d0" InformativeScreenshot="46f65e0a3a67ae0781ca1a7215d2b762.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the 'Acceder' button on a web page" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the 'Acceder' button on a web page" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="435,87" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Timeout="[CDbl(in_Config(&quot;ODM_TimeoutShort&quot;))]" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="ed40604d-70e8-400a-b913-828f135136f6" ContentHash="nxELRrnCv0KgH_8ERsR9Ng" DesignTimeRectangle="1546, 389, 365, 49" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' innertext=' Acceder ' parentid='loginform' visibleinnertext='ACCEDER ' /&gt;" Guid="38d27d48-19ce-40fc-9abf-8cd11608193e" InformativeScreenshot="0dcb3361230a6e8a6ee377c319771fc4.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/O0vfw7ePx0mGaj-O2AJerA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check ODM login state and log success" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,442" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="7a7a0aa1-82dc-4a5c-929e-9c08f9868590" Version="V5">
-              <uix:NCheckState.IfExists>
-                <ui:LogMessage DisplayName="Log message for successful ODM login" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Inicio de sesión en ODM exitoso&quot;]" />
-              </uix:NCheckState.IfExists>
-              <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </uix:NCheckState.IfNotExists>
-              <uix:NCheckState.Target>
-                <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="8967bc32-2b4c-4c44-98ae-abe9f5943875" ContentHash="-paWYKLxzk6yEEeLCeEnRQ" DesignTimeRectangle="8, 347, 240, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='sidebarnav' tag='A' innertext='Inicio  ' parentclass='active ng-star-inserted' visibleinnertext='Inicio' /&gt;" Guid="32570a7d-c9e8-4acc-8f90-798316539947" InformativeScreenshot="e3df269e4e02f864a0c7170950cb9a2b.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/pTtErKwTP0u-VrTjYDlxsQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-              </uix:NCheckState.Target>
-            </uix:NCheckState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ODM_ValidateActiveSession - Invoke Workflow File (Apps\ODM\ODM_ValidateActiveSession.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\ODM\ODM_ValidateActiveSession.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SessionActive" />
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

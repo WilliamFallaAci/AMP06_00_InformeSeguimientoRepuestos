@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="iQpPyNKc9k-kKKO_g6oeng" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="25a3c54d-6e7b-4f1a-9603-575cda80f271" DesignTimeRectangle="3, 25, 200, 22" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Contexto' role='popup menu' /&gt;&lt;ctrl name='Seleccionar disposición*' role='menu item' text='Seleccionar disposición*' /&gt;" Guid="58b873da-fa1b-4f28-8aab-d4560724a21e" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="c7d66993153b838b6d34eb80111e535c.png" xmlns="">0lWYp5ggHjkGutJe5n1O6jQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

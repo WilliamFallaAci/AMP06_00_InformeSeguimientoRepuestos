@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="io_SheetsCompleted" Type="InOutArgument(scg:Dictionary(x:String, x:Boolean))" />
     <x:Property Name="io_BatchIntervalsAdvance" Type="InOutArgument(x:String)" />
     <x:Property Name="in_FullFinalReportPath" Type="InArgument(x:String)" />
     <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
@@ -135,12 +136,13 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1163,3787" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1163,5012" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Disposicion" />
       <Variable x:TypeArguments="x:String" Name="Variante" />
       <Variable x:TypeArguments="sd:DataTable" Name="DataTableRecords" />
       <Variable x:TypeArguments="x:Int32" Name="Counter" />
+      <Variable x:TypeArguments="x:Boolean" Name="ODMReport" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -148,8 +150,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="505,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim)]" DisplayName="Checks transaction item and invokes SAP workflow" sap:VirtualizedContainerService.HintSize="505,567" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="524,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim)]" DisplayName="Checks transaction item and invokes SAP workflow" sap:VirtualizedContainerService.HintSize="524,567" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,403" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -183,7 +185,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <Switch x:TypeArguments="x:String" DisplayName="Switches on transaction item, assigns variant from configuration" Expression="[in_TransactionItem(&quot;Transaction&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="505,57" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" DisplayName="Switches on transaction item, assigns variant from configuration" Expression="[in_TransactionItem(&quot;Transaction&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="524,57" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Switch.Default>
         <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="466,25" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
@@ -359,15 +361,15 @@
         </ui:MultipleAssign>
       </Sequence>
     </Switch>
-    <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;Split(&quot;ZMG002_01;ZMM026;COHV;ZPP029_1&quot;,&quot;;&quot;c).Any(Function (str) str.Trim.Contains(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim))]" DisplayName="Process SAP reports for spare parts tracking based on transaction type." sap:VirtualizedContainerService.HintSize="505,2717" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;Split(&quot;ZMG002_01;ZMM026;COHV;ZPP029_1&quot;,&quot;;&quot;c).Any(Function (str) str.Trim.Contains(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim))]" DisplayName="Process SAP reports for spare parts tracking based on transaction type." sap:VirtualizedContainerService.HintSize="524,3942" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="503,1344" sap2010:WorkflowViewState.IdRef="Sequence_48">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="522,1344" sap2010:WorkflowViewState.IdRef="Sequence_48">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim.Equals(&quot;ZMM026&quot;) OrElse&#xA;in_TransactionItem(&quot;Transaction&quot;).ToString.Trim.Equals(&quot;COHV&quot;) OrElse&#xA;in_TransactionItem(&quot;Transaction&quot;).ToString.Trim.Equals(&quot;ZPP029_1&quot;))]" DisplayName="Process &quot;ZMM026&quot; transaction to generate SAP batch intervals." sap:VirtualizedContainerService.HintSize="469,57" sap2010:WorkflowViewState.IdRef="If_6">
+          <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim.Equals(&quot;ZMM026&quot;) OrElse&#xA;in_TransactionItem(&quot;Transaction&quot;).ToString.Trim.Equals(&quot;COHV&quot;) OrElse&#xA;in_TransactionItem(&quot;Transaction&quot;).ToString.Trim.Equals(&quot;ZPP029_1&quot;))]" DisplayName="Process &quot;ZMM026&quot; transaction to generate SAP batch intervals." sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="If_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -419,7 +421,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[Counter]" DisplayName="For Each batch intervals" sap:VirtualizedContainerService.HintSize="469,1227" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_Config(&quot;SAPBatchIntervals&quot;).ToString.Split(&quot;;&quot;c)]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[Counter]" DisplayName="For Each batch intervals" sap:VirtualizedContainerService.HintSize="488,1227" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_Config(&quot;SAPBatchIntervals&quot;).ToString.Split(&quot;;&quot;c)]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
@@ -681,16 +683,13 @@ False)]</InArgument>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="503,1234" sap2010:WorkflowViewState.IdRef="Sequence_49">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="x:Boolean" Name="ODMReport" />
-          </Sequence.Variables>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="522,2459" sap2010:WorkflowViewState.IdRef="Sequence_49">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Iterate Steps SAP - Invoke Workflow File (Utils\Iterate Steps SAP.xaml)" sap:VirtualizedContainerService.HintSize="469,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Utils\Iterate Steps SAP.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Iterate Steps SAP - Invoke Workflow File (Utils\Iterate Steps SAP.xaml)" sap:VirtualizedContainerService.HintSize="488,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Utils\Iterate Steps SAP.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_StopBatches" />
               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_NextBatch" />
@@ -708,15 +707,55 @@ False)]</InArgument>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <If Condition="[ODMReport]" DisplayName="Download spare parts tracking report from ODM or SAP" sap:VirtualizedContainerService.HintSize="469,595" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[ODMReport]" DisplayName="Download spare parts tracking report from ODM or SAP" sap:VirtualizedContainerService.HintSize="488,1229" sap2010:WorkflowViewState.IdRef="If_3">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_50">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,862" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="SessionActive" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ODM_DonloadReport - Invoke Workflow File (Apps\ODM\ODM_DonloadReport.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Apps\ODM\ODM_DonloadReport.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ODM_ValidateActiveSession - Invoke Workflow File (Apps\ODM\ODM_ValidateActiveSession.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Apps\ODM\ODM_ValidateActiveSession.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SessionActive">[SessionActive]</OutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
+                <If Condition="[Not SessionActive]" DisplayName="Logs in to ODM if session is inactive" sap:VirtualizedContainerService.HintSize="452,457" sap2010:WorkflowViewState.IdRef="If_10">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ODM_Login - Invoke Workflow File (Apps\ODM\ODM_Login.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Apps\ODM\ODM_Login.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ODM_DonloadReport - Invoke Workflow File (Apps\ODM\ODM_DonloadReport.xaml)" sap:VirtualizedContainerService.HintSize="452,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Apps\ODM\ODM_DonloadReport.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="in_FullReportPath">[Path.Combine(System.Environment.CurrentDirectory,"Data\Temp\ReportDownloaded.xlsx")]</InArgument>
                     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -732,13 +771,13 @@ False)]</InArgument>
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_51">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,228" sap2010:WorkflowViewState.IdRef="Sequence_51">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_DownloadReport - Invoke Workflow File (Apps\SAP\SAP_DownloadReport.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_DownloadReport.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_DownloadReport - Invoke Workflow File (Apps\SAP\SAP_DownloadReport.xaml)" sap:VirtualizedContainerService.HintSize="452,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_DownloadReport.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="in_Transaction">[in_TransactionItem("Transaction").ToString.Trim]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_Config("SAP_SheetName").ToString.Trim]</InArgument>
@@ -756,7 +795,7 @@ False)]</InArgument>
               </Sequence>
             </If.Else>
           </If>
-          <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;in_TransactionItem(&quot;Transaction&quot;).ToString.Trim.Equals(&quot;LT23&quot;)]" DisplayName="Conditionally add and reorder columns in a DataTable" sap:VirtualizedContainerService.HintSize="469,57" sap2010:WorkflowViewState.IdRef="If_7">
+          <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;in_TransactionItem(&quot;Transaction&quot;).ToString.Trim.Equals(&quot;LT23&quot;)]" DisplayName="Conditionally add and reorder columns in a DataTable" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="If_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -823,7 +862,7 @@ False)]</InArgument>
               </Sequence>
             </If.Else>
           </If>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SaveReportToExcelTemplate - Invoke Workflow File (Utils\SaveReportToExcelTemplate.xaml)" sap:VirtualizedContainerService.HintSize="469,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Utils\SaveReportToExcelTemplate.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SaveReportToExcelTemplate - Invoke Workflow File (Utils\SaveReportToExcelTemplate.xaml)" sap:VirtualizedContainerService.HintSize="488,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Utils\SaveReportToExcelTemplate.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InOutArgument x:TypeArguments="x:String" x:Key="io_ReportRange">[io_ReportRange]</InOutArgument>
               <InArgument x:TypeArguments="x:Boolean" x:Key="in_WriteData">True</InArgument>
@@ -841,7 +880,46 @@ False)]</InArgument>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_GoBackTransaction - Invoke Workflow File (Apps\SAP\SAP_GoBackTransaction.xaml)" sap:VirtualizedContainerService.HintSize="469,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_GoBackTransaction.xaml">
+          <If Condition="[ODMReport]" DisplayName="Marks report sheets as completed based on report type" sap:VirtualizedContainerService.HintSize="488,591" sap2010:WorkflowViewState.IdRef="If_11">
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="SessionActive" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Assign True to io_SheetsCompleted(&quot;ODM&quot;)" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_14">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[io_SheetsCompleted("ODM")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Set sheet completion status" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_15">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[io_SheetsCompleted(in_TransactionItem("Transaction").ToString.Trim)]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Else>
+          </If>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_GoBackTransaction - Invoke Workflow File (Apps\SAP\SAP_GoBackTransaction.xaml)" sap:VirtualizedContainerService.HintSize="488,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_GoBackTransaction.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:Boolean" x:Key="RequiredBatches">False</InArgument>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -856,7 +934,7 @@ False)]</InArgument>
         </Sequence>
       </If.Else>
     </If>
-    <ui:MultipleAssign DisplayName="Initialize variables for report tracking spare parts." sap:VirtualizedContainerService.HintSize="505,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Initialize variables for report tracking spare parts." sap:VirtualizedContainerService.HintSize="524,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
