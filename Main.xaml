@@ -585,7 +585,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[SystemException IsNot Nothing]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="232,121" sap2010:WorkflowViewState.IdRef="State_2">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="498,1289" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
                         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="452,865" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
@@ -779,7 +779,7 @@
                               </If>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Invoke InitiAllApplications workflow" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Boolean)" x:Key="out_SheetsCompleted">[SheetsCompleted]</OutArgument>
+                                  <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Boolean)" x:Key="io_SheetsCompleted">[SheetsCompleted]</InOutArgument>
                                   <InOutArgument x:TypeArguments="x:String" x:Key="io_FullFinalReportPath">[FullFinalReportPath]</InOutArgument>
                                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
                                   <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_TransactionData">[TransactionData]</OutArgument>
@@ -1028,7 +1028,11 @@
       <Variable x:TypeArguments="sd:DataTable" sap2010:Annotation.AnnotationText="Used in case transactions are stored in a DataTable, for example, after being retrieved from a spreadsheet." Name="TransactionData" />
       <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="Used to control the number of consecutive system exceptions." Default="0" Name="ConsecutiveSystemExceptions" />
       <Variable x:TypeArguments="x:String" Default="[String.Empty]" Name="BatchIntervalsAdvance" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Boolean)" Name="SheetsCompleted" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Boolean)" Name="SheetsCompleted">
+        <Variable.Default>
+          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Boolean)" ExpressionText="New Dictionary(Of String, Boolean)" />
+        </Variable.Default>
+      </Variable>
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
