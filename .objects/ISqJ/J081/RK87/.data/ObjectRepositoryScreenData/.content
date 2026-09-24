@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="JILoS7992UCKmt_sjn-eiw" Reference="oCOFMf_dREKLlM0YaHnBwQ/RK87ZbvbZUuEkhW5eqBUoA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-8, -8, 1936, 1048" BrowserType="Edge" ContentHash="iZC7OAL3CkWrvRZ8QSNV9Q" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVDhP7Y47ikJREESPjmBsNLFCbcHQXIw1my0YTGCiqSAK4idwB67pLEeuXAPfBjR4B5qmu7qKhpYvQjKQbCSLOjf1Tu29N+GF5CAZSm6SsWQrGUmukrNkL7lI/iWrpr8EHCVTyV0yk5wk6xpQjDvJRLIs+6a/BPxK5pI/Sbe8LPmp/Vn1rt/0tnyaBwlMNDmyh277AAAAAElFTkSuQmCC" Reference="oCOFMf_dREKLlM0YaHnBwQ/RK87ZbvbZUuEkhW5eqBUoA" Selector="&lt;html app='msedge.exe' title='*Portal AMPO*' /&gt;" Version="V2">
+      <TargetApp.Url>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.Url>
+      <imageRef attrName="InformativeScreenshot" originalValue="9ce73b0af0c0d655eb3ee4d86177056f.jpg" xmlns="">01uwwuM-EFUqTW-w6NMstiQ</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

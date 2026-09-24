@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="HaDK9-qqYEevWfCrkB4rDw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odm.ampo.com" CVScreenId="a15269e1-3e35-4afb-9ff3-1861a9368cdd" DesignTimeRectangle="294, 711, 138, 33" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='gridValidacionCompras_ZMAT' tag='LI' aaname='Resetear vista*' class='dropdown-item' parentclass='dropdown-menu' /&gt;" Guid="4baa7115-ea68-4f64-8f63-297c6e0cc51a" ScopeSelectorArgument="&lt;html app='msedge.exe' title='PORTAL AMPO VALIDACIÓN DOCUMENTACIÓN PROVEEDOR' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="09eedfe74189cea7f41e632c39c71c75.png" xmlns="">0jsW-rdh6G06g7skNxRBkVg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

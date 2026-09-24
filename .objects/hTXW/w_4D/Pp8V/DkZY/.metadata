@@ -1,0 +1,14 @@
+﻿{
+  "Name": "BUTTON dropdownMenuButt…",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "DkZYs9FWeU-3pv0ma1EZYA",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/DkZYs9FWeU-3pv0ma1EZYA",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/Pp8Vz7QlYUKXB76Kr2_UuA",
+  "Created": "2026-09-23T20:30:15.4406583Z",
+  "Updated": "2026-09-23T20:30:15.4406583Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

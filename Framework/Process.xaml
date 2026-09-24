@@ -136,7 +136,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1163,5467" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1163,5819" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Disposicion" />
       <Variable x:TypeArguments="x:String" Name="Variante" />
@@ -360,7 +360,7 @@
         </ui:MultipleAssign>
       </Sequence>
     </Switch>
-    <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;Split(&quot;ZMG002_01;ZMM026;COHV;ZPP029_1&quot;,&quot;;&quot;c).Any(Function (str) str.Trim.Contains(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim))]" DisplayName="Process SAP reports for spare parts tracking based on transaction type." sap:VirtualizedContainerService.HintSize="524,4397" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[Not String.IsNullOrEmpty(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim) AndAlso&#xA;Split(&quot;ZMG002_01;ZMM026;COHV;ZPP029_1&quot;,&quot;;&quot;c).Any(Function (str) str.Trim.Contains(in_TransactionItem(&quot;Transaction&quot;).ToString.Trim))]" DisplayName="Process SAP reports for spare parts tracking based on transaction type." sap:VirtualizedContainerService.HintSize="524,4749" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="522,1799" sap2010:WorkflowViewState.IdRef="Sequence_48">
           <sap:WorkflowViewStateService.ViewState>
@@ -710,7 +710,7 @@ False)]</InArgument>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="522,2459" sap2010:WorkflowViewState.IdRef="Sequence_49">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="522,2811" sap2010:WorkflowViewState.IdRef="Sequence_49">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="ODMReport" />
           </Sequence.Variables>
@@ -737,9 +737,9 @@ False)]</InArgument>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <If Condition="[ODMReport]" DisplayName="Download spare parts tracking report from ODM or SAP" sap:VirtualizedContainerService.HintSize="488,1229" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[ODMReport]" DisplayName="Download spare parts tracking report from ODM or SAP" sap:VirtualizedContainerService.HintSize="488,1581" sap2010:WorkflowViewState.IdRef="If_3">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,862" sap2010:WorkflowViewState.IdRef="Sequence_50">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1214" sap2010:WorkflowViewState.IdRef="Sequence_50">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="SessionActive" />
                 </Sequence.Variables>
@@ -760,16 +760,23 @@ False)]</InArgument>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
-                <If Condition="[Not SessionActive]" DisplayName="Logs in to ODM if session is inactive" sap:VirtualizedContainerService.HintSize="452,457" sap2010:WorkflowViewState.IdRef="If_10">
+                <If Condition="[Not SessionActive]" DisplayName="Logs in to ODM if session is inactive" sap:VirtualizedContainerService.HintSize="452,809" sap2010:WorkflowViewState.IdRef="If_10">
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,580" sap2010:WorkflowViewState.IdRef="Sequence_67">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ODM_Login - Invoke Workflow File (Apps\ODM\ODM_Login.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Apps\ODM\ODM_Login.xaml">
+                      <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill Process - process name by user" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="msedge.exe" />
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ODM_Login - Invoke Workflow File (Apps\ODM\ODM_Login.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Apps\ODM\ODM_Login.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ODM_NavigateTo - Invoke Workflow File (Apps\ODM\ODM_NavigateTo.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Apps\ODM\ODM_NavigateTo.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_MenuName">[in_Config("ODM_MenuName").ToString.trim]</InArgument>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>

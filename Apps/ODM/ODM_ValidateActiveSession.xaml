@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ODM_ValidateActiveSession" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ODM_ValidateActiveSession" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_SessionActive" Type="OutArgument(x:Boolean)" />
@@ -102,36 +102,88 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ODM_ValidateActiveSession" sap:VirtualizedContainerService.HintSize="1169,849.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ODM_ValidateActiveSession" sap:VirtualizedContainerService.HintSize="1163,1312" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia validar sesión activa en ODM&quot;]" />
-    <uix:NCheckState DisplayName="Check ODM login state and log success" EnableIfNotExists="False" Exists="[out_SessionActive]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="450,451" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V5">
-      <uix:NCheckState.IfExists>
-        <ui:LogMessage DisplayName="Log message for successful ODM login" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Inicio de sesión en ODM exitoso&quot;]" />
-      </uix:NCheckState.IfExists>
-      <uix:NCheckState.IfNotExists>
-        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_2">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </Sequence>
-      </uix:NCheckState.IfNotExists>
-      <uix:NCheckState.Target>
-        <uix:TargetAnchorable BrowserURL="odmtest.ampo.com" CVScreenId="8967bc32-2b4c-4c44-98ae-abe9f5943875" ContentHash="-paWYKLxzk6yEEeLCeEnRQ" DesignTimeRectangle="8, 347, 240, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='sidebarnav' tag='A' innertext='Inicio  ' parentclass='active ng-star-inserted' visibleinnertext='Inicio' /&gt;" Guid="32570a7d-c9e8-4acc-8f90-798316539947" InformativeScreenshot="e3df269e4e02f864a0c7170950cb9a2b.png" Reference="oCOFMf_dREKLlM0YaHnBwQ/pTtErKwTP0u-VrTjYDlxsQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*PORTAL AMPO' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-      </uix:NCheckState.Target>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </uix:NCheckState>
-    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="450,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza validar sesión activa en ODM&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia validar sesión activa en ODM&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Edge Portal AMPO" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,948" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="e4997edd-8344-491b-85de-f2beeb2079a1" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,797" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Inicio'" Exists="[out_SessionActive]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,737" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="e4997edd-8344-491b-85de-f2beeb2079a1" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log message for successful ODM login" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Inicio de sesión en ODM exitoso&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log message for successful ODM login" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Inicio de sesión en ODM fallido&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="odm.ampo.com" CVScreenId="0b09a6fc-2cd7-4a7e-847d-50f579758334" CvTextArea="59, 317, 36, 15" CvTextArgument="Inicio" CvType="Text" DesignTimeRectangle="12, 306, 240, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='sidebarnav' tag='A' innertext='Inicio  ' parentclass='active ng-star-inserted' visibleinnertext='Inicio' /&gt;" Guid="d9eb00ed-21c3-4f7f-9ca2-926b453f5f09" InformativeScreenshot="ca00c8d099f18497dab4b40ea3b3d6a6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='.*(Portal|PORTAL) AMPO.*' matching:title='regex' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVDhP7Y47ikJREESPjmBsNLFCbcHQXIw1my0YTGCiqSAK4idwB67pLEeuXAPfBjR4B5qmu7qKhpYvQjKQbCSLOjf1Tu29N+GF5CAZSm6SsWQrGUmukrNkL7lI/iWrpr8EHCVTyV0yk5wk6xpQjDvJRLIs+6a/BPxK5pI/Sbe8LPmp/Vn1rt/0tnyaBwlMNDmyh277AAAAAElFTkSuQmCC" InformativeScreenshot="9ce73b0af0c0d655eb3ee4d86177056f.jpg" Selector="&lt;html app='msedge.exe' title='.*(Portal|PORTAL) AMPO.*' matching:title='regex' /&gt;" Version="V2">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Url>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="488,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza validar sesión activa en ODM&quot;]" />
   </Sequence>
 </Activity>

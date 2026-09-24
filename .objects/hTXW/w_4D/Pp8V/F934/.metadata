@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Inicio",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "F934gButy0O5KUslm-HKyQ",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/F934gButy0O5KUslm-HKyQ",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/Pp8Vz7QlYUKXB76Kr2_UuA",
+  "Created": "2026-09-23T21:34:35.3989804Z",
+  "Updated": "2026-09-23T21:34:35.3989804Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

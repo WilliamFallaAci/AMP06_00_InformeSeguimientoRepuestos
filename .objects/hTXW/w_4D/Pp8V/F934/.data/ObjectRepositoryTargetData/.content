@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="mJPT48aAjUGeTC9U-KU6Ww" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="odm.ampo.com" CVScreenId="0b09a6fc-2cd7-4a7e-847d-50f579758334" CvTextArea="59, 317, 36, 15" CvTextArgument="Inicio" CvType="Text" DesignTimeRectangle="12, 306, 240, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Inicio  ' parentid='sidebarnav' tag='A' /&gt;" Guid="d9eb00ed-21c3-4f7f-9ca2-926b453f5f09" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Portal AMPO - CERTIFICADO PROVISIONAL RX' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="ca00c8d099f18497dab4b40ea3b3d6a6.png" xmlns="">0Jz30_dCXFESTGFNn9b5Jnw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

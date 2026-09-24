@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Resetear vista",
+  "Type": "Element",
+  "Id": "T0zNTTjq-0uTkTFFxmIiCg",
+  "Reference": "oCOFMf_dREKLlM0YaHnBwQ/T0zNTTjq-0uTkTFFxmIiCg",
+  "ParentRef": "oCOFMf_dREKLlM0YaHnBwQ/Pp8Vz7QlYUKXB76Kr2_UuA",
+  "Created": "2026-09-23T20:33:25.1168751Z",
+  "Updated": "2026-09-23T20:33:25.1168751Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
