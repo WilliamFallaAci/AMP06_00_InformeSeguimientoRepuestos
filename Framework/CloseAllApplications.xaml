@@ -1,5 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.Mail.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="in_ExceptionsCollections" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="in_SheetsCompleted" Type="InArgument(scg:Dictionary(x:String, x:Boolean))" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_FullFinalReportPath" Type="InArgument(x:String)" />
@@ -44,6 +45,16 @@
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Enums</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -102,9 +113,18 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="1163,2830" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="1163,5340" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -112,7 +132,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="610,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
-    <If Condition="[Not String.IsNullOrEmpty(in_FullFinalReportPath)]" DisplayName="Execute a macro in a specified Excel report" sap:VirtualizedContainerService.HintSize="610,2079" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[Not String.IsNullOrEmpty(in_FullFinalReportPath)]" DisplayName="Execute a macro in a specified Excel report" sap:VirtualizedContainerService.HintSize="610,4589" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -120,16 +140,16 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="608,1915" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="608,4425" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log message for macro execution" sap:VirtualizedContainerService.HintSize="574,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;---------------------------- Ejecutar Macro &quot;+in_Config(&quot;MacroName&quot;).ToString.Trim+&quot; ----------------------------&quot;]" />
-          <If Condition="[in_SheetsCompleted.Values.All(Function(x) x)]" DisplayName="Conditionally execute Excel macro for report, with error handling." sap:VirtualizedContainerService.HintSize="574,1680" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[in_SheetsCompleted.Values.All(Function(x) x)]" DisplayName="Conditionally execute Excel macro for report, with error handling." sap:VirtualizedContainerService.HintSize="574,4190" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="572,1324" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="572,1552" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -224,18 +244,170 @@
                     </Sequence>
                   </TryCatch.Finally>
                 </TryCatch>
-                <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill EXCEL.exe process for the current user" sap:VirtualizedContainerService.HintSize="538,166" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="EXCEL.exe" />
+                <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill EXCEL.exe process for the current user" sap:VirtualizedContainerService.HintSize="538,175" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="EXCEL.exe" />
+                <ui:SetAsset AssetName="[in_Config(&quot;OnDemandData_Set&quot;).ToString.Trim]" DisplayName="Initialize OnDemandData asset to 'Empty'" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="538,219" sap2010:WorkflowViewState.IdRef="SetAsset_2" TimeoutMS="60000" Value="[&quot;Empty&quot;]" />
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="572,226" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="572,2508" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="ScreenshotsPath" />
+                  <Variable x:TypeArguments="x:String" Name="User" />
+                  <Variable x:TypeArguments="ss:SecureString" Name="Password" />
+                  <Variable x:TypeArguments="x:String" Name="BodyHtml" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log a warning about missing report sheets" sap:VirtualizedContainerService.HintSize="538,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;No se ejecutó la macro, faltan hojas por llenar con los reportes: &quot;+&#xD;&#xA;String.Join(&quot;, &quot;, in_SheetsCompleted.Where(Function(x) Not x.Value).&#xD;&#xA;                                      Select(Function(x) x.Key))]" />
+                <ui:SetAsset AssetName="[in_Config(&quot;OnDemandData_Set&quot;).ToString.Trim]" DisplayName="Set asset value from config and sheet data" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="538,228" sap2010:WorkflowViewState.IdRef="SetAsset_1" TimeoutMS="60000" Value="[String.Join(&quot;,&quot;, in_SheetsCompleted.Where(Function(x) Not x.Value).&#xD;&#xA;                                      Select(Function(x) x.Key)) +&quot;;&quot;+&#xD;&#xA;in_FullFinalReportPath]" />
+                <ui:LogMessage DisplayName="Log a warning about missing report sheets" sap:VirtualizedContainerService.HintSize="538,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;No se ejecutó la macro, faltan hojas por llenar con los reportes: &quot;+&#xA;String.Join(&quot;, &quot;, in_SheetsCompleted.Where(Function(x) Not x.Value).&#xA;                                      Select(Function(x) x.Key))]" />
+                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;EmailSender&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Get Credential - email account" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="538,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[User]" />
+                <ui:ReadTextFile File="{x:Null}" Content="[BodyHtml]" DisplayName="Read Text File - HTML body success" FileName="[Path.Combine(System.Environment.CurrentDirectory,&quot;Data\Templates\BodyTemplateAmpo.html&quot;)]" sap:VirtualizedContainerService.HintSize="538,124" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+                <TryCatch DisplayName="Try Catch - notify by success" sap:VirtualizedContainerService.HintSize="538,1745" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch.Try>
+                    <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486,1329" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[(From kvp In in_ExceptionsCollections&#xD;&#xA; Where in_SheetsCompleted.ContainsKey(kvp.Key) AndAlso in_SheetsCompleted(kvp.Key) = False&#xD;&#xA; From ruta In kvp.Value.ToString().Split(&quot;;&quot;c)&#xD;&#xA; Where Not String.IsNullOrWhiteSpace(ruta)&#xD;&#xA; Select ruta.Trim).Any()]" DisplayName="Send email report for uncompleted spare parts follow-up." sap:VirtualizedContainerService.HintSize="452,1269" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,657" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Filters screenshot paths for report generation" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="scg:IEnumerable(x:String)">[ScreenshotsPath]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="scg:IEnumerable(x:String)" xml:space="preserve">[(From kvp In in_ExceptionsCollections
+ Where in_SheetsCompleted.ContainsKey(kvp.Key) AndAlso in_SheetsCompleted(kvp.Key) = False
+ From ruta In kvp.Value.ToString().Split(";"c)
+ Where Not String.IsNullOrWhiteSpace(ruta)
+ Select ruta.Trim).AsEnumerable()]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" UseOAuth="{x:Null}" AttachmentInputMode="FilePaths" AttachmentsCollection="[ScreenshotsPath]" Body="[BodyHtml.Replace(&quot;@Transactions&quot;,String.Join(&quot;, &quot;, in_SheetsCompleted.Where(Function(x) Not x.Value).&#xD;&#xA;                                      Select(Function(x) x.Key))).Replace(&quot;@Reporte&quot;,in_FullFinalReportPath)]" ConnectionMode="LegacyConfiguration" DisplayName="Send SMTP Email - notify by error with attachments" Email="[User]" EnableSSL="True" From="[User]" sap:VirtualizedContainerService.HintSize="416,422" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Name="Bot AMP 06 Informe Seguimiento Repuestos" Port="[CInt(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[Password]" Server="[in_Config(&quot;SmtpEmailserver&quot;).ToString.Trim]" Subject="Bot Exportación Lecturas posiSoft" TimeoutMS="60000" To="[in_Config(&quot;RepuestosEmailTo&quot;).ToString.Trim]" UseISConnection="False" UseRichTextEditor="True">
+                              <ui:SendMail.AttachmentsBackup>
+                                <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="FilePaths">
+                                  <usau:BackupSlot.BackupValues>
+                                    <scg:List x:TypeArguments="x:Object" x:Key="Existing" Capacity="1">
+                                      <x:Null />
+                                    </scg:List>
+                                    <scg:List x:TypeArguments="x:Object" x:Key="FilePaths" Capacity="2">
+                                      <x:Null />
+                                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                    </scg:List>
+                                  </usau:BackupSlot.BackupValues>
+                                </usau:BackupSlot>
+                              </ui:SendMail.AttachmentsBackup>
+                              <ui:SendMail.ConnectionDetailsBackupSlot>
+                                <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="LegacyConfiguration">
+                                  <usau:BackupSlot.BackupValues>
+                                    <scg:List x:TypeArguments="x:Object" x:Key="IntegrationService" Capacity="1">
+                                      <x:Null />
+                                    </scg:List>
+                                  </usau:BackupSlot.BackupValues>
+                                </usau:BackupSlot>
+                              </ui:SendMail.ConnectionDetailsBackupSlot>
+                              <ui:SendMail.Files>
+                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                              </ui:SendMail.Files>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:SendMail>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,482" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" UseOAuth="{x:Null}" AttachmentInputMode="FilePaths" Body="[BodyHtml.Replace(&quot;@Transactions&quot;,String.Join(&quot;, &quot;, in_SheetsCompleted.Where(Function(x) Not x.Value).&#xA;                                      Select(Function(x) x.Key))).Replace(&quot;@Reporte&quot;,in_FullFinalReportPath)]" ConnectionMode="LegacyConfiguration" DisplayName="Send SMTP Email - notify by error without attachments" Email="[User]" EnableSSL="True" From="[User]" sap:VirtualizedContainerService.HintSize="416,422" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="True" Name="Bot AMP 06 Informe Seguimiento Repuestos" Port="[CInt(in_Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[Password]" Server="[in_Config(&quot;SmtpEmailserver&quot;).ToString.Trim]" Subject="Bot Exportación Lecturas posiSoft" TimeoutMS="60000" To="[in_Config(&quot;RepuestosEmailTo&quot;).ToString.Trim]" UseISConnection="False" UseRichTextEditor="True">
+                              <ui:SendMail.AttachmentsBackup>
+                                <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="FilePaths">
+                                  <usau:BackupSlot.BackupValues>
+                                    <scg:List x:TypeArguments="x:Object" x:Key="Existing" Capacity="1">
+                                      <x:Null />
+                                    </scg:List>
+                                    <scg:List x:TypeArguments="x:Object" x:Key="FilePaths" Capacity="2">
+                                      <x:Null />
+                                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                    </scg:List>
+                                  </usau:BackupSlot.BackupValues>
+                                </usau:BackupSlot>
+                              </ui:SendMail.AttachmentsBackup>
+                              <ui:SendMail.ConnectionDetailsBackupSlot>
+                                <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="LegacyConfiguration">
+                                  <usau:BackupSlot.BackupValues>
+                                    <scg:List x:TypeArguments="x:Object" x:Key="IntegrationService" Capacity="1">
+                                      <x:Null />
+                                    </scg:List>
+                                  </usau:BackupSlot.BackupValues>
+                                </usau:BackupSlot>
+                              </ui:SendMail.ConnectionDetailsBackupSlot>
+                              <ui:SendMail.Files>
+                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                              </ui:SendMail.Files>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:SendMail>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,226" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message - error by success" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Sepresentó el siguiente error notificando por proceso exitoso: &quot;+exception.Message]" />
+                        </Sequence>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                  <TryCatch.Finally>
+                    <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="486,25" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </TryCatch.Finally>
+                </TryCatch>
               </Sequence>
             </If.Else>
           </If>
